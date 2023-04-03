@@ -1,107 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  const [navbar, setNavbar] = useState(false);
+function Navbar() {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="w-full bg-purple-500 shadow">
-    <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                <a href="javascript:void(0)">
-                    <h2 className="text-2xl font-bold text-white">LOGO</h2>
-                </a>
-                <div className="md:hidden">
-                    <button
-                        className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                        onClick={() => setNavbar(!navbar)}
-                    >
-                        {navbar ? (
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-6 h-6 text-white"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        ) : (
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-6 h-6 text-white"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
-                            </svg>
-                        )}
-                    </button>
-                </div>
+    <nav
+      className={`bg-gray-700 shadow-lg fixed w-full transition duration-500 ease-in-out ${
+        scroll ? "py-2" : "py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-between h-8">
+          <div className="flex-shrink-0">
+            <Link to="/" className="font-bold text-2xl text-white">
+              Cholo Bangladesh
+            </Link>
+          </div>
+          <div className=" flex items-center justify-end sm:items-stretch sm:justify-start">
+            <div className="hidden sm:block sm:ml-6">
+              <div className="flex space-x-4 text-white">
+                <Link
+                  to="/"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  About
+                </Link>
+                <Link
+                  to="/contact"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-        </div>
-        <div>
-            <div
-                className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                    navbar ? "block" : "hidden"
-                }`}
-            >
-                <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                    <li className="text-white hover:text-indigo-200">
-                        <a href="javascript:void(0)">Home</a>
-                    </li>
-                    <li className="text-white hover:text-indigo-200">
-                        <a href="javascript:void(0)">Blog</a>
-                    </li>
-                    <li className="text-white hover:text-indigo-200">
-                        <a href="javascript:void(0)">About US</a>
-                    </li>
-                    <li className="text-white hover:text-indigo-200">
-                        <a href="javascript:void(0)">Contact US</a>
-                    </li>
-                </ul>
-
-                <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-            <a
-                href="javascript:void(0)"
-                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-            >
-                Sign in
-            </a>
-            <a
-                href="javascript:void(0)"
-                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-            >
-                Sign up
-            </a>
-        </div>
+            {/* Login/Register Buttons */}
+            <div className="flex items-center sm:ml-6">
+              <Link
+                to="/login"
+                className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Log In
+              </Link>
+              <Link
+                to="/register"
+                className="  text-white font-semibold   shadow ml-4 relative"
+              >
+                Register
+                <div className="absolute bottom-0 left-0 w-full h-1 border-b-2"></div>
+              </Link>
             </div>
+          </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-            <a
-                href="javascript:void(0)"
-                className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-            >
-                Sign in
-            </a>
-            <a
-                href="javascript:void(0)"
-                className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-            >
-                Sign up
-            </a>
-        </div>
-    </div>
-</nav>
+      </div>
+    </nav>
   );
-};
+}
 
 export default Navbar;
