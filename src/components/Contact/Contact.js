@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
  
-    <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
+    <section class="relative z-auto overflow-hidden pt-28 pb-4 ">
       <div class="container mx-auto">
         <div class="-mx-4 flex flex-wrap lg:justify-between">
           <div class="w-full px-24 lg:w-1/2 xl:w-6/12">
@@ -91,8 +91,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-            <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
+
+          <div class="w-full px-4 lg:w-1/2 xl:w-5/12 pt-10">
+            <div class="relative rounded-lg border border-red-200 p-8 shadow-lg sm:p-12">
               <form>
                 <div class="mb-6">
                   <input
