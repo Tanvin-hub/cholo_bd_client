@@ -1,92 +1,32 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React from "react";
 
 const About = () => {
   return (
-    <section class="relative pt-16 bg-blueGray-50">
-<div class="container mx-auto">
-  <div class="flex flex-wrap items-center">
-    <div class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
-      <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pink-500">
-        <img alt="..." src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="w-full align-middle rounded-t-lg"></img>
-        <blockquote class="relative p-8 mb-4">
-          <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block h-95-px -top-94-px">
-            <polygon points="-30,95 583,95 583,65" class="text-pink-500 fill-current"></polygon>
-          </svg>
-          <h4 class="text-xl font-bold text-white">
-            Great for your awesome project
-          </h4>
-          <p class="text-md font-light mt-2 text-white">
-            Putting together a page has never been easier than matching
-            together pre-made components. From landing pages presentation
-            to login areas, you can easily customise and built your pages.
+    <section className="w-4/5 mx-auto py-32">
+      <div className="grid grid-cols-2 gap-6">
+        <div>
+          <span className="text-primary text-lg">About Us</span>
+          <h2 className="text-5xl font-medium mt-2 mb-6 leading-tight">Welcome To Roberto Hotel Luxury</h2>
+          <p className="text-slate-500 text-xl">
+            With over 340 hotels worldwide, NH Hotel Group offers a wide variety
+            of hotels catering for a perfect stay no matter where your
+            destination.
           </p>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="w-full md:w-6/12 px-4">
-      <div class="flex flex-wrap">
-        <div class="w-full md:w-6/12 px-4">
-          <div class="relative flex flex-col mt-4">
-            <div class="px-4 py-5 flex-auto">
-              <div class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                <i class="fas fa-sitemap"></i>
-              </div>
-              <h6 class="text-xl mb-1 font-semibold">CSS Components</h6>
-              <p class="mb-4 text-blueGray-500">
-                Notus JS comes with a huge number of Fully Coded CSS
-                components.
-              </p>
-            </div>
-          </div>
-          <div class="relative flex flex-col min-w-0">
-            <div class="px-4 py-5 flex-auto">
-              <div class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                <i class="fas fa-drafting-compass"></i>
-              </div>
-              <h6 class="text-xl mb-1 font-semibold">
-                JavaScript Components
-              </h6>
-              <p class="mb-4 text-blueGray-500">
-                We also feature many dynamic components for React, NextJS,
-                Vue and Angular.
-              </p>
-            </div>
-          </div>
         </div>
-        <div class="w-full md:w-6/12 px-4">
-          <div class="relative flex flex-col min-w-0 mt-4">
-            <div class="px-4 py-5 flex-auto">
-              <div class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                <i class="fas fa-newspaper"></i>
-              </div>
-              <h6 class="text-xl mb-1 font-semibold">Pages</h6>
-              <p class="mb-4 text-blueGray-500">
-                This extension also comes with 3 sample pages. They are
-                fully coded so you can start working instantly.
-              </p>
-            </div>
+        <div className="grid grid-rows-3 grid-flow-col gap-4">
+          <div className="row-span-2">
+            <img className="w-full h-32" src="https://images.unsplash.com/photo-1680531331515-649be8dea9fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
           </div>
-          <div class="relative flex flex-col min-w-0">
-            <div class="px-4 py-5 flex-auto">
-              <div class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                <i class="fas fa-file-alt"></i>
-              </div>
-              <h6 class="text-xl mb-1 font-semibold">Documentation</h6>
-              <p class="mb-4 text-blueGray-500">
-                Built by developers for developers. You will love how easy
-                is to to work with Notus JS.
-              </p>
-            </div>
+          <div className="row-span-2">
+            <img className="w-full h-32" src="https://images.unsplash.com/photo-1680181253112-82f74f368509?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+          </div>
+          <div className="row-span-2 col-span-2">
+            <img className="w-full h-32" src="https://images.unsplash.com/photo-1680623356108-6ffb5193f1b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="" />
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</section>
-  )
-}
+    </section>
+  );
+};
 
-export default About
+export default About;

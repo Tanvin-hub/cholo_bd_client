@@ -65,9 +65,9 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-between sm:items-stretch">
+          <div className="flex-1 flex items-center justify-between sm:items-center px-12 sm:px-0">
             <div className="flex-shrink-0">
-              <Link to="/" className="font-bold text-xl">
+              <Link to="/" className="font-bold text-xl uppercase">
                 Cholo BD
               </Link>
             </div>
@@ -188,22 +188,22 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="sm:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-blue-500">
             <Link
               to="/"
-              className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               About
             </Link>
             <Link
               to="/contact"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Contact
             </Link>

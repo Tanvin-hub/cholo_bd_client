@@ -22,8 +22,8 @@ const Banner = () => {
             </p>
             <Link
               to="/"
-              className="px-3 py-2 border border-transparent text-base font-medium 
-                  rounded text-black bg-white hover:bg-blue-500 hover:text-white transition-all 
+              className="px-3 py-2 border border-primary text-base font-medium 
+                  rounded hover:bg-primary hover:text-white transition-all 
                   duration-150 ease-linear md:py-2 
                   md:px-6 inline-block uppercase tracking-wider"
             >
