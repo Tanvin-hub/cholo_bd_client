@@ -1,12 +1,12 @@
 import React from 'react';
 import Banner  from "../Banner/Banner.js";
-import About from "../About/About";
-
+import Contact from "../Contact/Contact"
 const Home = () => {
     return (
         <div>
             <Banner/>
-            <About/>
+            {/* <About/> */}
+            <Contact/>
         </div>
     );
 };
