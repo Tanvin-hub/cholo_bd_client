@@ -3,11 +3,22 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [navbar, setNavbar] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const changeBg = () => {
+    if(window.scrollY >= 20) {
+      setNavbar(true)
+    }
+    else {
+      setNavbar(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeBg)
+
   return (
-    <nav className="bg-base-100">
+    <nav className={navbar ? 'navbar active myBgColor fixed top-0 z-10 h-6 w-screen px-6 py-3' : 'navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white'}>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
