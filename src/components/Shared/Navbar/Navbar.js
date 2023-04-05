@@ -18,9 +18,9 @@ const Navbar = () => {
   window.addEventListener('scroll', changeBg)
 
   return (
-    <nav className={navbar ? 'navbar active myBgColor fixed top-0 z-10 h-6 w-screen px-6 py-3' : 'navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white'}>
+    <nav className={navbar ? 'navbar active myBgColor fixed top-0 z-10 w-screen px-6 py-3' : 'navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white'}>
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-10">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               type="button"

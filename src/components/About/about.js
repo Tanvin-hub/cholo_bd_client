@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-const about = () => {
+const About = () => {
   return (
     <section class="relative pt-16 bg-blueGray-50">
 <div class="container mx-auto">
@@ -89,4 +89,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About

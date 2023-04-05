@@ -28,14 +28,17 @@ li:hover > button svg {
 }
 
 .banner {
-  background: url("./Assets/banner.webp") no-repeat center;
-  height: 100vh;
+  background: url("./assets/banner.webp") no-repeat center;
   width: 100% ;
   background-size: cover;
 }
 
 .overflow {
   background: rgba(0, 0, 0, .4);
-  height: 100vh;
   width: 100%;
+}
+
+.myBgColor {
+  background-color: rgb(59 130 246);
+  color: white;
 }
