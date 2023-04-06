@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+
 const Banner = () => {
   return (
+    <div>
     <section className="banner text-white h-[500px] relative">
       <div className="overflow h-[500px]">
         <div className="py-12 md:py-20">
@@ -56,9 +59,10 @@ const Banner = () => {
           hover:text-black cursor-pointer transition-all duration-150 ease-linear uppercase font-medium" />
           </div>
         </form>
-
       </div>
     </section>
+   
+    </div>
   );
 };
 
