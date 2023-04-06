@@ -1,7 +1,8 @@
 import React from "react";
-
+import Footer from "../Footer/Footer";
 const About = () => {
   return (
+    <div>
     <section className="w-4/5 mx-auto py-32">
       <div className="grid grid-cols-2 gap-6">
         <div className="mt-10">
@@ -26,6 +27,8 @@ const About = () => {
         </div>
       </div>
     </section>
+    <Footer></Footer>
+    </div>
   );
 };
 
