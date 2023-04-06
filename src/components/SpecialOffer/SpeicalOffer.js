@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  FaBed,
-  FaBath,
-  FaWifi,
-  FaShuttleVan,
+  
   FaMapMarkerAlt,
   FaArrowRight,
+  FaAngleRight,
 } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 
 const SpeicalOffer = () => {
   return (
@@ -21,7 +21,7 @@ const SpeicalOffer = () => {
 
       <div className="container mx-auto px-32">
         <div className="grid grid-cols-3 gap-6 items-center justify-center mt-16">
-          <div className="h-full w-full shadow-2xl rounded-lg">
+           <div className="h-full w-full shadow-2xl rounded-lg">
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
@@ -56,37 +56,42 @@ const SpeicalOffer = () => {
                 </div>
               </button>
             </div>
+
             <div className="px-6 py-3">
-              <h1 className="text-xl font-bold">700$</h1>
-              <ul className="flex flex-wrap gap-2 mt-5">
+            <div class="flex justify-evenly ">
+            <div className="order-first text-xl font-bold">Package Name</div>
+            <div className="text-xl font-bold">$700</div>
+            </div>
+
+              <ul className="flex flex-wrap gap-2 mt-5 justify-center">
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaBed />
+                    <FaAngleRight/>
                   </span>
-                  <p>Beds</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaBath />
+                    <FaAngleRight />
                   </span>
-                  <p>1 Bath</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaWifi />
+                    <FaAngleRight />
                   </span>
-                  <p>Wi-Fi</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaShuttleVan />
+                    <FaAngleRight/>
                   </span>
-                  <p>Shuttle</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
               </ul>
-              <p className="flex gap-3 items-center my-4 text-slate-500">
+              <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
                 <span>
-                  <FaMapMarkerAlt />
+                <FaMapMarkerAlt />
                 </span>
                 450 Vine st # 310, peru
               </p>
@@ -95,13 +100,20 @@ const SpeicalOffer = () => {
                         transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                         text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
               >
-                View Details{" "}
+                <Link
+                  to="/trip"
+                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                 View Details
+                </Link>
+
+    
                 <span>
                   <FaArrowRight />
                 </span>
               </button>
             </div>
-          </div>
+          </div> 
 
           <div className="h-full w-full shadow-2xl rounded-lg">
             <div className="relative w-full p-4">
@@ -132,37 +144,43 @@ const SpeicalOffer = () => {
                 </div>
               </button>
             </div>
+       
+       
             <div className="px-6 py-3">
-              <h1 className="text-xl font-bold">700$</h1>
-              <ul className="flex flex-wrap gap-2 mt-5">
+            <div class="flex justify-evenly ">
+            <div className="order-first text-xl font-bold">Package Name</div>
+            <div className="text-xl font-bold">$700</div>
+            </div>
+
+              <ul className="flex flex-wrap gap-2 mt-5 justify-center">
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaBed />
+                    <FaAngleRight/>
                   </span>
-                  <p>Beds</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaBath />
+                    <FaAngleRight />
                   </span>
-                  <p>1 Bath</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaWifi />
+                    <FaAngleRight />
                   </span>
-                  <p>Wi-Fi</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
-                    <FaShuttleVan />
+                    <FaAngleRight/>
                   </span>
-                  <p>Shuttle</p>
+                  <p>Lorem Ipsum Lorem</p>
                 </li>
               </ul>
-              <p className="flex gap-3 items-center my-4 text-slate-500">
+              <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
                 <span>
-                  <FaMapMarkerAlt />
+                <FaMapMarkerAlt />
                 </span>
                 450 Vine st # 310, peru
               </p>
@@ -171,13 +189,112 @@ const SpeicalOffer = () => {
                         transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                         text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
               >
-                View Details{" "}
+                <Link
+                  to="/trip"
+                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                 View Details
+                </Link>
+
+    
                 <span>
                   <FaArrowRight />
                 </span>
               </button>
             </div>
           </div>
+          
+          <div className="h-full w-full shadow-2xl rounded-lg">
+            <div className="relative w-full p-4">
+              <img
+                src="https://images.unsplash.com/photo-1680664777916-0e4735183619?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                alt=""
+              />
+              <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
+                <div className="flex h-full w-full items-center justify-center rounded-full text-xl hover:bg-gray-50">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+           
+           
+            <div className="px-6 py-3">
+            <div class="flex justify-evenly ">
+            <div className="order-first text-xl font-bold">Package Name</div>
+            <div className="text-xl font-bold">$700</div>
+            </div>
+
+              <ul className="flex flex-wrap gap-2 mt-5 justify-center">
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight/>
+                  </span>
+                  <p>Lorem Ipsum Lorem</p>
+                </li>
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight />
+                  </span>
+                  <p>Lorem Ipsum Lorem</p>
+                </li>
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight />
+                  </span>
+                  <p>Lorem Ipsum Lorem</p>
+                </li>
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight/>
+                  </span>
+                  <p>Lorem Ipsum Lorem</p>
+                </li>
+              </ul>
+              <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
+                <span>
+                <FaMapMarkerAlt />
+                </span>
+                450 Vine st # 310, peru
+              </p>
+              <button
+                className="bg-primary hover:bg-transparent border border-primary 
+                        transition-all duration-200 ease-linear flex justify-center py-2 px-8 
+                        text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+              >
+                <Link
+                  to="/trip"
+                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                 View Details
+                </Link>
+
+    
+                <span>
+                  <FaArrowRight />
+                </span>
+              </button>
+            </div>
+          </div> 
+
+          
+{/* 
 
           <div className="h-full w-full shadow-2xl rounded-lg">
             <div className="relative w-full p-4">
@@ -253,7 +370,7 @@ const SpeicalOffer = () => {
                 </span>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
