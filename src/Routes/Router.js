@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
+import SpecialOffer from "../components/SpecialOffer/SpeicalOffer"
 
 const router = createBrowserRouter([
   {
@@ -11,15 +12,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Home />
       },
       {
         path: "/about",
-        element: <About />,
+        element: <About />
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <Contact />
+      },
+      {
+        path: "/offer",
+        element: <SpecialOffer/>
       }
     ],
 
