@@ -101,13 +101,13 @@ const Navbar = () => {
             <div>
               <div className="group inline-block">
                 <button className="outline-none focus:outline-none px-3 rounded-sm flex items-center">
-                  <div class="relative">
+                  <div className="relative">
                     <img
-                      class="w-10 h-10 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                      className="w-10 h-10 rounded-full object-cover"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                     />
-                    <span class="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                    <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
                   </div>
                   <span>
                     <svg
