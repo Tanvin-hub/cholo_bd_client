@@ -7,18 +7,23 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const changeBg = () => {
-    if(window.scrollY >= 20) {
-      setNavbar(true)
+    if (window.scrollY >= 20) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
     }
-    else {
-      setNavbar(false)
-    }
-  }
+  };
 
-  window.addEventListener('scroll', changeBg)
+  window.addEventListener("scroll", changeBg);
 
   return (
-    <nav className={navbar ? 'navbar active myBgColor fixed top-0 z-10 w-screen px-6 py-3' : 'navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white'}>
+    <nav
+      className={
+        navbar
+          ? "navbar active myBgColor fixed top-0 z-10 w-screen px-6 py-3 transition-all duration-300 ease-in-out"
+          : "navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white"
+      }
+    >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-10">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -96,13 +101,13 @@ const Navbar = () => {
             <div>
               <div className="group inline-block">
                 <button className="outline-none focus:outline-none px-3 rounded-sm flex items-center">
-                  <div class="relative">
+                  <div className="relative">
                     <img
-                      class="w-10 h-10 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                      className="w-10 h-10 rounded-full object-cover"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                     />
-                    <span class="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                    <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
                   </div>
                   <span>
                     <svg

@@ -28,7 +28,7 @@ li:hover > button svg {
 }
 
 .banner {
-  background: url("./assets/banner.webp") no-repeat center;
+  background: url("./assets/banner.jpg") no-repeat center;
   width: 100% ;
   background-size: cover;
 }
@@ -41,4 +41,8 @@ li:hover > button svg {
 .myBgColor {
   background-color: #1cc3b2;
   color: white;
+}
+
+.heading {
+  line-height: 4rem;
 }
