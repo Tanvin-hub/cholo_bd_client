@@ -10,9 +10,11 @@ const Contact = () => {
               <span className="text-primary mb-4 block text-base font-semibold">
                 Contact Us
               </span>
+
               <h2 className="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                 GET IN TOUCH WITH US
               </h2>
+              
               <p className="text-body-color mb-9 text-base leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -62,6 +64,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
+
               <div className="mb-8 flex w-full max-w-[370px]">
                 <div className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
                   <svg
@@ -82,6 +85,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
 

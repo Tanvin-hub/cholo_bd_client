@@ -6,6 +6,8 @@ import Contact from "../components/Contact/Contact";
 import SpecialOffer from "../components/SpecialOffer/SpeicalOffer"
 import Trip from "../components/Trip/Trip";
 import Services from "../components/Services/Services";
+import Testimonial from "../components/Testimonial/Testimonial";
+import Cart from "../components/Cart/Cart";
 
 
 const router = createBrowserRouter([
@@ -38,6 +40,15 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services/>
+      },
+
+      {
+        path: "/testimonial",
+        element: <Testimonial/>
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       },
     
     ],

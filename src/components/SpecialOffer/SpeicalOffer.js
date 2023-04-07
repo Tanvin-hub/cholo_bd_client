@@ -21,11 +21,12 @@ const SpeicalOffer = () => {
 
       <div className="container mx-auto px-32">
         <div className="grid grid-cols-3 gap-6 items-center justify-center mt-16">
-           <div className="h-full w-full shadow-2xl rounded-lg">
-            <div className="relative w-full p-4">
-              <img
+          
+           <div className="h-full w-full shadow-2xl rounded-lg ">
+            <div className="relative w-full p-4 ">
+            <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-red-300"
                 alt=""
               />
               <button
@@ -124,9 +125,9 @@ const SpeicalOffer = () => {
 
           <div className="h-full w-full shadow-2xl rounded-lg">
             <div className="relative w-full p-4">
-              <img
-                src="https://images.unsplash.com/photo-1680664777916-0e4735183619?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+            <img
+                src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-red-300"
                 alt=""
               />
               <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
@@ -222,9 +223,9 @@ const SpeicalOffer = () => {
           
           <div className="h-full w-full shadow-2xl rounded-lg">
             <div className="relative w-full p-4">
-              <img
-                src="https://images.unsplash.com/photo-1680664777916-0e4735183619?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+            <img
+                src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-red-300"
                 alt=""
               />
               <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
