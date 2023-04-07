@@ -18,6 +18,7 @@ const Contact = () => {
                 eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
                 adiqua minim veniam quis nostrud exercitation ullamco
               </p>
+             
               <div className="mb-8 flex w-full max-w-[370px]">
                 <div className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
                   <svg
@@ -38,6 +39,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
+              
               <div className="mb-8 flex w-full max-w-[370px]">
                 <div className="bg-primary text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
                   <svg
