@@ -18,7 +18,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
@@ -109,7 +109,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
@@ -202,7 +202,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
@@ -294,7 +294,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
@@ -386,7 +386,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
@@ -478,7 +478,7 @@ const Trip = () => {
             <div className="relative w-full p-4">
               <img
                 src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                 alt=""
               />
               <button
