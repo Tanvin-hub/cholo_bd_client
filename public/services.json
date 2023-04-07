@@ -1,0 +1,38 @@
+[
+  {
+    "service_id": "01",
+    "icon": "icon",
+    "title": "Refreshing Design",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  },
+  {
+    "service_id": "02",
+    "icon": "icon",
+    "title": "Based on Tailwind CSS",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  },
+  {
+    "service_id": "03",
+    "icon": "icon",
+    "title": "300+ Components",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  },
+  {
+    "service_id": "04",
+    "icon": "icon",
+    "title": "Speed Optimized",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  },
+  {
+    "service_id": "05",
+    "icon": "icon",
+    "title": "Fully Customizable",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  },
+  {
+    "service_id": "06",
+    "icon": "icon",
+    "title": "Regular Updates",
+    "description": "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+  }
+]
