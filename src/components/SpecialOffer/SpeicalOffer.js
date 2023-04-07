@@ -68,25 +68,32 @@ const SpeicalOffer = () => {
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
+                </li>
+
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight/>
+                  </span>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
               </ul>
               <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
@@ -97,8 +104,8 @@ const SpeicalOffer = () => {
               </p>
               <button
                 className="bg-primary hover:bg-transparent border border-primary 
-                        transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                        text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                        transition-all duration-200 ease-linear flex justify-center  px-8 
+                        text-white hover:text-black items-center  mb-3 w-full rounded-full"
               >
                 <Link
                   to="/trip"
@@ -152,32 +159,41 @@ const SpeicalOffer = () => {
             <div className="text-xl font-bold">$700</div>
             </div>
 
-              <ul className="flex flex-wrap gap-2 mt-5 justify-center">
+            <ul className="flex flex-wrap gap-2 mt-5 justify-center">
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
+                </li>
+
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight/>
+                  </span>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
               </ul>
+
+
               <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
                 <span>
                 <FaMapMarkerAlt />
@@ -186,8 +202,8 @@ const SpeicalOffer = () => {
               </p>
               <button
                 className="bg-primary hover:bg-transparent border border-primary 
-                        transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                        text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                        transition-all duration-200 ease-linear flex justify-center px-8 
+                        text-white hover:text-black items-center  mb-3 w-full rounded-full"
               >
                 <Link
                   to="/trip"
@@ -241,32 +257,41 @@ const SpeicalOffer = () => {
             <div className="text-xl font-bold">$700</div>
             </div>
 
-              <ul className="flex flex-wrap gap-2 mt-5 justify-center">
+            <ul className="flex flex-wrap gap-2 mt-5 justify-center">
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
+                </li>
+
+                <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                  <span>
+                    <FaAngleRight/>
+                  </span>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight />
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
                 <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                   <span>
                     <FaAngleRight/>
                   </span>
-                  <p>Lorem Ipsum Lorem</p>
+                  <p>Lorem</p>
                 </li>
               </ul>
+
+
               <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
                 <span>
                 <FaMapMarkerAlt />
@@ -275,8 +300,8 @@ const SpeicalOffer = () => {
               </p>
               <button
                 className="bg-primary hover:bg-transparent border border-primary 
-                        transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                        text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                        transition-all duration-200 ease-linear flex justify-center px-8 
+                        text-white hover:text-black items-center  mb-3 w-full rounded-full"
               >
                 <Link
                   to="/trip"
