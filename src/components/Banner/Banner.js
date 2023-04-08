@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-
 const Banner = () => {
   return (
     <div>
     <section className="banner text-white h-[500px] relative">
-      <div className="overflow h-[500px]">
+      <div className="overlay h-[500px]">
         <div className="py-12 md:py-20">
           <div
             className="text-white md:pt-42 md:absolute md:top-[48%] 

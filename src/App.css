@@ -33,7 +33,7 @@ li:hover > button svg {
   background-size: cover;
 }
 
-.overflow {
+.overlay {
   background: rgba(0, 0, 0, .4);
   width: 100%;
 }
@@ -133,8 +133,6 @@ button {
 }
 
 
-
-
 .login{
   /*
     background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
@@ -142,5 +140,9 @@ button {
   background: url("./assets/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.contact {
+  background: url("./assets/banner.jpg") no-repeat center;
+  background-position: cover;
 }
