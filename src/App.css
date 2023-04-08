@@ -39,8 +39,8 @@ li:hover > button svg {
 }
 
 .myBgColor {
-  background-color: #1cc3b2;
-  color: white;
+  background-image: linear-gradient(to right, rgb(243 244 246), #82fcf0, rgb(243 244 246));
+  color: black;
 }
 
 .heading {
