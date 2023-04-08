@@ -16,16 +16,7 @@ const Services = () => {
               <span className="font-semibold text-lg text-primary mb-2 block">
                 Our Services
               </span>
-              <h2
-                className="
-                  font-bold
-                  text-3xl
-                  sm:text-4xl
-                  md:text-[40px]
-                  text-dark
-                  mb-4
-                  "
-              >
+              <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
                 What We Offer
               </h2>
               <p className="text-base text-body-color">

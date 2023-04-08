@@ -27,7 +27,7 @@ const SpeicalOffer = () => {
               <div className="relative w-full p-4">
                 <img
                   src={offer?.img}
-                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
+                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                   alt=""
                 />
                 <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
@@ -39,7 +39,8 @@ const SpeicalOffer = () => {
                       viewBox="0 0 512 512"
                       height="1em"
                       width="1em"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         fill="none"
                         stroke-linecap="round"
@@ -53,53 +54,33 @@ const SpeicalOffer = () => {
               </div>
 
               <div className="px-6 py-3">
-                <div class="flex justify-evenly ">
-                  <div className="order-first text-xl font-bold">
-                    {offer?.title}
+                <div className="flex justify-between ">
+                  <div className="order-first text-2xl font-bold">
+                    $ {offer?.price}
                   </div>
-                  <div className="text-xl font-bold">$ {offer?.price}</div>
+                  <p
+                    className="text-md font-semibold bg-slate-200 py-1 px-3 rounded-full
+                   text-primary"
+                  >
+                    {offer?.discount}% Off
+                  </p>
                 </div>
 
-                <ul className="flex flex-wrap gap-2 mt-5 justify-center">
-
-
-                  {
-                    offer?.facility?.map(fac => <li className="flex items-center gap-3 bg-slate-200 
-                    py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>{fac?.name}</p>
-                  </li>)
-                  }
-
-                  {/* <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem</p>
-                  </li> */}
+                <ul className="flex flex-wrap gap-2 mt-5">
+                  {offer?.facility?.map((fac) => (
+                    <li
+                      className="flex items-center gap-3 bg-slate-200 
+                    py-1 px-4 rounded text-slate-500"
+                    >
+                      <span>
+                        <FaAngleRight />
+                      </span>
+                      <p>{fac?.name}</p>
+                    </li>
+                  ))}
                 </ul>
 
-                <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
+                <p className="flex gap-3 items-center my-6 text-slate-500">
                   <span>
                     <FaMapMarkerAlt />
                   </span>

@@ -38,12 +38,12 @@ const Register = () => {
                   type="submit">Create Account</button>
               </div>
               <div className="text-center">
-                <a className=" inline-block right-0 align-baseline font-light text-sm text-500">
+                
                 Already have an account? 
                     <a class="no-underline border-b border-blue text-blue" href="../login/">
                         Log in
                     </a>.
-                </a>
+                
               </div>
 
         </form>
