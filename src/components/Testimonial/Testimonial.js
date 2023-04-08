@@ -11,7 +11,7 @@ const Testimonial = () => {
     queryFn: () => fetch("testimonial.json").then((res) => res.json()),
   });
   return (
-    <section className="my-20">
+    <section className="my-20 container mx-auto px-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
