@@ -136,4 +136,14 @@ button {
 }
 
 
-  
+
+
+.login{
+  /*
+    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+  */
+  background: url("./assets/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
