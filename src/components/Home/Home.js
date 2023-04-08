@@ -4,6 +4,7 @@ import SpecialOffer from "../SpecialOffer/SpeicalOffer"
 import Services from '../Services/Services.js';
 import Testimonial from '../Testimonial/Testimonial.js';
 import Trip from "../Trip/Trip"
+import HomeContact from "../HomeContact/HomeContact"
 
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
             <SpecialOffer/>
             <Trip/>
             <Services/>
-            <Testimonial/>            
+            <Testimonial/>
+            <HomeContact/>            
         </div>
     );
 };

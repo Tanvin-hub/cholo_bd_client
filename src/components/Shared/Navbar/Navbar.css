@@ -10,3 +10,13 @@
   .nav-item:focus {
     background: #FF7B47;
   }
+
+  .item {
+    color: black;
+  }
+
+  .navbar.active .navbar-logo,
+.navbar.navbar.active .item {
+  color: black !important;
+}
+  
