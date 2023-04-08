@@ -8,9 +8,9 @@ import Services from "../components/Services/Services";
 import Testimonial from "../components/Testimonial/Testimonial";
 import Cart from "../components/Cart/Cart";
 import About from "../components/About/about";
-import Details from "../components/Details/Details";
 import Review from "../components/Review/Review";
 import Login from "../components/Login/login"
+import Register from "../components/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -56,8 +56,8 @@ const router = createBrowserRouter([
       
 
       {
-        path: "/details",
-        element: <Details/>
+        path: "/register",
+        element: <Register/>
       },
 
       {
