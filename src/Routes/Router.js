@@ -62,9 +62,13 @@ const router = createBrowserRouter([
         element: <Review/>
       },
       {
+        path: "/trips",
+        element: <Review/>
+      },
+      {
         path: "/trips/:id",
         element: <TripDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/trips/:id`)
+        loader: ({params}) => fetch(`http://localhost:5000/trips/${params.id}`)
       },
       {
         path: "/tab",
