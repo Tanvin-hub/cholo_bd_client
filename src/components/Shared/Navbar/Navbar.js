@@ -16,13 +16,22 @@ const Navbar = () => {
 
   window.addEventListener("scroll", changeBg);
 
+  const getColor = (current) => {
+    if (window.location.pathname === current) {
+      return "#fff";
+    } else {
+      return "#111";
+    }
+  };
+
   return (
     <nav
       className={
         navbar
-          ? "navbar active myBgColor fixed top-0 z-10 w-screen px-6 py-3 transition-all duration-300 ease-in-out"
-          : "navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 text-white"
-      }
+          ? "navbar active myBgColor item fixed top-0 z-10 w-screen px-6 py-3 transition-all duration-300 ease-in-out"
+          : "navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 item"
+        }
+        style={{ color: getColor("/") }}
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-10">
@@ -72,7 +81,7 @@ const Navbar = () => {
           </div>
           <div className="flex-1 flex items-center justify-between sm:items-center px-12 sm:px-0">
             <div className="flex-shrink-0">
-              <Link to="/" className="font-bold text-xl uppercase">
+              <Link to="/" className="font-bold text-xl uppercase" >
                 Cholo BD
               </Link>
             </div>
