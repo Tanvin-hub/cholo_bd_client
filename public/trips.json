@@ -1,6 +1,5 @@
 [
   {
-    "service_id": "01",
     "title": "Jaflong",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
@@ -29,7 +28,6 @@
     "description": "450 Vine st # 310, peru"
   },
   {
-    "service_id": "02",
     "title": "Bandarban",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
@@ -58,7 +56,6 @@
     "description": "450 Vine st # 310, peru"
   },
   {
-    "service_id": "03",
     "title": "Sajek",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
@@ -87,7 +84,6 @@
     "description": "450 Vine st # 310, peru"
   },
   {
-    "service_id": "01",
     "title": "Jaflong",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
@@ -116,7 +112,6 @@
     "description": "450 Vine st # 310, peru"
   },
   {
-    "service_id": "02",
     "title": "Bandarban",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
@@ -145,7 +140,6 @@
     "description": "450 Vine st # 310, peru"
   },
   {
-    "service_id": "03",
     "title": "Sajek",
     "img": "https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
     "price": "700",
