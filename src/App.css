@@ -54,7 +54,7 @@ li:hover > button svg {
 }
 
 .swiper-slide {
-  background: #fff;
+  /* background: #fff; */
   padding: 3rem 1rem;
 
   /* Center slide text vertically */
@@ -62,9 +62,6 @@ li:hover > button svg {
   justify-content: center;
   align-items: center;
 }
-
-
-
 
 .bloc-tabs {
   display: flex;

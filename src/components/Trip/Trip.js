@@ -6,7 +6,8 @@ import { useQuery } from "react-query";
 const Trip = () => {
   const { data: trips = [] } = useQuery({
     queryKey: ["trips"],
-    queryFn: () => fetch("http://localhost:5000/trips").then((res) => res.json()),
+    queryFn: () =>
+      fetch("http://localhost:5000/trips").then((res) => res.json()),
   });
 
   return (
@@ -26,17 +27,15 @@ const Trip = () => {
               <div className="relative w-full p-4">
                 <img
                   src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
+                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                   alt=""
                 />
                 <button
                   className="absolute top-6 right-6 flex items-center justify-center 
-                      rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer"
-                >
+                      rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
                   <div
                     className="flex h-full w-full items-center justify-center 
-                          rounded-full text-xl hover:bg-gray-50"
-                  >
+                          rounded-full text-xl hover:bg-gray-50">
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
@@ -59,40 +58,24 @@ const Trip = () => {
               </div>
 
               <div className="px-6 py-3">
-                <div className="flex justify-evenly ">
+                <div className="flex justify-between">
                   <div className="order-first text-xl font-bold">
                     {trip?.title}
                   </div>
                   <div className="text-xl font-bold">$ {trip?.price}</div>
                 </div>
 
-                <ul className="flex flex-wrap gap-2 mt-5 justify-center">
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem Ipsum Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem Ipsum Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem Ipsum Lorem</p>
-                  </li>
-                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                    <span>
-                      <FaAngleRight />
-                    </span>
-                    <p>Lorem Ipsum Lorem</p>
-                  </li>
+                <ul className="flex flex-wrap gap-2 mt-5">
+                {trip?.facility?.map((fac) =>   <li
+                      className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                      <span>
+                        <FaAngleRight />
+                      </span>
+                      <p>{fac?.name}</p>
+                    </li>
+                )}
                 </ul>
-                <p className="flex gap-3 items-center my-4 text-slate-500 justify-center">
+                <p className="flex gap-3 items-center my-4 text-slate-500 ">
                   <span>
                     <FaMapMarkerAlt />
                   </span>
@@ -102,7 +85,8 @@ const Trip = () => {
                   to={`/trips/${trip?._id}`}
                   className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full">
+                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                >
                   Details
                   <span>
                     <FaArrowRight />
