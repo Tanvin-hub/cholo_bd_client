@@ -6,7 +6,7 @@ import SpecialOffer from "../components/SpecialOffer/SpeicalOffer"
 import Trip from "../components/Trip/Trip";
 import Services from "../components/Services/Services";
 import Cart from "../components/Cart/Cart";
-import About from "../components/About/About";
+import About from "../components/About/about";
 import Login from "../components/Login/login"
 import Register from "../components/Register/Register";
 import Review from "../components/Review/Review";
