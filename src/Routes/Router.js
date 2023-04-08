@@ -9,6 +9,7 @@ import Cart from "../components/Cart/Cart";
 import About from "../components/About/about";
 import Login from "../components/Login/login"
 import Register from "../components/Register/Register";
+import Review from "../components/Review/Review";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register/>
+      },
+      {
+        path: "/review",
+        element: <Review/>
       },
     
     

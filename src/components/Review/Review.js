@@ -3,9 +3,9 @@ import React from 'react'
 const Review = () => {
   return (
     <div>
-    <div class="min-h-screen bg-gray-300 py-6 flex flex-col justify-center sm:py-12">
+    <div class="min-h-screen  py-6 flex flex-col justify-center sm:py-12">
 <div class="py-3 sm:max-w-xl sm:mx-auto">
-<div class="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg">
+<div class=" border border-primary min-w-1xl flex flex-col rounded-xl shadow-lg">
   <div class="px-12 py-5">
     <h2 class="text-gray-800 text-3xl font-semibold">Your opinion matters to us!</h2>
   </div>
