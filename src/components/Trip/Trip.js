@@ -12,16 +12,25 @@ const Trip = () => {
 
   return (
     <section className="mt-32 mb-16">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold">Upcoming Trip</h2>
-        <p className="mt-3 text-slate-500">
-          From historical clients to natrual spectulars, come see the best of
-          the world.
-        </p>
+       <div className="flex flex-wrap -mx-4">
+        <div className="w-full px-4">
+          <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+            <span className="font-semibold text-lg text-primary mb-2 block">
+              Upcoming Tour
+            </span>
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+              Tour are coming soon
+            </h2>
+            <p className="text-base text-body-color">
+              There are many variations of passages of Lorem Ipsum available but
+              the majority have suffered alteration in some form.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="container mx-auto px-32">
-        <div className="grid grid-cols-3 gap-6 items-center justify-center mt-16">
+        <div className="grid grid-cols-3 gap-6 items-center justify-center ">
           {trips?.map((trip) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4">
