@@ -6,11 +6,11 @@ import SpecialOffer from "../components/SpecialOffer/SpeicalOffer"
 import Trip from "../components/Trip/Trip";
 import Services from "../components/Services/Services";
 import Cart from "../components/Cart/Cart";
-import About from "../components/About/about";
+import About from "../components/About/About";
 import Login from "../components/Login/login"
 import Register from "../components/Register/Register";
 import Review from "../components/Review/Review";
-import Details from "../components/Details/Details";
+import TripDetails from "../components/TripDetails/TripDetails";
 import Tab from "../components/Tab/Tab"
 
 
@@ -49,12 +49,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart/>
       },
-
       {
         path: "/login",
         element: <Login/>
       },
-
       {
         path: "/register",
         element: <Register/>
@@ -63,12 +61,15 @@ const router = createBrowserRouter([
         path: "/review",
         element: <Review/>
       },
-
       {
-        path: "/details",
-        element: <Details/>
+        path: "/trips",
+        element: <Review/>
       },
-
+      {
+        path: "/trips/:id",
+        element: <TripDetails/>,
+        loader: ({params}) => fetch(`http://localhost:5000/trips/${params.id}`)
+      },
       {
         path: "/tab",
         element: <Tab/>
