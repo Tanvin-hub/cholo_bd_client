@@ -139,8 +139,21 @@ button {
   /*
     background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
   */
-  background: url("./assets/banner.jpg");
+  background: url("./assets/natural.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
 }
+
+
+.register{
+  /*
+    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+  */
+  background: url("./assets/natural.jpg");
+  height: 150vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
