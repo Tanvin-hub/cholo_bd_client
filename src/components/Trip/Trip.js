@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 const Trip = () => {
   const { data: trips = [] } = useQuery({
     queryKey: ["trips"],
-    queryFn: () => fetch("trips.json").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/trips").then((res) => res.json()),
   });
 
   return (
@@ -98,16 +98,16 @@ const Trip = () => {
                   </span>
                   450 Vine st # 310, peru
                 </p>
-                <button
+                <Link
+                  to={`/trips/${trip?._id}`}
                   className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
-                >
-                  <Link to="/cart">Add to Cart</Link>
+                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full">
+                  Details
                   <span>
                     <FaArrowRight />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -6,7 +6,7 @@ import Tab from '../Tab/Tab';
 
 
 
-const Details = () => {
+const TripDetails = () => {
     const defaultProps = {
         center: {
           lat: 10.99835602,
@@ -87,4 +87,4 @@ const Details = () => {
   )
 }
 
-export default Details
+export default TripDetails
