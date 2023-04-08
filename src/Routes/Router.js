@@ -10,6 +10,8 @@ import About from "../components/About/about";
 import Login from "../components/Login/login"
 import Register from "../components/Register/Register";
 import Review from "../components/Review/Review";
+import Details from "../components/Details/Details";
+import Tab from "../components/Tab/Tab"
 
 
 const router = createBrowserRouter([
@@ -61,6 +63,17 @@ const router = createBrowserRouter([
         path: "/review",
         element: <Review/>
       },
+
+      {
+        path: "/details",
+        element: <Details/>
+      },
+
+      {
+        path: "/tab",
+        element: <Tab/>
+      },
+    
     
     
     ],
