@@ -11,7 +11,7 @@ const SpeicalOffer = () => {
   });
 
   return (
-    <section className="mt-32">
+    <section>
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
@@ -95,22 +95,17 @@ const SpeicalOffer = () => {
                   </span>
                   450 Vine st # 310, peru
                 </p>
-                <button
-                  className="bg-primary hover:bg-transparent border border-primary 
-                        transition-all duration-200 ease-linear flex justify-center px-8 
-                        text-white hover:text-black items-center  mb-3 w-full rounded-full"
-                >
                   <Link
-                    to="/trip"
-                    className=" px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    View Details
-                  </Link>
-
+                  to="/"
+                  className="bg-primary hover:bg-transparent border border-primary 
+                      transition-all duration-200 ease-linear flex justify-center py-2 px-8 
+                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                >
+                  Details
                   <span>
                     <FaArrowRight />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}

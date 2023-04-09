@@ -14,7 +14,7 @@ const Testimonial = () => {
     <section className="my-20 container mx-auto px-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
-          <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+          <div className="text-center mx-auto mb-12 max-w-[510px]">
             <span className="font-semibold text-lg text-primary mb-2 block">
               Testimonial
             </span>
@@ -59,7 +59,7 @@ const Testimonial = () => {
       >
         {
           testimonials?.map(testimonial => <SwiperSlide>
-            <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+            <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-12">
               <div className="flex justify-center md:justify-end -mt-16">
                 <img
                   className="w-20 h-20 object-cover rounded-full border-2 border-primary"
