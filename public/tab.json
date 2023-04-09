@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "tabName": "Details",
+        "tabState": 1,
+        "overview": "Ever dreamed of rising upwards, far from your everyday worries, to a place where the man-made sounds of the world are reduced to a murmur, and the only sounds are your own exclamations of wonder and the roar of the ocean? Parasailing at Dorianagar or Himchari is here to give you the most thrilling experience of Cox's Bazar. Enjoy the sea view in the eyes of a seagull while getting yourself lost in the breathtaking experience of parasailing. If you are willing to make your upcoming vacation at Cox's Bazar count, this has to be on your activity checklist!"
+    },
+    {
+        "id": 2,
+        "tabName": "Options",
+        "tabState": 2,
+        "Option": "Group Booking (Super Fun Parasailing"
+    },
+    {
+        "id": 3,
+        "tabName": "Policy",
+        "tabState": 3,
+        "Cancellation": "To cancel any tour, an email has to be sent to tours@gozayaan.com mentioning the tour booking ID and details about the cancellation. The time of sending the email will be considered as the time of cancellation." 
+    }
+]

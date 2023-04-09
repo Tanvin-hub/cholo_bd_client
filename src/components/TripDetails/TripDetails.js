@@ -97,6 +97,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import GoogleMapReact from "google-map-react";
 import { FaAngleRight } from "react-icons/fa";
+import Tab from '../Tab/Tab';
 
 // Import Swiper styles
 import "swiper/css";
@@ -142,12 +143,10 @@ const TripDetails = () => {
             </Swiper>
           </div>
           <div className="px-3 py-5">
-            <h2 className="text-primary text-2xl">Cox's Bazar</h2>
+            <h2 className="text-primary text-2xl font-semibold my-4">Cox's Bazar</h2>
             <div style={{
-                height: "45vh",
+                height: "35vh",
                 width: "100%",
-                // marginLeft: "20px",
-                // marginTop: "98px",
               }}>
               <GoogleMapReact
                 bootstrapURLKeys={{ key: "" }}
@@ -172,6 +171,9 @@ const TripDetails = () => {
                 )}
                 </ul>
           </div>
+        </div>
+        <div className="bg-white">
+          <Tab/>
         </div>
       </div>
     </section>

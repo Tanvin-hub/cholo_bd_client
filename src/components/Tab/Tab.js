@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Accordion from "../Accordion/Accordion";
-
-
+// import Accordion from "../Accordion/Accordion";
+import { useQuery } from "react-query";
 
 const Tab = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -10,91 +9,115 @@ const Tab = () => {
     setToggleState(index);
   };
 
+  const { data: tab = [] } = useQuery({
+    queryKey: ["tab"],
+    queryFn: () =>
+      fetch("http://localhost:5000/tabs").then((res) => res.json()),
+  });
+
+  console.log(tab);
+
   return (
     <div className="container mb-16">
-      <div className="bloc-tabs mt-20 ml-24 ">
-        <button
-          className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(1)}
-        >
-          Tab 1
-        </button>
-        <button
-          className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(2)}
-        >
-          Tab 2
-        </button>
-        <button
-          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(3)}
-        >
-          Tab 3
-        </button>
+      <div className="bloc-tabs mt-8">
+        {tab?.map((tab) => (
+          <button
+            className={
+              toggleState === tab.tabState ? "tabs active-tabs" : "tabs"
+            }
+            onClick={() => toggleTab(tab.tabState)}
+          >
+            {tab?.tabName}
+          </button>
+        ))}
       </div>
 
-      <div className="content-tabs ml-24">
-        <div
-          className={toggleState === 1 ? "content  active-content" : "content"}
-        >
-   <Accordion></Accordion>
+      <div className="content-tabs flex justify-between px-12">
+        <div>
+          {tab?.map((t) => (
+            <div
+              className={
+                toggleState === t.tabState
+                  ? "content  active-content"
+                  : "content"
+              }
+            >
+              <h2>{t.tabName}</h2>
+              <hr />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente voluptatum qui adipisci.
+              </p>
+            </div>
+          ))}
         </div>
-       
 
-        <div
-          className={toggleState === 2 ? "content  active-content" : "content"}
-        >
-          <h2>Content 2</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            voluptatum qui adipisci.
-          </p>
-        </div>
+        <div>
+          <div className="w-full max-w-lg">
+            <div className="leading-loose">
+              <form className="max-w-sm m-4 p-10 boorder border-primary bg-white bg-opacity-30 rounded shadow-xl">
+                <p className="text-white text-center text-lg font-bold">
+                  LOGIN
+                </p>
+                <div className="">
+                  <label
+                    className="block mb-2 text-sm font-bold text-black"
+                    for="E-mail"
+                  >
+                    Email
+                  </label>
+                  <input
+                    className="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
+                    type="email"
+                    id="email"
+                    placeholder="Enter your e-mail"
+                    aria-label="email"
+                    required
+                  />
+                </div>
+                <div className="mt-2">
+                  <label
+                    className="block mb-2 text-sm font-bold text-black"
+                    for="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    className="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
+                    type="password"
+                    id="password"
+                    placeholder="Enter Your Password"
+                    arial-label="password"
+                    required
+                  />
+                </div>
 
-        <div
-          className={toggleState === 3 ? "content  active-content" : "content"}
-        >
-          <h2>Content 3</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-            nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-            Accusamus in quia odit aspernatur provident et ad vel distinctio
-            recusandae totam quidem repudiandae omnis veritatis nostrum
-            laboriosam architecto optio rem, dignissimos voluptatum beatae
-            aperiam voluptatem atque. Beatae rerum dolores sunt.
-          </p>
+                <div className="mt-4 items-center flex justify-between">
+                  <button
+                    className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 hover:bg-gray-800 rounded"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                  <a
+                    className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary"
+                    href="#"
+                  >
+                    Forgot Password ?
+                  </a>
+                </div>
+                <div className="text-center">
+                  <a className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary">
+                    Create Account
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      {/* <div class="flex flex-col justify-center items-center h-[100vh]">
-            <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] md:max-w-[400px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-6 3xl:p-![18px] bg-white undefined">
-                 
-            <div class="relative flex flex-row justify-between">
-                <h4 class="text-xl font-bold text-navy-700 dark:text-white mb-3">
-                    Horizon UI Inputs
-                </h4>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="text-sm text-navy-700 dark:text-white font-bold">Default</label>
-                <input type="text" id="email" placeholder="@horizon.ui" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"/>
-            </div>
-            <div class="mb-3">
-                <label for="email2" class="text-sm text-navy-700 dark:text-white font-bold">Success</label>
-                <input type="text" id="email2" placeholder="Success input" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-green-500 text-green-500 placeholder:text-green-500 dark:!border-green-400 dark:!text-green-400 dark:placeholder:!text-green-400"/>
-            </div>
-            <div class="mb-3">
-                <label for="email3" class="text-sm text-navy-700 dark:text-white font-bold">Error</label>
-                <input type="text" id="email3" placeholder="Error input" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-red-500 text-red-500 placeholder:text-red-500 dark:!border-red-400 dark:!text-red-400 dark:placeholder:!text-red-400"/>
-            </div>
-            <div>
-                <label for="email4" class="text-sm text-navy-700 dark:text-white font-bold">Disabled</label>
-                <input disabled="" type="text" id="email4" placeholder="@horizon.ui" class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none !border-none !bg-gray-100 cursor-not-allowed dark:!bg-white/5 "/>
-            </div>
-            </div>
-            </div> */}
     </div>
   );
-}
+};
 
-export default Tab
+export default Tab;
