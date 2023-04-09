@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import Home from "../components/Home/Home";
+import Home from "../components/Home/Home/Home";
 import Contact from "../components/Contact/Contact";
-import SpecialOffer from "../components/SpecialOffer/SpeicalOffer"
-import Trip from "../components/Trip/Trip";
-import Services from "../components/Services/Services";
+import SpecialOffer from "../components/Home/SpecialOffer/SpeicalOffer"
+import Trip from "../components/Trip/Trip/Trip";
+import Services from "../components/Home/Services/Services";
 import Cart from "../components/Cart/Cart";
-import About from "../components/About/About";
-import Login from "../components/Login/Login"
-import Register from "../components/Register/Register";
-import Review from "../components/Review/Review";
-import TripDetails from "../components/TripDetails/TripDetails";
-import Tab from "../components/Tab/Tab"
+import About from "../components/Home/About/About";
+import Login from "../components/Shared/Login/Login"
+import Register from "../components/Shared/Register/Register";
+import Review from "../components/Home/Review/Review";
+import TripDetails from "../components/Trip/TripDetails/TripDetails";
+import Tab from "../components/Trip/Tab/Tab"
 
 
 const router = createBrowserRouter([

@@ -4,7 +4,7 @@ import About  from "../About/About";
 import SpecialOffer from "../SpecialOffer/SpeicalOffer"
 import Services from '../Services/Services.js';
 import Testimonial from '../Testimonial/Testimonial.js';
-import Trip from "../Trip/Trip"
+import Trip from "../../Trip/Trip/Trip"
 import HomeContact from "../HomeContact/HomeContact"
 
 

@@ -45,22 +45,22 @@ const Testimonial = () => {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 2,
+            spaceBetween: 1,
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 10,
+            slidesPerView: 1,
+            spaceBetween: 1,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 2,
+            slidesPerView: 1,
+            spaceBetween: 1,
           },
         }}
       >
         {
           testimonials?.map(testimonial => <SwiperSlide>
-            <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-12">
-              <div className="flex justify-center md:justify-end -mt-16">
+            <div className="max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">
+              <div className="flex justify-center md:justify-center -mt-16">
                 <img
                   className="w-20 h-20 object-cover rounded-full border-2 border-primary"
                   alt=""
@@ -68,9 +68,9 @@ const Testimonial = () => {
                 />
               </div>
               <div>
-                <p className="mt-2 text-gray-600">
+                <blockquote className="mt-7 text-gray-600">
                   {testimonial?.review}
-                </p>
+                </blockquote>
               </div>
               <div className="flex justify-end mt-4">
                 <a href="/" className="text-xl font-medium text-primary">

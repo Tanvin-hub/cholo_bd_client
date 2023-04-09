@@ -29,32 +29,30 @@ li:hover > button svg {
 
 .banner {
   background: url("./assets/banner.jpg") no-repeat center;
-  width: 100% ;
+  width: 100%;
   background-size: cover;
 }
 
 .overlay {
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
   width: 100%;
 }
 
 .myBgColor {
-  background-image: linear-gradient(to right, rgb(243 244 246), #82fcf0, rgb(243 244 246));
-  /* color: black; */
+  background-image: linear-gradient(to right,rgb(243 244 246),#82fcf0,rgb(243 244 246));
 }
 
 .heading {
   line-height: 4rem;
 }
 
-/* SWIPER */
+/* SWIPER SLIDER */
 .swiper {
   width: 100%;
   height: 100%;
 }
 
 .swiper-slide {
-  /* background: #fff; */
   padding: 3rem 1rem;
 
   /* Center slide text vertically */
@@ -62,6 +60,8 @@ li:hover > button svg {
   justify-content: center;
   align-items: center;
 }
+
+/* TABS in trips details */
 
 .bloc-tabs {
   display: flex;
@@ -77,7 +77,7 @@ li:hover > button svg {
   outline: none;
 }
 
-.active-tabs  {
+.active-tabs {
   background: white;
   border-bottom: 1px solid transparent;
 }
@@ -92,45 +92,43 @@ li:hover > button svg {
   width: calc(100% + 2px);
   height: 5px;
   background: #1cc3b2;
-} 
-
-button {
-  border: none;
-  
 }
+
 .content-tabs {
-  flex-grow : 1;
+  flex-grow: 1;
   height: 100vh;
 }
 .content {
-  /* background: white; */
   padding: 20px;
   width: 100%;
   height: 100%;
   display: none;
 }
+
 .content h2 {
   padding: 0px 0 5px 0px;
 }
+
 .content hr {
   width: 100px;
   height: 2px;
   background: #222;
   margin-bottom: 5px;
 }
+
 .content p {
   width: 100%;
   height: 100%;
 }
+
 .active-content {
   display: block;
 }
 
+/* Login */
 
-.login{
-  /*
-    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
-  */
+.login {
+
   background: url("./assets/natural.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -141,15 +139,44 @@ button {
   background-position: cover;
 }
 
-
-.register{
-  /*
-    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
-  */
+.register {
   background: url("./assets/natural.jpg");
   height: 150vh;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
+/* Testimonial Blockquote design */
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  width: 500px;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
+}
