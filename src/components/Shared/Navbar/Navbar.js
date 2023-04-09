@@ -89,34 +89,29 @@ const Navbar = () => {
               <div className="flex space-x-4">
                 <Link
                   to="/"
-                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="hover:text-primary transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
                 </Link>
-
-
                 <Link
                   to="/about"
-                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
+                  className="hover:text-primary transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium">
                   About
                 </Link>
-
                 <Link
                   to="/trip"
-                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
+                  className="hover:text-primary transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium">
                   Trip
                 </Link>
-
                 <Link
                   to="/contact"
-                  className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
+                  className="hover:text-primary transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium">
                   Contact
                 </Link>
-
-
               </div>
             </div>
             <div>

@@ -14,11 +14,15 @@ import TripDetails from "../components/Trip/TripDetails/TripDetails";
 import Tab from "../components/Trip/Tab/Tab";
 import Accordion from "../components/Trip/Accordion/Accordion"
 
+// Error Route (404)
+import Error from "../components/Error/Error"
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error/>,
     children: [
       {
         path: "/",
