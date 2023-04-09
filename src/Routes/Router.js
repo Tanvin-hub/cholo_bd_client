@@ -13,11 +13,15 @@ import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
 import Tab from "../components/Trip/Tab/Tab"
 
+// Error Route (404)
+import Error from "../components/Error/Error"
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error/>,
     children: [
       {
         path: "/",

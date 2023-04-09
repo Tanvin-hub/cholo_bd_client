@@ -137,8 +137,7 @@ li:hover > button svg {
 }
 
 .contact {
-  background: url("./assets/banner.jpg") no-repeat center;
-  background-position: cover;
+  background: url("./assets/contact-us.webp") no-repeat center;
 }
 
 .register {
