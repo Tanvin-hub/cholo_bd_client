@@ -64,7 +64,7 @@ const Register = () => {
                   cx="364.43401"
                   cy="261.50202"
                   r="24.45"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <path
                   id="bbe451c3-febc-41ba-8083-4c8307a2e73e"
@@ -88,7 +88,7 @@ const Register = () => {
                   cx="225.46401"
                   cy="427.41999"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <rect
                   id="ff33d889-4c74-4b91-85ef-b4882cc8fe76"
@@ -105,12 +105,12 @@ const Register = () => {
                   cx="225.46401"
                   cy="496.43702"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <path
                   d="M660.69043,671.17188H591.62207a4.50493,4.50493,0,0,1-4.5-4.5v-24.208a4.50492,4.50492,0,0,1,4.5-4.5h69.06836a4.50491,4.50491,0,0,1,4.5,4.5v24.208A4.50492,4.50492,0,0,1,660.69043,671.17188Z"
                   transform="translate(-227.576 -76.46149)"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <circle
                   id="e12ee00d-aa4a-4413-a013-11d20b7f97f7"
@@ -118,7 +118,7 @@ const Register = () => {
                   cx="247.97799"
                   cy="427.41999"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <circle
                   id="f58f497e-6949-45c8-be5f-eee2aa0f6586"
@@ -126,7 +126,7 @@ const Register = () => {
                   cx="270.492"
                   cy="427.41999"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <circle
                   id="b4d4939a-c6e6-4f4d-ba6c-e8b05485017d"
@@ -134,7 +134,7 @@ const Register = () => {
                   cx="247.97799"
                   cy="496.43702"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <circle
                   id="aff120b1-519b-4e96-ac87-836aa55663de"
@@ -142,7 +142,7 @@ const Register = () => {
                   cx="270.492"
                   cy="496.43702"
                   r="6.902"
-                  fill="#6c63ff"
+                  fill="#1cc3b2"
                 />
                 <path
                   id="f1094013-1297-477a-ac57-08eac07c4bd5"
@@ -297,7 +297,7 @@ const Register = () => {
                     className="px-3 py-2 font-medium bg-primary border border-primary
                      rounded hover:bg-transparent transition-all 
                      duration-150 ease-linear md:py-2 
-                     md:px-6 inline-block uppercase tracking-wider text-white"
+                     md:px-6 inline-block uppercase tracking-wider text-white hover:text-black"
                     type="button"
                   >
                     Register Account
@@ -317,7 +317,7 @@ const Register = () => {
                     className="inline-block text-sm text-primary align-baseline hover:text-primary"
                     href="./index.html"
                   >
-                    Already have an account? Login!
+                    Already have an account? <Link to="/login">Login!</Link>
                   </a>
                 </div>
               </form>
