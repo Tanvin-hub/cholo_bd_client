@@ -1,130 +1,159 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import google from "../../../assets/google.ico";
 
 const Register = () => {
   return (
-    <div>
-      <div className="h-screen font-sans register bg-cover">
-        <div className="container mx-auto h-full flex flex-1 justify-center items-center">
-          <div className="w-full max-w-lg">
-            <div className="leading-loose">
-              <form className="max-w-sm m-4  p-10 border border-primary bg-white bg-opacity-30 rounded shadow-xl">
-                <p className="text-white mb-4 text-center text-lg font-bold">
-                  Register
+    <section className="">
+      <div className="relative min-h-screen flex ">
+        <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
+          <div
+            className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative"
+            style={{
+              "background-image":
+                "url(https://images.unsplash.com/photo-1579451861283-a2239070aaa9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);",
+            }}
+          >
+            <div className="absolute bg-gradient-to-b bg-primary opacity-75 inset-0 z-0"></div>
+            <div className="w-full  max-w-2xl z-10 text-center">
+              <div className="sm:text-4xl xl:text-5xl font-bold leading-10 mb-6">
+                Welcome to Cholo Bangladesh..
+              </div>
+              <div className="sm:text-sm xl:text-md text-gray-200 font-normal leading-10">
+                {" "}
+                What is Lorem Ipsum Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s when an
+                unknown printer took a galley of type and scrambled it to make a
+                type specimen book it has?
+              </div>
+            </div>
+
+            <ul className="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div className="md:flex md:items-center md:justify-center sm:w-auto md:h-full w-2/5 xl:w-2/5 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white">
+            <div className="max-w-md w-full space-y-8">
+              <div className="text-center">
+                <h2 className="mt-6 text-3xl font-bold text-gray-900">
+                  Join in Cholo BD
+                </h2>
+                <p className="mt-2 text-sm text-gray-500">
+                  Please sign in to your account
                 </p>
-                <div className="mb-4 md:flex md:justify-between">
-                  <div className="mb-4 md:mr-2 md:mb-0">
-                    <label
-                      className="block mb-2 text-sm font-bold text-black"
-                      for="firstName"
+              </div>
+              <div className="flex flex-row justify-center items-center space-x-3">
+                <Link
+                  href="https://www.behance.net/ajeeshmon"
+                  className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold 
+              text-lg   bg-primary hover:shadow-lg cursor-pointer transition ease-in 
+              duration-300"
+                >
+                  <img className="w-4 h-4" src={google} alt="" />
+                </Link>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <span className="h-px w-16 bg-gray-200"></span>
+                <span className="text-gray-300 font-normal">
+                  or continue with
+                </span>
+                <span className="h-px w-16 bg-gray-200"></span>
+              </div>
+              <form className="mt-8 space-y-6">
+                <input type="hidden" name="remember" value="true" />
+                <div className="relative">
+                  <div className="absolute right-3 mt-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      First Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="firstName"
-                      type="text"
-                      placeholder="First Name"
-                    />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
                   </div>
-
-                  <div className="md:ml-2">
-                    <label
-                      className="block mb-2 text-sm font-bold text-black"
-                      for="lastName"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="lastName"
-                      type="text"
-                      placeholder="Last Name"
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <label
-                    className="block mb-2 text-sm font-bold text-black"
-                    for="email"
-                  >
+                  <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
                     Email
                   </label>
                   <input
-                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="email"
-                    type="email"
-                    placeholder="Email"
+                    className=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                    type=""
+                    placeholder="mail@gmail.com"
+                    value="mail@gmail.com"
                   />
                 </div>
-
-                <div className="mb-4 md:flex md:justify-between">
-                  <div className="mb-4 md:mr-2 md:mb-0">
-                    <label
-                      className="block mb-2 text-sm font-bold text-black"
-                      for="password"
-                    >
-                      Password
-                    </label>
+                <div className="mt-8 content-center">
+                  <label className="ml-3 text-sm font-bold text-gray-700 tracking-wide">
+                    Password
+                  </label>
+                  <input
+                    className="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                    type=""
+                    placeholder="Enter your password"
+                    value="*****|"
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <input
-                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="password"
-                      type="password"
-                      placeholder="******************"
+                      id="remember_me"
+                      name="remember_me"
+                      type="checkbox"
+                      className="h-4 w-4 bg-primary focus:ring-blue-400 border-gray-300 rounded"
                     />
-                    <p className="text-xs italic f text-white">
-                      Please choose a password.
-                    </p>
+                    <label
+                      for="remember_me"
+                      className="ml-2 block text-sm text-gray-900"
+                    >
+                      Remember me
+                    </label>
                   </div>
-
-                  <div className="md:ml-2">
-                    <label
-                      className="block mb-2 text-sm font-bold text-black"
-                      for="c_password"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="c_password"
-                      type="password"
-                      placeholder="******************"
-                    />
+                  <div className="text-sm">
+                    <Link to="#" className="text-primary hover:text-blue-500">
+                      Forgot your password?
+                    </Link>
                   </div>
                 </div>
-
-                <div className="mb-6 text-center">
+                <div>
                   <button
-                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                    type="button"
+                    type="submit"
+                    className="w-full flex justify-center bg-primary text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500"
                   >
-                    Register Account
+                    Sign in
                   </button>
                 </div>
-
-                <hr className="mb-6 border-t" />
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-white font-bold align-baseline hover:text-primary"
-                    href="#"
+                <p className="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+                  <span>Don't have an account?</span>
+                  <Link
+                    to="#"
+                    className="text-indigo-400 hover:text-blue-500 no-underline hover:underline 
+                cursor-pointer transition ease-in duration-300"
                   >
-                    Forgot Password?
-                  </a>
-                </div>
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-white font-bold align-baseline hover:text-primary"
-                    href="./index.html"
-                  >
-                    Already have an account? Login!
-                  </a>
-                </div>
+                    Signup
+                  </Link>
+                </p>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
