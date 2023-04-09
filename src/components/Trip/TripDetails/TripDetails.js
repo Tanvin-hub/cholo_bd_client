@@ -96,7 +96,10 @@ import { useLoaderData } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import GoogleMapReact from "google-map-react";
-import { FaAngleRight } from "react-icons/fa";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import {HiOutlineUserGroup} from "react-icons/hi";
+import {RiMacbookLine} from "react-icons/ri"
+import {TbBrandStrava} from "react-icons/tb"
 import Tab from '../Tab/Tab';
 
 // Import Swiper styles
@@ -143,7 +146,7 @@ const TripDetails = () => {
             </Swiper>
           </div>
           <div className="px-3 py-5">
-            <h2 className="text-primary text-2xl font-semibold my-4">Cox's Bazar</h2>
+            <h2 className="text-primary text-2xl font-semibold my-4 ml-24">Cox's Bazar</h2>
             <div style={{
                 height: "35vh",
                 width: "100%",
@@ -160,16 +163,64 @@ const TripDetails = () => {
                 />
               </GoogleMapReact>
             </div>
-            <ul className="flex flex-wrap gap-2 mt-5">
+            {/* <ul className="flex flex-wrap gap-2 mt-5">
                 {data?.facility?.map((fac) =>   <li
-                      className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                      className="flex items-center gap-3  py-1 px-4 rounded text-slate-500">
                       <span>
-                        <FaAngleRight />
+                        <AiOutlineClockCircle />
                       </span>
-                      <p>{fac?.name}</p>
+                      <p className="text-[5px] text-bold text-black"> 7 minutes</p>
                     </li>
                 )}
+                </ul> */}
+
+
+
+          <ul className="flex flex-wrap gap-2 mt-5">
+                  <li
+                      className="flex items-center gap-3  py-1 px-4 rounded text-slate-500">
+                      <span>
+                        <AiOutlineClockCircle />
+                      </span>
+                      <p className="text-sm text-bold text-black"> 7 minutes away</p>
+                    </li>
+
+                    <li
+                      className="flex items-center gap-3  py-1  rounded text-slate-500">
+                      <span>
+                        <HiOutlineUserGroup />
+                      </span>
+                      <p className="text-sm text-bold text-black"> Up to 50 People</p>
+                    </li>
+
+                    <li
+                      className="flex items-center gap-3  py-1 px-4 rounded text-slate-500">
+                      <span>
+                        <RiMacbookLine/>
+                      </span>
+                      <p className="text-sm text-bold text-black">Activities Booking Can be Cancelled Anytime</p>
+                    </li>
+
+                    <li
+                      className="flex items-center bg-slate-200 gap-2 ml-4 px-2 py-1  rounded text-slate-500">
+                      <span>
+                        <AiOutlineClockCircle />
+                      </span>
+                      <p className="text-sm text-bold text-black"> Outdoor Activities</p>
+                    </li>
+
+                    <li
+                      className="flex items-center bg-slate-200 gap-2 ml-4 px-2 py-1  rounded text-slate-500">
+                      <span>
+                        <TbBrandStrava />
+                      </span>
+                      <p className="text-smtext-bold text-black">Adventure</p>
+                    </li>
                 </ul>
+
+
+
+
           </div>
         </div>
         <div className="bg-white">

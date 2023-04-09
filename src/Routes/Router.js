@@ -11,7 +11,8 @@ import Login from "../components/Shared/Login/Login"
 import Register from "../components/Shared/Register/Register";
 import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
-import Tab from "../components/Trip/Tab/Tab"
+import Tab from "../components/Trip/Tab/Tab";
+import Accordion from "../components/Trip/Accordion/Accordion"
 
 
 const router = createBrowserRouter([
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
       {
         path: "/tab",
         element: <Tab/>
+      },
+
+      {
+        path: "/accordion",
+        element: <Accordion/>
       },
     
     

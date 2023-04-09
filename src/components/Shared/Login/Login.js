@@ -1,4 +1,4 @@
-import React from "react";
+import {React, Link} from "react";
 
 const Login = () => {
   return (
@@ -51,17 +51,17 @@ const Login = () => {
                   >
                     Login
                   </button>
-                  <a
+                  <Link
                     className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary"
                     href="#"
                   >
                     Forgot Password ?
-                  </a>
+                  </Link>
                 </div>
                 <div className="text-center">
-                  <a className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary">
+                  <Link className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary">
                     Create Account
-                  </a>
+                  </Link>
                 </div>
               </form>
             </div>

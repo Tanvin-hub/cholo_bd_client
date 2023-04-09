@@ -1,4 +1,6 @@
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css'
 // import Accordion from "../Accordion/Accordion";
 import { useQuery } from "react-query";
 
@@ -16,8 +18,12 @@ const Tab = () => {
   });
 
   console.log(tab);
+   const [selectedDate,setSelectedDate] = useState (null)
 
-  return (
+
+
+
+   return (
     <div className="container mb-16">
       <div className="bloc-tabs mt-8">
         {tab?.map((tab) => (
@@ -56,41 +62,26 @@ const Tab = () => {
           <div className="w-full max-w-lg">
             <div className="leading-loose">
               <form className="max-w-sm m-4 p-10 boorder border-primary bg-white bg-opacity-30 rounded shadow-xl">
-                <p className="text-white text-center text-lg font-bold">
+                <p className="text-primary text-center text-lg font-bold">
                   LOGIN
                 </p>
-                <div className="">
+              
+
+   
+
+                
+                <div className="mt-2 border rounded ">
                   <label
-                    className="block mb-2 text-sm font-bold text-black"
-                    for="E-mail"
+                    className="block px-2 mb-2 text-sm font-bold text-primary"
+                    for="date"
                   >
-                    Email
+                    Journey Date
                   </label>
-                  <input
-                    className="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
-                    type="email"
-                    id="email"
-                    placeholder="Enter your e-mail"
-                    aria-label="email"
-                    required
-                  />
+                  
+                 <DatePicker className="px-2 w-full border border-black rounded"  selected={selectedDate} onChange={date=>setSelectedDate(date)} dateFormat="dd/MM/yyyy"/>
                 </div>
-                <div className="mt-2">
-                  <label
-                    className="block mb-2 text-sm font-bold text-black"
-                    for="password"
-                  >
-                    Password
-                  </label>
-                  <input
-                    className="w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white"
-                    type="password"
-                    id="password"
-                    placeholder="Enter Your Password"
-                    arial-label="password"
-                    required
-                  />
-                </div>
+
+                
 
                 <div className="mt-4 items-center flex justify-between">
                   <button
@@ -99,18 +90,10 @@ const Tab = () => {
                   >
                     Login
                   </button>
-                  <a
-                    className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary"
-                    href="#"
-                  >
-                    Forgot Password ?
-                  </a>
+                
                 </div>
-                <div className="text-center">
-                  <a className="inline-block right-0 align-baseline font-bold text-sm text-500 text-white hover:text-primary">
-                    Create Account
-                  </a>
-                </div>
+
+          
               </form>
             </div>
           </div>

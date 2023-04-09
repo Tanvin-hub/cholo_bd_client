@@ -59,7 +59,7 @@ const Testimonial = () => {
       >
         {
           testimonials?.map(testimonial => <SwiperSlide>
-            <div className="max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">
+            <div className="border border-primary max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">
               <div className="flex justify-center md:justify-center -mt-16">
                 <img
                   className="w-20 h-20 object-cover rounded-full border-2 border-primary"
