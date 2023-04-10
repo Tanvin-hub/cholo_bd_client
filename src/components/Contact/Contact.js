@@ -2,6 +2,7 @@ import React from 'react';
 import { BsFillTelephoneFill,BsFillClockFill } from "react-icons/bs";
 import {MdLocationOn, MdOutlineMail} from "react-icons/md";
 import GoogleMapReact from "google-map-react";
+import { Link } from 'react-router-dom';
 const Contact = () => {
 
   const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -17,11 +18,11 @@ const Contact = () => {
   };
   return (
     <div>
-    <section className="con-img text-white h-[500px] relative mb-[1100px]">
+    <section className="con-img text-white h-[500px] relative mb-[1300px]">
       <div className="overlay h-[500px]">
         <div className="py-12 md:py-20">
           <div
-            className="text-white md:pt-42 md:absolute md:top-[48%] 
+            className="text-white md:pt-42 md:absolute md:top-[35%] 
           md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center"
           >
             <h1
@@ -30,10 +31,21 @@ const Contact = () => {
             >
              Contact Us
             </h1>
-            <p className="mt-6 text-x sm:text-center my-8 px-24 text-slate-200">
-              Plan and book your perfect trip with expert advice, travel tips,
-              destination information and inspiration from us.
-            </p>
+            
+            <ol class="list-reset flex">
+    <li>
+      <Link className='text-primary'>Home</Link>
+    </li>
+    <li>
+      <span class="mx-3 text-white">  / </span>
+    </li>
+    <li>
+      <Link className='text-primary'> Contact </Link>
+    
+    </li>
+    
+    
+  </ol>
             
           </div>
         </div>
@@ -42,7 +54,7 @@ const Contact = () => {
       <div className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
       rounded-2xl bg-white text-black shadow-xl">
         <form className="grid grid-cols-4 gap-6 items-center">
-          <div className='shadow-2xl border py-4 ml-8 rounded border-primary'>
+          <div className='shadow-2xl border py-4 ml-8 rounded '>
             <div className='text-primary text-3xl ml-[104px] mb-4'>
           <BsFillTelephoneFill />
           </div>
@@ -50,7 +62,7 @@ const Contact = () => {
                <h1 className='ml-8 mt-1 font-semibold text-xl text-gray-600'>+8801779580031</h1>
           </div>
 
-          <div className='shadow-2xl border py-4 ml-8 rounded border-primary'>
+          <div className='shadow-2xl border py-4 ml-8 rounded '>
             <div className='text-primary text-4xl ml-[104px] mb-4'>
           <MdLocationOn />
           </div>
@@ -58,14 +70,14 @@ const Contact = () => {
                <h1 className='ml-10 mt-1 font-semibold text-lg text-gray-600'>Zindabazar,Sylhet</h1>
           </div>
 
-          <div className='shadow-2xl border py-4 ml-8 rounded border-primary'>
+          <div className='shadow-2xl border py-4 ml-8 rounded '>
             <div className='text-primary text-4xl ml-24 mb-4'>
           <MdOutlineMail />
           </div>
             <label className="font-medium text-xl ml-20 text-gray-600 ">E-Mail</label>
-               <h1 className='ml-2 mt-1 font-semibold text-base text-gray-600'>marufrony48@gmail.com</h1>
+               <h1 className='ml-[10px] mt-1 font-semibold text-base text-gray-600'>marufrony48@gmail.com</h1>
           </div>
-          <div className='shadow-2xl border py-4 ml-8 rounded border-primary'>
+          <div className='shadow-2xl border py-4 ml-8 rounded '>
             <div className='text-primary text-4xl ml-[96px] mb-4'>
           <BsFillClockFill />
           </div>
@@ -101,7 +113,7 @@ const Contact = () => {
           </div>
 
 
-          <div className='mt-20'>
+          <div className='mt-48'>
           <div className=" -mx-4">
           <div className="w-full px-4">
             <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
@@ -141,7 +153,7 @@ const Contact = () => {
     
     </div>
     <div className="mt-10">
-      <button type="submit" className="ml-[500px] mb-10 rounded-md bg-primary px-10 py-2.5 text-center text-sm font-semibold text-white   ">Submit</button>
+      <button type="submit" className="ml-[500px] mb-32 rounded-md bg-primary px-10 py-2.5 text-center text-sm font-semibold text-white   ">Submit</button>
     </div>
   </form>
 
