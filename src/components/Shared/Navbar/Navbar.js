@@ -20,7 +20,7 @@ const Navbar = () => {
     if (window.location.pathname === current) {
       return "#fff";
     } else {
-      return "#111";
+      return "#fff";
     }
   };
 
