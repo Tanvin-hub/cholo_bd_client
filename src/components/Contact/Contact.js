@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { BsFillTelephoneFill,BsFillClockFill } from "react-icons/bs";
 import {MdLocationOn, MdOutlineMail} from "react-icons/md";
 import GoogleMapReact from "google-map-react";
@@ -16,6 +17,32 @@ const Contact = () => {
     },
     zoom: 11,
   };
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_8kfw5tr",
+        "template_zsbax3m",
+        form.current,
+        "ZwLe3cjoDsAxotL9D"
+      )
+      .then(
+        (result) => {
+          alert("Message Sent Successfully");
+        },
+        (error) => {
+          alert(error.message);
+        }
+      );
+  };
+
+
+
   return (
     <div>
     <section className="con-img text-white h-[500px] relative mb-[1300px]">
@@ -128,7 +155,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form action="#" method="POST" className="mx-auto mt-16  sm:mt-20">
+        <form ref={form} onSubmit={sendEmail} className="mx-auto mt-16  sm:mt-20">
     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
       <div>
         <label for="first-name" className="block text-sm font-semibold leading-6 text-gray-900">First name</label>
