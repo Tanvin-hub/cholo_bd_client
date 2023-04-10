@@ -3,9 +3,10 @@ import React from "react";
 const Review = () => {
   return (
     <section>
-      <div className="register bg-cover  text-white py-20">
+      
+      {/* <div className=" bg-cover  text-white py-20">
         <div className="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
-          <div className="flex flex-col w-full lg:w-1/3 p-8">
+          <div className=" w-full lg:w-1/3 p-8">
             <p className="ml-6 text-primary text-lg uppercase tracking-loose">
               REVIEW
             </p>
@@ -16,7 +17,7 @@ const Review = () => {
               Please provide your valuable feedback and something something ...
             </p>
           </div>
-          <div className="flex flex-col w-full lg:w-2/3 justify-center">
+          <div className="  w-full lg:w-2/3 justify-center">
             <div className="container w-full px-4">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-6/12 px-4">
@@ -80,7 +81,26 @@ const Review = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+       <div className=" mt-28">
+        <div className="w-full px-4">
+          <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+            <span className="font-semibold text-lg text-primary mb-2 block">
+             Review
+            </span>
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+              Clients Opinion
+            </h2>
+            <p className="text-base text-body-color">
+              We Value Our Clients Opinion
+            </p>
+          </div>
+        </div>
+
+      
+            
+                      </div>
+     
     </section>
   );
 };

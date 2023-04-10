@@ -146,12 +146,7 @@ li:hover > button svg {
   background: url("./assets/contact-us.webp") no-repeat center;
 }
 
-.register {
-  background: url("./assets/natural.jpg");
-  height: 150vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 /* Testimonial Blockquote design */
 blockquote {
