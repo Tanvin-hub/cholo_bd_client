@@ -1,8 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { GoogleAuthProvider } from "@firebase/auth";
+import ScrollToTop from "../../../ScrollToTop";
+
+const googleProvider = new GoogleAuthProvider();
 
 
 const Login = () => {
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (data, event) => {
+    signIn(data.email, data.password)
+      .then(result => {
+        const user = result.user;
+        console.log(data)
+        console.log(user);
+        toast.success("Successfully logged in");
+        event.target.reset();
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        toast.error(error.message);
+      })
+  }
+
   return (
     <section className="py-20 bg-slate-100">
       <div className="container mx-auto">
@@ -15,8 +44,7 @@ const Login = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
                 height="auto"
-                viewBox="0 0 744.84799 747.07702"
-              >
+                viewBox="0 0 744.84799 747.07702">
                 <path
                   id="fa3b9e12-7275-481e-bee9-64fd9595a50d"
                   data-name="Path 1"
@@ -215,94 +243,53 @@ const Login = () => {
             </div>
             <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
               <h3 className="pt-4 text-2xl text-center">Login Your Account!</h3>
-              <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
-                <div className="mb-4 md:flex md:justify-between">
-                  <div className="mb-4 md:mr-2 md:mb-0">
-                    <label
-                      className="block mb-2 text-sm font-bold text-gray-700"
-                      for="firstName"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="firstName"
-                      type="text"
-                      placeholder="First Name"
-                    />
-                  </div>
-                  <div className="md:ml-2">
-                    <label
-                      className="block mb-2 text-sm font-bold text-gray-700"
-                      for="lastName"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="lastName"
-                      type="text"
-                      placeholder="Last Name"
-                    />
-                  </div>
-                </div>
+              <form onSubmit={handleSubmit(handleLogin)} className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
                 <div className="mb-4">
                   <label
                     className="block mb-2 text-sm font-bold text-gray-700"
-                    for="email"
-                  >
+                    for="email">
                     Email
                   </label>
                   <input
                     className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="email"
                     type="email"
                     placeholder="Email"
+                    {...register("email", {
+                      required: "email address is required",
+                    })}
                   />
                 </div>
-                <div className="mb-4 md:flex md:justify-between">
+                <div className="mb-4 md:flex md:justify-between w-full">
                   <div className="mb-4 md:mr-2 md:mb-0">
                     <label
                       className="block mb-2 text-sm font-bold text-gray-700"
-                      for="password"
-                    >
+                      for="password">
                       Password
                     </label>
                     <input
-                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="password"
+                      className="w-full px-3 py-2 mb-3 text-sm leading-tight
+                       text-gray-700 border border-red-500 rounded shadow appearance-none 
+                       focus:outline-none focus:shadow-outline"
                       type="password"
                       placeholder="******************"
+                      {...register("password", {
+                        required: "password is required",
+                      })}
                     />
                     <p className="text-xs italic text-red-500">
                       Please choose a password.
                     </p>
                   </div>
-                  <div className="md:ml-2">
-                    <label
-                      className="block mb-2 text-sm font-bold text-gray-700"
-                      for="c_password"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="c_password"
-                      type="password"
-                      placeholder="******************"
-                    />
-                  </div>
                 </div>
                 <div className="mb-6 text-center">
-                  <button
+                <input
                     className="px-3 py-2 font-medium bg-primary border border-primary
                      rounded hover:bg-transparent transition-all 
                      duration-150 ease-linear md:py-2 
                      md:px-6 inline-block uppercase tracking-wider text-white hover:text-black"
-                    type="button"
-                  >
-                    Login Account
-                  </button>
+                    type="submit"
+                    value=" Login Account"
+                  />
                 </div>
                 <hr className="mb-6 border-t" />
                 <div className="text-center">

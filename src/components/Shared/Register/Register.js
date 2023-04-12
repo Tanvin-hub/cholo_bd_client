@@ -252,7 +252,6 @@ const Register = () => {
                     </label>
                     <input
                       className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="firstName"
                       type="text"
                       placeholder="First Name"
                       {...register("name", {
@@ -269,7 +268,6 @@ const Register = () => {
                     </label>
                     <input
                       className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="lastName"
                       type="text"
                       placeholder="Last Name"
                     />
@@ -284,7 +282,6 @@ const Register = () => {
                   </label>
                   <input
                     className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                    id="email"
                     type="email"
                     placeholder="Email"
                     {...register("email", {
@@ -302,7 +299,6 @@ const Register = () => {
                     </label>
                     <input
                        className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      id="password"
                       type="password"
                       placeholder="******************"
                       {...register("password", {
