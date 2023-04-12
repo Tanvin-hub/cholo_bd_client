@@ -46,8 +46,7 @@ li:hover > button svg {
 
 .myBgColor {
   /* background-image: linear-gradient(to right,rgb(243 244 246),#82fcf0,rgb(243 244 246)); */
-  background-color:#1cc3b2;
-;
+  background-color: #1cc3b2;
 }
 
 .heading {
@@ -61,12 +60,22 @@ li:hover > button svg {
 }
 
 .swiper-slide {
-  padding: 3rem 1rem;
+  padding: 0;
 
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.swiper-pagination-progressbar-fill {
+  background: #1cc3b2 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #1cc3b2;
+  padding: 0 2rem;
 }
 
 /* TABS in trips details */
@@ -136,15 +145,20 @@ li:hover > button svg {
 /* Login */
 
 .login {
-
   background: url("./assets/natural.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* Contact */
+.contact {
+  background: url("./assets/banner.jpg") no-repeat center;
+  background-size: cover;
+}
 
-
-
+.custom-leading {
+  line-height: 3rem;
+}
 
 /* Testimonial Blockquote design */
 blockquote {

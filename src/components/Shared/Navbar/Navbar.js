@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const navigate = useNavigate();
+  const { user, logOut } = useContext(AuthContext);
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const changeBg = () => {
@@ -20,8 +25,19 @@ const Navbar = () => {
     if (window.location.pathname === current) {
       return "#fff";
     } else {
-      return "#111";
+      return "#fff";
     }
+  };
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Sign Out Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   return (
@@ -89,120 +105,84 @@ const Navbar = () => {
               <div className="flex space-x-4 text-white">
                 <Link
                   to="/"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
                 </Link>
                 <Link
                   to="/about"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   About
                 </Link>
                 <Link
                   to="/trip"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   Trip
                 </Link>
                 <Link
                   to="/contact"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   Contact
                 </Link>
               </div>
             </div>
-            <div>
+           <div>
+           {
+              user?.uid ? <>
+                       <div>
               <div className="group inline-block">
-                <button className="outline-none focus:outline-none px-3 rounded-sm flex items-center">
+                <button className="outline-none focus:outline-none px-3 rounded-sm flex 
+                items-center">
                   <div className="relative">
                     <img
                       className="w-10 h-10 rounded-full object-cover"
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                       alt=""
                     />
-                    <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                    <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2
+                     border-white dark:border-gray-800 rounded-full"></span>
                   </div>
                   <span>
                     <svg
-                      className="fill-current h-4 w-4 transform group-hover:-rotate-180
-        transition duration-150 ease-in-out"
+                      className="fill-current h-4 w-4 transform group-hover:-rotate-180 
+                      transition duration-150 ease-in-out"
                       xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
+                      viewBox="0 0 20 20">
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                     </svg>
                   </span>
                 </button>
                 <ul
-                  className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
-  transition duration-150 ease-in-out origin-top min-w-32"
-                >
-                  <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
-                    Programming
+                  className="bg-black border rounded-sm transform scale-0 group-hover:scale-100 
+                  absolute transition duration-150 ease-in-out origin-top min-w-32 px-6 py-12">
+                  <li>
+                  <Link
+                  to="/review"
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium">
+                  Review
+                </Link>
                   </li>
                   <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
-                    DevOps
-                  </li>
-                  <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                    <button className="w-full text-left flex items-center outline-none focus:outline-none">
-                      <span className="pr-1 flex-1">Langauges</span>
-                      <span className="mr-auto">
-                        <svg
-                          className="fill-current h-4 w-4
-            transition duration-150 ease-in-out"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
-                      </span>
-                    </button>
-                    <ul
-                      className="bg-white border rounded-sm absolute top-0 right-0 
-  transition duration-150 ease-in-out origin-top-left
-  min-w-32
-  "
-                    >
-                      <li className="px-3 py-1 hover:bg-gray-100">
-                        Javascript
-                      </li>
-                      <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                        <button className="w-full text-left flex items-center outline-none focus:outline-none">
-                          <span className="pr-1 flex-1">Python</span>
-                          <span className="mr-auto">
-                            <svg
-                              className="fill-current h-4 w-4
-                transition duration-150 ease-in-out"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                            </svg>
-                          </span>
-                        </button>
-                        <ul
-                          className="bg-white border rounded-sm absolute top-0 right-0 
-      transition duration-150 ease-in-out origin-top-left
-      min-w-32
-      "
-                        >
-                          <li className="px-3 py-1 hover:bg-gray-100">2.7</li>
-                          <li className="px-3 py-1 hover:bg-gray-100">3+</li>
-                        </ul>
-                      </li>
-                      <li className="px-3 py-1 hover:bg-gray-100">Go</li>
-                      <li className="px-3 py-1 hover:bg-gray-100">Rust</li>
-                    </ul>
-                  </li>
-                  <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
-                    Testing
+                  <Link to='/' onClick={handleLogOut} className="dark:text-white">Log Out</Link>
                   </li>
                 </ul>
               </div>
             </div>
+              </>
+              :
+              <>
+                <Link to="/login" className="btn list item mr-4" style={{ color: getColor("/") }}>Login</Link>
+       
+              <Link to="/register" className="btn hover:btn-primary
+                  list item" style={{ color: getColor("/") }}>Join</Link>
+            </>
+            }
+           </div>
           </div>
         </div>
       </div>

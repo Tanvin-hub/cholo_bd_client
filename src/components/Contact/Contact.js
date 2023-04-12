@@ -55,13 +55,21 @@ const Contact = () => {
 
               <ol class="list-reset flex">
                 <li>
+<<<<<<< HEAD
                   <Link className="text-white">Home</Link>
+=======
+                  <Link to="/" className="text-primary">Home</Link>
+>>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
                 </li>
                 <li>
                   <span class="mx-3 text-white"> / </span>
                 </li>
                 <li>
+<<<<<<< HEAD
                   <Link className="text-white"> Contact </Link>
+=======
+                  <Link className="text-primary" to="/contact"> Contact </Link>
+>>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
                 </li>
               </ol>
             </div>
@@ -72,12 +80,12 @@ const Contact = () => {
           className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
       rounded-2xl bg-white text-black shadow-xl border-primary"
         >
-          <form className="grid grid-cols-4 gap-6 items-center">
-            <div className="shadow-2xl border py-4 ml-8 rounded ">
-              <div className="text-primary text-3xl ml-[104px] mb-4">
+          <form className="grid grid-cols-4 gap-6 items-center justify-center">
+            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+              <div className="text-primary text-3xl  mb-4">
                 <BsFillTelephoneFill />
               </div>
-              <label className="font-medium text-xl ml-[88px] text-gray-600 ">
+              <label className="font-medium text-xl text-gray-600 ">
                 Phone
               </label>
               <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
@@ -85,11 +93,11 @@ const Contact = () => {
               </h1>
             </div>
 
-            <div className="shadow-2xl border py-4 ml-8 rounded ">
-              <div className="text-primary text-4xl ml-[104px] mb-4">
+            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+              <div className="text-primary text-4xl mb-4">
                 <MdLocationOn />
               </div>
-              <label className="font-medium text-xl ml-20 text-gray-600 ">
+              <label className="font-medium text-xl text-gray-600 ">
                 Address
               </label>
               <h1 className="ml-10 mt-1 font-semibold text-lg text-gray-600">
@@ -97,22 +105,22 @@ const Contact = () => {
               </h1>
             </div>
 
-            <div className="shadow-2xl border py-4 ml-8 rounded ">
-              <div className="text-primary text-4xl ml-24 mb-4">
+            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+              <div className="text-primary text-4xl mb-4">
                 <MdOutlineMail />
               </div>
-              <label className="font-medium text-xl ml-20 text-gray-600 ">
+              <label className="font-medium text-xl text-gray-600 ">
                 E-Mail
               </label>
               <h1 className="ml-[10px] mt-1 font-semibold text-base text-gray-600">
                 marufrony48@gmail.com
               </h1>
             </div>
-            <div className="shadow-2xl border py-4 ml-8 rounded ">
-              <div className="text-primary text-4xl ml-[96px] mb-4">
+            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+              <div className="text-primary text-4xl mb-4">
                 <BsFillClockFill />
               </div>
-              <label className="font-medium text-xl ml-12 text-gray-600">
+              <label className="font-medium text-xl text-gray-600">
                 Opening Time
               </label>
               <h1 className=" mt-1 font-semibold text-lg ml-6 text-gray-600">

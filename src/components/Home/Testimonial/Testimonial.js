@@ -8,8 +8,11 @@ import "swiper/css/pagination";
 const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
-    queryFn: () => fetch("testimonial.json").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/reviews").then((res) => res.json()),
   });
+
+  console.log(testimonials)
+
   return (
     <section className="my-20 container mx-auto px-32">
       <div className="flex flex-wrap -mx-4">
@@ -18,7 +21,7 @@ const Testimonial = () => {
             <span className="font-semibold text-lg text-primary mb-2 block">
               Testimonial
             </span>
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
               What Client says about us
             </h2>
             <p className="text-base text-body-color">
@@ -55,8 +58,7 @@ const Testimonial = () => {
             slidesPerView: 1,
             spaceBetween: 1,
           },
-        }}
-      >
+        }}>
         {
           testimonials?.map(testimonial => <SwiperSlide>
             <div className="border border-primary max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">

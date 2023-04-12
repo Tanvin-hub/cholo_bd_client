@@ -12,11 +12,11 @@
   }
 
   .item {
-    color: black;
+    color: #fff;
   }
 
   .navbar.active .navbar-logo,
 .navbar.navbar.active .item {
-  color: black !important;
+  color: #fff !important;
 }
   
