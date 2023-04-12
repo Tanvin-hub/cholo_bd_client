@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const getColor = (current) => {
     if (window.location.pathname === current) {
-      return "#111";
+      return "#fff";
     } else {
       return "#fff";
     }
@@ -105,26 +105,32 @@ const Navbar = () => {
               <div className="flex space-x-4">
                 <Link
                   to="/"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
                 </Link>
                 <Link
                   to="/about"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   About
                 </Link>
                 <Link
                   to="/trip"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   Trip
                 </Link>
                 <Link
+                  to="/review"
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
+                   px-3 py-2 rounded-md text-sm font-medium">
+                  Review
+                </Link>
+                <Link
                   to="/contact"
-                  className="hover:text-primary transition-all duration-200 ease-linear
+                  className="hover:text-slate-200 transition-all duration-200 ease-linear
                    px-3 py-2 rounded-md text-sm font-medium">
                   Contact
                 </Link>

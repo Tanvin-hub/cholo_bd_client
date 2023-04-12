@@ -143,7 +143,15 @@ li:hover > button svg {
 }
 
 
+/* Contact */
+.contact {
+  background: url("./assets/banner.jpg") no-repeat center;
+  background-size: cover;
+}
 
+.custom-leading {
+  line-height: 3rem;
+}
 
 
 /* Testimonial Blockquote design */

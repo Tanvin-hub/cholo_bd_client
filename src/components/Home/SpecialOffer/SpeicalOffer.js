@@ -18,10 +18,10 @@ const SpeicalOffer = () => {
             <span className="font-semibold text-lg text-primary mb-2 block">
               Special Offer
             </span>
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
               Offer given by us
             </h2>
-            <p className="text-base text-body-color">
+            <p className="text-slate-500 text-body-color">
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.
             </p>
