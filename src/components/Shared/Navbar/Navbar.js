@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const getColor = (current) => {
     if (window.location.pathname === current) {
-      return "#fff";
+      return "#111";
     } else {
       return "#fff";
     }
