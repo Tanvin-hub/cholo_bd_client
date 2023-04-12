@@ -11,14 +11,14 @@ const SpeicalOffer = () => {
   });
 
   return (
-    <section className="container mx-auto p-32 mt-24">
+    <section className="container mx-auto pt-32 pl-32 pr-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-            <span className="font-semibold text-lg text-primary mb-2 block">
+            <span className="font-semibold text-lg text-primary mb-2 block capitalize">
               Special Offer
             </span>
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 capitalize">
               Offer given by us
             </h2>
             <p className="text-base text-body-color">
@@ -29,14 +29,14 @@ const SpeicalOffer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto border ">
         <div className="grid grid-cols-3 gap-6 items-center justify-center">
           {offers?.map((offer) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
-              <div className="relative w-full p-4">
+              <div className="relative w-full p-4 ">
                 <img
                   src={offer?.img}
-                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                   alt=""
                 />
                 <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">

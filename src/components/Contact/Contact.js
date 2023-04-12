@@ -55,13 +55,13 @@ const Contact = () => {
 
               <ol class="list-reset flex">
                 <li>
-                  <Link className="text-primary">Home</Link>
+                  <Link className="text-white">Home</Link>
                 </li>
                 <li>
                   <span class="mx-3 text-white"> / </span>
                 </li>
                 <li>
-                  <Link className="text-primary"> Contact </Link>
+                  <Link className="text-white"> Contact </Link>
                 </li>
               </ol>
             </div>
@@ -70,7 +70,7 @@ const Contact = () => {
 
         <div
           className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
-      rounded-2xl bg-white text-black shadow-xl"
+      rounded-2xl bg-white text-black shadow-xl border-primary"
         >
           <form className="grid grid-cols-4 gap-6 items-center">
             <div className="shadow-2xl border py-4 ml-8 rounded ">
@@ -120,6 +120,7 @@ const Contact = () => {
               </h1>
             </div>
           </form>
+
           <div className="mt-10 ml-7">
             <div className="px-3 py-5">
               <div

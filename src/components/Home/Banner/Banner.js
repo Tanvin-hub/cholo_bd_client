@@ -35,7 +35,7 @@ const Banner = () => {
       </div>
       <div className="absolute border-primary border -bottom-[66px] left-[15%] w-[70%] mx-auto py-8 px-6 
       rounded-2xl bg-white text-black shadow-xl">
-        <form className="grid grid-cols-4 gap-6 items-center">
+        <form className=" sm grid grid-cols-4 gap-6 items-center">
           <div>
             <label className="font-medium">Location</label>
             <input type="text" className="w-full rounded bg-gray-200 text-black 
@@ -52,7 +52,7 @@ const Banner = () => {
             outline-none py-3 px-6 mt-2" placeholder="140$ - 500$" />
           </div>
           <div>
-           <input type="submit" value="Search" className="bg-primary rounded-full py-2 px-[5rem]
+           <input type="submit" value="Search" className=" bg-primary rounded-full py-2 px-[5rem]
            justify-self-center text-white mt-6 hover:bg-transparent border border-primary
           hover:text-black cursor-pointer transition-all duration-150 ease-linear uppercase font-medium" />
           </div>

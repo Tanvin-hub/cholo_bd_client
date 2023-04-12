@@ -8,7 +8,7 @@ const Services = () => {
   });
 
   return (
-    <section className="container mx-auto p-32 mt-24">
+    <section className="container mx-auto pt-24 pl-32 pr-32">
       <div>
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">

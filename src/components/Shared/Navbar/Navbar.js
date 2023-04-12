@@ -86,7 +86,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 text-white">
                 <Link
                   to="/"
                   className="hover:text-primary transition-all duration-200 ease-linear
