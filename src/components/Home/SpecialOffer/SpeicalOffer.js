@@ -11,7 +11,7 @@ const SpeicalOffer = () => {
   });
 
   return (
-    <section>
+    <section className="container mx-auto p-32 mt-24">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
@@ -29,7 +29,7 @@ const SpeicalOffer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-32">
+      <div className="container mx-auto">
         <div className="grid grid-cols-3 gap-6 items-center justify-center">
           {offers?.map((offer) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
