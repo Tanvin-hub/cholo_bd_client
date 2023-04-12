@@ -9,32 +9,18 @@ import Trip from "../../Trip/Trip/Trip";
 import HomeContact from "../HomeContact/HomeContact";
 
 const Home = () => {
-<<<<<<< HEAD
-    return (
-        <div>
-            <Banner/>
-           {/* <About/> */}
-              <SpecialOffer/> 
-          <Services/>
-               {/* <Trip/> */}
-            <Testimonial/>
-            <HomeContact/>          
-        </div>
-    );
-=======
   return (
     <div>
       <Banner />
-      <About />
+      {/* <About /> */}
       <SpecialOffer />
       <Services />
-      <Trip />
+      {/* <Trip /> */}
       <Testimonial />
       {/* <Review/> */}
       <HomeContact />
     </div>
   );
->>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
 };
 
 export default Home;

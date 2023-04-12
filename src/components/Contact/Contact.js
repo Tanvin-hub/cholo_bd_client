@@ -55,21 +55,13 @@ const Contact = () => {
 
               <ol class="list-reset flex">
                 <li>
-<<<<<<< HEAD
-                  <Link className="text-white">Home</Link>
-=======
-                  <Link to="/" className="text-primary">Home</Link>
->>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
+                  <Link to="/" className="text-white">Home</Link>
                 </li>
                 <li>
                   <span class="mx-3 text-white"> / </span>
                 </li>
                 <li>
-<<<<<<< HEAD
-                  <Link className="text-white"> Contact </Link>
-=======
-                  <Link className="text-primary" to="/contact"> Contact </Link>
->>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
+                  <Link className="text-white" to="/contact"> Contact </Link>
                 </li>
               </ol>
             </div>

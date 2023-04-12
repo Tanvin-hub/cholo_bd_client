@@ -18,11 +18,7 @@ const SpeicalOffer = () => {
             <span className="font-semibold text-lg text-primary mb-2 block capitalize">
               Special Offer
             </span>
-<<<<<<< HEAD
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 capitalize">
-=======
             <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
->>>>>>> cbfc66501b9447729c5cbb2812af8c83ea4bacfa
               Offer given by us
             </h2>
             <p className="text-slate-500 text-body-color">
