@@ -18,9 +18,9 @@ import "swiper/css/navigation";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const OfferDetails = () => {
-
     const data = useLoaderData();
     const detailsImg = data.detailsImg;
+    console.log(detailsImg)
   
     const defaultProps = {
       center: {
