@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../components/Home/Home/Home";
 import Contact from "../components/Contact/Contact";
-import SpecialOffer from "../components/Home/SpecialOffer/SpeicalOffer";
+import SpecialOffer from "../components/Home/Offer/SpecialOffer/SpecialOffer";
 import Trip from "../components/Trip/Trip/Trip";
 import Services from "../components/Home/Services/Services";
 import Cart from "../components/Cart/Cart";
@@ -13,6 +13,7 @@ import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
 import Tab from "../components/Trip/Tab/Tab";
 import Accordion from "../components/Trip/Accordion/Accordion";
+import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails"
 
 // Error Route (404)
 import Error from "../components/Error/Error";
@@ -36,8 +37,14 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/offer",
+        path: "/offers",
         element: <SpecialOffer />,
+      },
+      {
+        path: "/offers/:id",
+        element: <OfferDetails />,
+        loader: ({ params }) =>
+          fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
       },
 
       {

@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Tab = () => {
+const OfferTab = () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -183,7 +183,7 @@ const Tab = () => {
 
                 <div className="text-center mt-2">
                   <p>Starting from</p>
-                  {/* <h6 className="line-through my-1">BDT 1,840</h6> */}
+                  <h6 className="line-through my-1">BDT 1,840</h6>
                   <h6 className="text-primary text-xl font-semibold">
                     BDT 1,693
                   </h6>
@@ -205,4 +205,4 @@ const Tab = () => {
   );
 };
 
-export default Tab;
+export default OfferTab;
