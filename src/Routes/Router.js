@@ -2,93 +2,89 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../components/Home/Home/Home";
 import Contact from "../components/Contact/Contact";
-import SpecialOffer from "../components/Home/SpecialOffer/SpeicalOffer"
+import SpecialOffer from "../components/Home/SpecialOffer/SpeicalOffer";
 import Trip from "../components/Trip/Trip/Trip";
 import Services from "../components/Home/Services/Services";
 import Cart from "../components/Cart/Cart";
 import About from "../components/Home/About/About";
-import Login from "../components/Shared/Login/Login"
+import Login from "../components/Shared/Login/Login";
 import Register from "../components/Shared/Register/Register";
 import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
 import Tab from "../components/Trip/Tab/Tab";
-import Accordion from "../components/Trip/Accordion/Accordion"
+import Accordion from "../components/Trip/Accordion/Accordion";
 
 // Error Route (404)
-import Error from "../components/Error/Error"
-
+import Error from "../components/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <About/>
+        element: <About />,
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: "/offer",
-        element: <SpecialOffer/>
+        element: <SpecialOffer />,
       },
 
       {
         path: "/trip",
-        element: <Trip/>
+        element: <Trip />,
       },
 
       {
         path: "/services",
-        element: <Services/>
+        element: <Services />,
       },
       {
         path: "/cart",
-        element: <Cart/>
+        element: <Cart />,
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />,
       },
       {
         path: "/review",
-        element: <Review/>
+        element: <Review />,
       },
       {
         path: "/trips",
-        element: <Review/>
+        element: <Review />,
       },
       {
         path: "/trips/:id",
-        element: <TripDetails/>,
-        loader: ({params}) => fetch(`http://localhost:5000/trips/${params.id}`)
+        element: <TripDetails />,
+        loader: ({ params }) =>
+          fetch(`https://travel-server-zeta.vercel.app/trips/${params.id}`),
       },
       {
         path: "/tab",
-        element: <Tab/>
+        element: <Tab />,
       },
 
       {
         path: "/accordion",
-        element: <Accordion/>
+        element: <Accordion />,
       },
-    
-    
-    
     ],
-
   },
 ]);
 
