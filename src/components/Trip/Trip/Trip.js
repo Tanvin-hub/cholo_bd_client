@@ -2,6 +2,7 @@ import React from "react";
 import { FaAngleRight, FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
+import ScrollToTop from "../../../ScrollToTop"
 
 const Trip = () => {
   const { data: trips = [] } = useQuery({
@@ -14,6 +15,7 @@ const Trip = () => {
 
   return (
     <div>
+      <ScrollToTop/>
       <section className="con-img text-white h-[500px] relative mb-[230vh]">
         <div className="overlay h-[500px]">
           <div className="py-12 md:py-20">

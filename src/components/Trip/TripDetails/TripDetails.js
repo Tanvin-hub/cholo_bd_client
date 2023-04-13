@@ -8,6 +8,7 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { RiMacbookLine } from "react-icons/ri";
 import { TbBrandStrava } from "react-icons/tb";
 import Tab from "../Tab/Tab";
+import ScrollToTop from "../../../ScrollToTop"
 
 // Import Swiper styles
 import "swiper/css";
@@ -30,6 +31,7 @@ const TripDetails = () => {
 
   return (
     <section className="bg-[#EBF0F4]">
+      <ScrollToTop/>
       <div className="container mx-auto px-32 py-24">
         <div className="grid grid-cols-3 bg-white rounded-lg">
           <div className="rounded-xl col-start-1 col-end-3">
