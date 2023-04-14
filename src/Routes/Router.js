@@ -26,6 +26,7 @@ import OfferData from "../components/Dashboard/OfferData/OfferData";
 import ServicesDash from "../components/Dashboard/SevicesDash/ServicesDash";
 import ServicesData from "../components/Dashboard/ServicesData/ServicesData";
 import Booking from "../components/Booking/Booking";
+import Users from "../components/Dashboard/Users/Users";
 
 
 const router = createBrowserRouter([
@@ -151,6 +152,11 @@ const router = createBrowserRouter([
   {
     path: "/servicesData",
     element: <ServicesData/>
+  },
+
+  {
+    path: "/users",
+    element: <Users/>
   },
 
 

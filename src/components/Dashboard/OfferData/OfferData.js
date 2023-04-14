@@ -13,7 +13,7 @@ const OfferData = () => {
   <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
  <div class="relative flex flex-col w-full min-w-0 mb-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
 <div class="p-6 pb-0 mb-0 bg-white rounded-t-2xl">
-<h6>Authors table</h6>
+<h6 className='font-bold text-2xl mb-8 text-center italic text-zinc-700'>Offer Information</h6>
 </div>
 <div class="flex-auto px-0 pt-0 pb-2">
 <div class="p-0 overflow-x-auto">
