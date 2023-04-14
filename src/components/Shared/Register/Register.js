@@ -9,13 +9,8 @@ import ScrollToTop from "../../../ScrollToTop";
 const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  const { createUser, updateUser, googleSignIn, verifyEmail } = useContext(AuthContext);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { createUser, googleSignIn, verifyEmail } = useContext(AuthContext);
+  const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
@@ -57,8 +52,7 @@ const Register = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
                 height="auto"
-                viewBox="0 0 744.84799 747.07702"
-              >
+                viewBox="0 0 744.84799 747.07702">
                 <path
                   id="fa3b9e12-7275-481e-bee9-64fd9595a50d"
                   data-name="Path 1"

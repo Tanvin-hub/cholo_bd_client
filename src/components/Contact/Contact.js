@@ -68,10 +68,8 @@ const Contact = () => {
           </div>
         </div>
 
-        <div
-          className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
-      rounded-2xl bg-white text-black shadow-xl border-primary"
-        >
+        <div className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
+      rounded-2xl bg-white text-black shadow-xl border-primary">
           <form className="grid grid-cols-4 gap-6 items-center justify-center">
             <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
               <div className="text-primary text-3xl  mb-4">
@@ -163,8 +161,7 @@ const Contact = () => {
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="mx-auto mt-16  sm:mt-20"
-            >
+              className="mx-auto mt-16  sm:mt-20">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label

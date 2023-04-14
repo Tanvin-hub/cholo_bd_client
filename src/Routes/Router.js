@@ -25,6 +25,9 @@ import OfferDash from "../components/Dashboard/OfferDash/OfferDash";
 import OfferData from "../components/Dashboard/OfferData/OfferData";
 import ServicesDash from "../components/Dashboard/SevicesDash/ServicesDash";
 import ServicesData from "../components/Dashboard/ServicesData/ServicesData";
+import Booking from "../components/Booking/Booking";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,7 +56,6 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
       },
-
       {
         path: "/trip",
         element: <Trip />,
@@ -98,14 +100,15 @@ const router = createBrowserRouter([
         path: "/accordion",
         element: <Accordion />,
       },
-
-     
+      {
+        path: "/booking",
+        element: <Booking/>
+      }
     ],
   },
   {
     path: "/",
     element: <Dashboard />,
-  
     children: [
       {
           path: "/dashboard",
