@@ -16,7 +16,7 @@ import Accordion from "../components/Trip/Accordion/Accordion";
 
 // Error Route (404)
 import Error from "../components/Error/Error";
-import Dash from "../components/Dashboard/Dash/Dash";
+import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
 import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../components/Dashboard/TripDash/TripDash";
 import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
@@ -97,22 +97,28 @@ const router = createBrowserRouter([
      
     ],
   },
-
-
   {
-    path: "/dashboard",
-    element: <Dash />,
-  },
+    path: "/",
+    element: <Dashboard />,
+  
+    children: [
+      {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/sidebar",
+          element: <Sidebar />,
+        },
+      
+        {
+          path: "/tripdash",
+          element: <TripDash />,
+        },
+    ]
+  }
 
-  {
-    path: "/sidebar",
-    element: <Sidebar />,
-  },
-
-  {
-    path: "/tripdash",
-    element: <TripDash />,
-  },
+  
 ]);
 
 export default router;
