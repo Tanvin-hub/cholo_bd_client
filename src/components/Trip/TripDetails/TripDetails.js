@@ -22,8 +22,6 @@ const TripDetails = () => {
   const data = useLoaderData();
   const detailsImg = data.detailsImg;
 
-  // console.log(data)
-
   const defaultProps = {
     center: {
       lat: 10.99835602,

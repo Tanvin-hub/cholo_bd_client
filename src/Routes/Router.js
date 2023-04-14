@@ -6,17 +6,22 @@ import SpecialOffer from "../components/Home/Offer/SpecialOffer/SpecialOffer";
 import Trip from "../components/Trip/Trip/Trip";
 import Services from "../components/Home/Services/Services";
 import Cart from "../components/Cart/Cart";
-import About from "../components/Home/About/About";
+import About from "../components/Home/About/About/About";
 import Login from "../components/Shared/Login/Login";
 import Register from "../components/Shared/Register/Register";
 import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
 import Tab from "../components/Trip/Tab/Tab";
 import Accordion from "../components/Trip/Accordion/Accordion";
-import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails"
 
 // Error Route (404)
 import Error from "../components/Error/Error";
+import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
+import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
+import TripDash from "../components/Dashboard/TripDash/TripDash";
+import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
+import Booking from "../components/Booking/Booking";
+
 
 const router = createBrowserRouter([
   {
@@ -42,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/offers/:id",
-        element: <OfferDetails />,
+        element: <OfferDetails/>,
         loader: ({ params }) =>
           fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
       },
@@ -89,9 +94,34 @@ const router = createBrowserRouter([
       {
         path: "/accordion",
         element: <Accordion />,
+      },
+      {
+        path: "/booking",
+        element: <Booking/>
       }
     ],
   },
+  {
+    path: "/",
+    element: <Dashboard />,
+    children: [
+      {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/sidebar",
+          element: <Sidebar />,
+        },
+      
+        {
+          path: "/tripdash",
+          element: <TripDash />,
+        },
+    ]
+  }
+
+  
 ]);
 
 export default router;

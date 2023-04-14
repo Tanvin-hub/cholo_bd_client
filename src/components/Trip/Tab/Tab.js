@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useQuery } from "react-query";
-import {Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
+
 
 const Tab = (data) => {
   const [toggleState, setToggleState] = useState(1);
-  console.log(data.data._id)
+  const navigate = useNavigate();
+   const { user } = useContext(AuthContext);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -18,6 +21,29 @@ const Tab = (data) => {
       ),
   });
 
+  const handleAddToTrip = (data) => {
+    const bookedTrip = {
+      title: data.data.title,
+      trip_img: data.data.detailsImg,
+      id: data.data._id,
+      price : data.data.price,
+      email: user?.email,
+      name: user?.displayName
+    };
+    fetch('http://localhost:5000/usersBooking', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(bookedTrip)
+    })
+    .then(res => res.json())
+    .then(result => {
+      if(result.acknowledged === true) {
+        navigate("/booking")
+      }
+    })
+  }
 
   return (
     <div className="container mb-16">
@@ -63,13 +89,14 @@ const Tab = (data) => {
                     BDT {data?.data.price}
                   </h6>
                 </div>
-                <Link to={`booking/${data.data._id}`}
+                <button onClick={() => handleAddToTrip(data)}
                   className="px-3 py-2 font-medium bg-primary border border-primary
                      rounded hover:bg-transparent transition-all 
                      duration-150 ease-linear md:py-2 w-full mx-auto mt-3
-                     md:px-6 inline-block uppercase tracking-wider text-white hover:text-black">
+                     md:px-6 inline-block uppercase tracking-wider text-white hover:text-black"
+                     >
                       Continue
-                </Link>
+                </button>
               </div>
             </div>
           </div>
