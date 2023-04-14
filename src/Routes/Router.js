@@ -93,8 +93,6 @@ const router = createBrowserRouter([
         path: "/accordion",
         element: <Accordion />,
       },
-
-     
     ],
   },
 
