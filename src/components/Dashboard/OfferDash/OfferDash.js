@@ -1,15 +1,14 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
 import DashboardNavbar from '../Dashboard/DashboardNavbar/DashboardNavbar'
+import Sidebar from '../Sidebar/Sidebar'
 
-const TripDash = () => {
+const OfferDash = () => {
   return (
     <div>
-     
         <DashboardNavbar/>
          <Sidebar/>
-      
-<div class="flex items-center justify-center p-12 ml-48">
+
+         <div class="flex items-center justify-center p-12 ml-48">
 
   <div class="mx-auto w-full max-w-[550px] bg-white shadow-2xl">
     <form
@@ -49,24 +48,25 @@ const TripDash = () => {
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Package Name">
         Package Name
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Package Name"/>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Package Name"/>
     </div>
 
         <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Price">
         Price
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="Number" placeholder="Package Price"/>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="Number" placeholder="Package Price"/>
     </div>
 
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Location">
-        Location
+       Discount
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Travel Location"/>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="Number" placeholder="Discount"/>
     </div>
 
-    <div className='flex gap-6'> <div class="mb-4">
+    <div className='flex gap-6'> 
+    <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Bed">
         Bed
       </label>
@@ -77,7 +77,7 @@ const TripDash = () => {
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Room">
         Room
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Room"/>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Room"/>
     </div>
     </div>
 
@@ -85,14 +85,14 @@ const TripDash = () => {
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Days">
         Days
       </label>
-      <input class="shadow appearance-none border rounded h-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" placeholder="Days"/>
+      <input class="shadow appearance-none border rounded h-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Days"/>
     </div>
     
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="Quantity">
         Quantity
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="Number" placeholder="Quantity"/>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="Number" placeholder="Quantity"/>
     </div>
     </div>
       </div>
@@ -108,8 +108,7 @@ const TripDash = () => {
   </div>
 </div>
     </div>
-  
   )
 }
 
-export default TripDash
+export default OfferDash

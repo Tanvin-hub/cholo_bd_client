@@ -8,7 +8,7 @@ const Sidebar = () => {
     <div>
         <div class="-mx-6 px-6 py-4">
             <Link href="#" title="home">
-                <h1 className='font-bold text-xl text-center'>Cholo BD</h1>
+                <h1 className='font-bold text-2xl mb-8 text-center italic text-zinc-700'>Cholo Bangladesh</h1>
             </Link>
         </div>
 
@@ -47,35 +47,66 @@ const Sidebar = () => {
                     <span class="group-hover:text-gray-700">Trip Data</span>
                 </Link>
             </li>
-            {/* <li>
-                <Link class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+            <li>
+                <Link to ="./offerDash" class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path class="fill-current text-gray-600 group-hover:text-cyan-600" d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                         <path class="fill-current text-gray-300 group-hover:text-cyan-300" d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                     </svg>
-                    <span class="group-hover:text-gray-700">Other data</span>
+                    <span class="group-hover:text-gray-700">Offer</span>
                 </Link>
-            </li> */}
+            </li>
 
-            {/* <li>
-                <Link class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+             <li>
+                <Link to = '/offerData' class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path class="fill-current text-gray-300 group-hover:text-cyan-300" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
                         <path class="fill-current text-gray-600 group-hover:text-cyan-600" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
                     </svg>
-                    <span class="group-hover:text-gray-700">Finance</span>
+                    <span class="group-hover:text-gray-700">Offer Data</span>
                 </Link>
-            </li> */}
+            </li> 
+
+            <li>
+                <Link to = '/servicesDash' class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path class="fill-current text-gray-300 group-hover:text-cyan-300" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path class="fill-current text-gray-600 group-hover:text-cyan-600" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="group-hover:text-gray-700">Services</span>
+                </Link>
+            </li> 
+
+            <li>
+                <Link to = '/servicesData' class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path class="fill-current text-gray-300 group-hover:text-cyan-300" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path class="fill-current text-gray-600 group-hover:text-cyan-600" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="group-hover:text-gray-700">Services Data</span>
+                </Link>
+            </li> 
+
+
+            <li>
+                <Link to = '/users' class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path class="fill-current text-gray-300 group-hover:text-cyan-300" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                        <path class="fill-current text-gray-600 group-hover:text-cyan-600" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="group-hover:text-gray-700">Users</span>
+                </Link>
+            </li> 
         </ul>
     </div>
 
     <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <button class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+        {/* <button class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
             <span class="group-hover:text-gray-700">Logout</span>
-        </button>
+        </button> */}
     </div>
 </aside> 
     </div>
