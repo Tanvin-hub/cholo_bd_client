@@ -4,10 +4,10 @@ import { useQuery } from "react-query";
 
 import { Link } from "react-router-dom";
 
-const SpeicalOffer = () => {
+const SpecialOffer = () => {
   const { data: offers = [] } = useQuery({
     queryKey: ["offers"],
-    queryFn: () => fetch("offer.json").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/offers").then((res) => res.json()),
   });
 
   return (
@@ -95,17 +95,17 @@ const SpeicalOffer = () => {
                   </span>
                   450 Vine st # 310, peru
                 </p>
-                  <Link
-                  to="/"
-                  className="bg-primary hover:bg-transparent border border-primary 
+                <Link
+                    to={`/offers/${offer?._id}`}
+                    className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                       text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
-                >
-                  Details
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                </Link>
+                  >
+                    Details
+                    <span>
+                      <FaArrowRight />
+                    </span>
+                  </Link>
               </div>
             </div>
           ))}
@@ -115,4 +115,4 @@ const SpeicalOffer = () => {
   );
 };
 
-export default SpeicalOffer;
+export default SpecialOffer;

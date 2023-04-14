@@ -14,7 +14,7 @@ const Review = () => {
       name: user?.displayName,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://travel-server-zeta.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,19 +52,23 @@ const Review = () => {
       <div>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center">
+          className="flex flex-col justify-center items-center"
+        >
           <textarea
             name="review"
             rows="7"
             placeholder="Your Review"
             className="bg-white border border-primary rounded-lg p-5
-           w-[50%] shadow-lg">            
-           </textarea>
+           w-[50%] shadow-lg"
+          ></textarea>
           <div className="w-full flex flex-col items-center ml-[30rem]">
-            <input className="w-[10%] px-3 py-2 font-medium bg-primary border border-primary
+            <input
+              className="w-[10%] px-3 py-2 font-medium bg-primary border border-primary
             rounded hover:bg-transparent transition-all duration-150 ease-linear md:py-2 
             md:px-6 uppercase tracking-wider text-white hover:text-black mt-5 flex flex-col 
-            justify-end cursor-pointer" type="submit" value="Submit"
+            justify-end cursor-pointer"
+              type="submit"
+              value="Submit"
             />
           </div>
         </form>

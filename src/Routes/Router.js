@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../components/Home/Home/Home";
 import Contact from "../components/Contact/Contact";
-import SpecialOffer from "../components/Home/SpecialOffer/SpeicalOffer";
+import SpecialOffer from "../components/Home/Offer/SpecialOffer/SpecialOffer";
 import Trip from "../components/Trip/Trip/Trip";
 import Services from "../components/Home/Services/Services";
 import Cart from "../components/Cart/Cart";
@@ -19,7 +19,7 @@ import Error from "../components/Error/Error";
 import Dash from "../components/Dashboard/Dash/Dash";
 import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../components/Dashboard/TripDash/TripDash";
-
+import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,8 +39,14 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/offer",
+        path: "/offers",
         element: <SpecialOffer />,
+      },
+      {
+        path: "/offers/:id",
+        element: <OfferDetails/>,
+        loader: ({ params }) =>
+          fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
       },
 
       {
@@ -76,7 +82,7 @@ const router = createBrowserRouter([
         path: "/trips/:id",
         element: <TripDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/trips/${params.id}`),
+          fetch(`https://travel-server-zeta.vercel.app/trips/${params.id}`),
       },
       {
         path: "/tab",
@@ -88,21 +94,24 @@ const router = createBrowserRouter([
         element: <Accordion />,
       },
 
-      {
-        path: "/dashboard",
-        element: <Dash />,
-      },
-
-      {
-        path: "/sidebar",
-        element: <Sidebar />,
-      },
-
-      {
-        path: "/tripdash",
-        element: <TripDash />,
-      },
+     
     ],
+  },
+
+
+  {
+    path: "/dashboard",
+    element: <Dash />,
+  },
+
+  {
+    path: "/sidebar",
+    element: <Sidebar />,
+  },
+
+  {
+    path: "/tripdash",
+    element: <TripDash />,
   },
 ]);
 

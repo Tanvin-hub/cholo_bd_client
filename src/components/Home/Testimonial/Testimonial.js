@@ -8,10 +8,13 @@ import "swiper/css/pagination";
 const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
-    queryFn: () => fetch("http://localhost:5000/reviews").then((res) => res.json()),
+    queryFn: () =>
+      fetch("https://travel-server-zeta.vercel.app/reviews").then((res) =>
+        res.json()
+      ),
   });
 
-  console.log(testimonials)
+  console.log(testimonials);
 
   return (
     <section className="my-20 container mx-auto px-32">
@@ -58,9 +61,10 @@ const Testimonial = () => {
             slidesPerView: 1,
             spaceBetween: 1,
           },
-        }}>
-        {
-          testimonials?.map(testimonial => <SwiperSlide>
+        }}
+      >
+        {testimonials?.map((testimonial) => (
+          <SwiperSlide>
             <div className="border border-primary max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">
               <div className="flex justify-center md:justify-center -mt-16">
                 <img
@@ -80,8 +84,8 @@ const Testimonial = () => {
                 </a>
               </div>
             </div>
-          </SwiperSlide>)
-        }
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   );

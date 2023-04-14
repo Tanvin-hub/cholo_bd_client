@@ -10,21 +10,39 @@ const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
   const { createUser, updateUser, googleSignIn, verifyEmail } = useContext(AuthContext);
-  const {register, handleSubmit, reset, formState: { errors },} = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    console.log(data)
+    console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        toast.success("Account created successfully")
-        navigate('/');
+        toast.success("Account created successfully");
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error.message);
       });
   };
+
+  const handleSignInGoogle = () => {
+    googleSignIn(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        toast.success("successfully logged in");
+        navigate('/');
+      })
+      .catch(error => {
+        toast.error(error.message);
+      })
+  }
 
   return (
     <section className="py-20 bg-slate-100">
@@ -39,7 +57,8 @@ const Register = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
                 height="auto"
-                viewBox="0 0 744.84799 747.07702">
+                viewBox="0 0 744.84799 747.07702"
+              >
                 <path
                   id="fa3b9e12-7275-481e-bee9-64fd9595a50d"
                   data-name="Path 1"
@@ -289,8 +308,8 @@ const Register = () => {
                     })}
                   />
                 </div>
-               <div>
-               <div className="mb-4 md:mr-2 md:mb-0">
+                <div>
+                  <div className="mb-4 md:mr-2 md:mb-0">
                     <label
                       className="block mb-2 text-sm font-bold text-gray-700"
                       for="password"
@@ -298,7 +317,7 @@ const Register = () => {
                       Password
                     </label>
                     <input
-                       className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       type="password"
                       placeholder="******************"
                       {...register("password", {
@@ -309,7 +328,15 @@ const Register = () => {
                       Please choose a password.
                     </p>
                   </div>
-               </div>
+                </div>
+                <div className="my-4">
+                  <a
+                    className="inline-block text-sm text-primary align-baseline hover:text-primary"
+                    href="./index.html"
+                  >
+                    Already have an account? <Link to="/login">Login!</Link>
+                  </a>
+                </div>
                 <div className="mb-6 text-center">
                   <input
                     className="px-3 py-2 font-medium bg-primary border border-primary
@@ -321,23 +348,11 @@ const Register = () => {
                   />
                 </div>
                 <hr className="mb-6 border-t" />
-                <div className="text-center">
-                  <Link
-                    className="inline-block text-sm text-primary align-baseline hover:text-primary"
-                    to="#"
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-primary align-baseline hover:text-primary"
-                    href="./index.html"
-                  >
-                    Already have an account? <Link to="/login">Login!</Link>
-                  </a>
-                </div>
               </form>
+              <button onClick={handleSignInGoogle} className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
+              >
+                <span>Sign in with Google</span>
+              </button>
             </div>
           </div>
         </div>
