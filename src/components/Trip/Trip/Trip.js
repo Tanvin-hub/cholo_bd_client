@@ -42,8 +42,8 @@ const Trip = () => {
             </div>
             </section>
 
-            <div
-          className="absolute border  -bottom-[195%] left-[5%] w-[90%]  mx-auto py-8 pl-6 pr-12 
+            <section
+          className="absolute border  -bottom-[200%] left-[5%] w-[90%]   mx-auto py-8 pl-6 pr-12 
       rounded-2xl bg-white text-black shadow-xl  border-primary"
         >
          <div className="container mx-auto px-32 py-20">
@@ -124,7 +124,7 @@ const Trip = () => {
           ))}
         </div>
       </div>
-          </div>
+          </section>
          
           
     

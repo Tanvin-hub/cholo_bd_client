@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
-    <section className="banner text-white h-[500px] relative">
+    <section className="banner text-white h-[500px] mb-32 relative">
       <div className="overlay h-[500px]">
         <div className="py-12 md:py-20">
           <div
