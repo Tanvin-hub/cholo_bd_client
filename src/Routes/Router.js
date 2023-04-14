@@ -46,7 +46,6 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
       },
-
       {
         path: "/trip",
         element: <Trip />,
@@ -90,7 +89,7 @@ const router = createBrowserRouter([
       {
         path: "/accordion",
         element: <Accordion />,
-      },
+      }
     ],
   },
 ]);
