@@ -10,6 +10,7 @@ import { TbBrandStrava } from "react-icons/tb";
 import Tab from "../Tab/Tab";
 import ScrollToTop from "../../../ScrollToTop"
 
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -41,8 +42,7 @@ const TripDetails = () => {
               }}
               navigation={true}
               modules={[Pagination, Navigation]}
-              className="mySwiper"
-            >
+              className="mySwiper">
               {detailsImg?.map((img) => (
                 <SwiperSlide>
                   <img
@@ -56,14 +56,13 @@ const TripDetails = () => {
           </div>
           <div className="px-3 py-5">
             <h2 className="text-primary text-2xl font-semibold my-4">
-              Cox's Bazar
+             {data?.title}
             </h2>
             <div
               style={{
                 height: "35vh",
                 width: "100%",
-              }}
-            >
+              }}>
               <GoogleMapReact
                 bootstrapURLKeys={{ key: "" }}
                 defaultCenter={defaultProps.center}
@@ -120,7 +119,7 @@ const TripDetails = () => {
           </div>
         </div>
         <div className="bg-white rounded-lg">
-          <Tab />
+          <Tab data={data} />
         </div>
       </div>
     </section>
