@@ -2,10 +2,12 @@ import { useQuery } from "react-query";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import { useForm } from "react-hook-form";
 import ScrollToTop from "../../ScrollToTop";
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
+  const {register, handleSubmit, reset, formState: { errors },} = useForm();
 
   const url = `http://localhost:5000/bookingData?email=${user?.email}`;
   const { data: bookingDatas = [] } = useQuery({
@@ -17,7 +19,27 @@ const Booking = () => {
     },
   });
 
-  console.log(bookingDatas);
+  const handlePurchaseData = (data) => {
+    const booked = {
+      name: data.fName,
+      number: data.number,
+      nid: data.nid,
+      travelers: data.travelers,
+      date: data.date
+    }
+      fetch('http://localhost:5000/booked', {
+      method: 'POST',
+      headers:
+      {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(booked)
+    })
+      .then(res => res.json())
+      .then(result => console.log(result))
+
+  }
+
   return (
     <section className="con-img text-white h-[500px] relative mb-[1300px]">
       <ScrollToTop />
@@ -62,7 +84,7 @@ const Booking = () => {
         </h1>
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-3 mt-12">
-            <form action="https://formbold.com/s/FORM_ID" method="POST">
+            <form onSubmit={handleSubmit(handlePurchaseData)}>
               <div className="-mx-3 flex flex-wrap">
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
@@ -74,7 +96,9 @@ const Booking = () => {
                     </label>
                     <input
                       type="text"
-                      name="fName"
+                       {...register("fName", {
+                        required: "Please provided your first name",
+                      })}
                       id="fName"
                       placeholder="First Name"
                       className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -91,7 +115,9 @@ const Booking = () => {
                     </label>
                     <input
                       type="text"
-                      name="lName"
+                      {...register("lName", {
+                        required: "Please provided your last name",
+                      })}
                       id="lName"
                       placeholder="Last Name"
                       className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -109,6 +135,9 @@ const Booking = () => {
                       Phone Number
                     </label>
                     <input
+                     {...register("number", {
+                      required: "Please provided your number",
+                    })}
                       id="pNum"
                       type="number"
                       placeholder="+880 XXX XXXX XXX"
@@ -126,7 +155,9 @@ const Booking = () => {
                     </label>
                     <input
                       type="number"
-                      name="nidNumber"
+                      {...register("nid", {
+                        required: "Please provided your NID Number",
+                      })}
                       id="nidNumber"
                       placeholder="123 456 789"
                       className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -145,6 +176,9 @@ const Booking = () => {
                       Date
                     </label>
                     <input
+                     {...register("date", {
+                      required: "Please provided your date",
+                    })}
                       type="date"
                       name="date"
                       id="date"
@@ -162,7 +196,9 @@ const Booking = () => {
                     </label>
                     <input
                       type="number"
-                      name="travelers"
+                      {...register("travelers", {
+                        required: "Please provided your travelers",
+                      })}
                       id="travelers"
                       className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 
                       text-base font-medium text-[#6B7280] outline-none 
@@ -171,14 +207,11 @@ const Booking = () => {
                   </div>
                 </div>
               </div>
-
               <div>
-                <button
+                <input
                   className="hover:shadow-form rounded-md bg-[#1cc3b2] py-3 px-8 text-center 
-                text-base font-semibold text-white outline-none w-full"
-                >
-                  Submit
-                </button>
+                text-base font-semibold text-white outline-none w-full" value="Submit" type="submit"
+                />
               </div>
             </form>
           </div>

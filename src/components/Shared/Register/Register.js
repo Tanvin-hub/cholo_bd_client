@@ -9,8 +9,8 @@ import ScrollToTop from "../../../ScrollToTop";
 const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  const { createUser, updateUser, googleSignIn, verifyEmail } = useContext(AuthContext);
-  const {register, handleSubmit, reset, formState: { errors },} = useForm();
+  const { createUser, googleSignIn, verifyEmail } = useContext(AuthContext);
+  const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {

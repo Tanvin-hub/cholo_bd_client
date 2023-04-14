@@ -96,13 +96,10 @@ const router = createBrowserRouter([
         path: "/accordion",
         element: <Accordion />,
       },
-<<<<<<< HEAD
-=======
       {
         path: "/booking",
         element: <Booking/>
       }
->>>>>>> rubayed
     ],
   },
   {
