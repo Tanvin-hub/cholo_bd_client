@@ -8,7 +8,7 @@ const Dash = () => {
      
    <Sidebar/>
 <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-    <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
+    {/* <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
         <div class="px-6 flex items-center justify-between space-x-4 2xl:container">
             <h5 hidden class="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
             <button class="w-12 h-16 -mr-2 border-r lg:hidden">
@@ -46,7 +46,7 @@ const Dash = () => {
                 </button>
             </div>
         </div>
-    </div>
+    </div> */}
 
     <div class="px-6 pt-6 2xl:container">
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

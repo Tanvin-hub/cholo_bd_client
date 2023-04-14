@@ -20,6 +20,7 @@ import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
 import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../components/Dashboard/TripDash/TripDash";
 import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
+import TripData from "../components/Dashboard/TripData/TripData";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -111,12 +112,19 @@ const router = createBrowserRouter([
           element: <Sidebar />,
         },
       
-        {
-          path: "/tripdash",
-          element: <TripDash />,
-        },
     ]
-  }
+  },
+
+  
+  {
+    path: "/tripdash",
+    element: <TripDash />,
+  },
+
+  {
+    path: "/tripdata",
+    element: <TripData />,
+  },
 
   
 ]);
