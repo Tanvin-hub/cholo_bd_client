@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const OfferTab = () => {
+const OfferTab = (data) => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -25,6 +25,8 @@ const OfferTab = () => {
   });
 
   const [selectedDate, setSelectedDate] = useState(null);
+
+  console.log(data)
 
   return (
     <div className="container mb-16">
