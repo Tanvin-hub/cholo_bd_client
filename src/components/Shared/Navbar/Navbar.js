@@ -249,15 +249,15 @@ const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/" className="font-bold text-xl uppercase">
                     Cholo Bangaldesh
                   </Link>
                 </div>
               </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex space-x-4">
+              <div className="hidden sm:block">
+                <div className="flex">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}

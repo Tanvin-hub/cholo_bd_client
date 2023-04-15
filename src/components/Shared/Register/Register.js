@@ -9,7 +9,7 @@ import ScrollToTop from "../../../ScrollToTop";
 const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  const { createUser, googleSignIn, verifyEmail } = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn, reset, verifyEmail } = useContext(AuthContext);
   const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
 
@@ -18,8 +18,18 @@ const Register = () => {
     createUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        toast.success("Account created successfully");
-        navigate("/");
+        verifyEmail()
+        reset()
+        navigate('/');
+
+        const userInfo = {
+          displayName: data.name,
+        }
+
+        updateUser(userInfo)
+        .then(() => {
+          savedUsertoDb(data.name, data.email);
+        })
       })
       .catch((error) => {
         toast.error(error.message);
@@ -32,11 +42,32 @@ const Register = () => {
         const user = result.user;
         console.log(user)
         toast.success("successfully logged in");
-        navigate('/');
       })
       .catch(error => {
         toast.error(error.message);
       })
+  }
+
+  const savedUsertoDb = (name, email) => {
+    const user = {
+      name,
+      email
+    }
+
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.acknowledged) {
+
+        }
+      })
+
   }
 
   return (
