@@ -54,9 +54,7 @@ const router = createBrowserRouter([
       {
         path: "/offers/:id",
         element: <OfferDetails/>,
-        loader: ({ params }) =>
-          fetch(`https://travel-server-zeta.vercel.app/offers/${params.id}`),
-      },
+        loader: ({ params }) =>  fetch(`http://localhost:5000/offers/${params.id}`),},
       {
         path: "/trip",
         element: <Trip />,
