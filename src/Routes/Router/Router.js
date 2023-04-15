@@ -1,32 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layout/Main";
-import Home from "../components/Home/Home/Home";
-import Contact from "../components/Contact/Contact";
-import SpecialOffer from "../components/Home/Offer/SpecialOffer/SpecialOffer";
-import Trip from "../components/Trip/Trip/Trip";
-import Services from "../components/Home/Services/Services";
-import Cart from "../components/Cart/Cart";
-import About from "../components/Home/About/About/About";
-import Login from "../components/Shared/Login/Login";
-import Register from "../components/Shared/Register/Register";
-import Review from "../components/Home/Review/Review";
-import TripDetails from "../components/Trip/TripDetails/TripDetails";
-import Tab from "../components/Trip/Tab/Tab";
-import Accordion from "../components/Trip/Accordion/Accordion";
+import Main from "../../Layout/Main";
+import Home from "../../components/Home/Home/Home";
+import Contact from "../../components/Contact/Contact";
+import SpecialOffer from "../../components/Home/Offer/SpecialOffer/SpecialOffer";
+import Trip from "../../components/Trip/Trip/Trip";
+import Services from "../../components/Home/Services/Services";
+import About from "../../components/Home/About/About/About";
+import Login from "../../components/Shared/Login/Login";
+import Register from "../../components/Shared/Register/Register";
+import Review from "../../components/Home/Review/Review";
+import TripDetails from "../../components/Trip/TripDetails/TripDetails";
+import Tab from "../../components/Trip/Tab/Tab";
+import Accordion from "../../components/Trip/Accordion/Accordion";
 
 // Error Route (404)
-import Error from "../components/Error/Error";
-import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
-import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
-import TripDash from "../components/Dashboard/TripDash/TripDash";
-import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
-import TripData from "../components/Dashboard/TripData/TripData";
-import OfferDash from "../components/Dashboard/OfferDash/OfferDash";
-import OfferData from "../components/Dashboard/OfferData/OfferData";
-import ServicesDash from "../components/Dashboard/SevicesDash/ServicesDash";
-import ServicesData from "../components/Dashboard/ServicesData/ServicesData";
-import Booking from "../components/Booking/Booking";
-import Users from "../components/Dashboard/Users/Users";
+import Error from "../../components/Error/Error";
+
+import Dashboard from "../../components/Dashboard/Dashboard/Dashboard";
+import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
+import TripDash from "../../components/Dashboard/TripDash/TripDash";
+import OfferDetails from "../../components/Home/Offer/OfferDetails/OfferDetails";
+import TripData from "../../components/Dashboard/TripData/TripData";
+import OfferDash from "../../components/Dashboard/OfferDash/OfferDash";
+import OfferData from "../../components/Dashboard/OfferData/OfferData";
+import ServicesDash from "../../components/Dashboard/SevicesDash/ServicesDash";
+import ServicesData from "../../components/Dashboard/ServicesData/ServicesData";
+import Booking from "../../components/Booking/Booking";
+import Users from "../../components/Dashboard/Users/Users";
+import PrivateRoute from "../PrivateRoute/PrivateRoute"
 
 
 const router = createBrowserRouter([
@@ -65,10 +66,6 @@ const router = createBrowserRouter([
         element: <Services />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
         path: "/login",
         element: <Login />,
       },
@@ -78,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/review",
-        element: <Review />,
+        element: <PrivateRoute><Review /></PrivateRoute>,
       },
       {
         path: "/trips",
@@ -101,7 +98,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/booking",
-        element: <Booking/>
+        element:<PrivateRoute> <Booking/></PrivateRoute>
       }
     ],
   },
