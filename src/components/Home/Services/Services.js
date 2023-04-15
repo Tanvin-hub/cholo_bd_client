@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 const Services = () => {
   const { data: services = [] } = useQuery({
     queryKey: ["services"],
-    queryFn: () => fetch("services.json").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/admin/services").then((res) => res.json()),
   });
 
   return (
@@ -16,7 +16,7 @@ const Services = () => {
               <span className="font-semibold text-lg text-primary mb-2 block">
                 Our Services
               </span>
-              <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
+              <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading+-">
                 What We Offer
               </h2>
               <p className="text-slate-500 text-body-color">
@@ -53,7 +53,7 @@ const Services = () => {
                     {service?.title}
                   </h4>
                   <p className="text-body-color">
-                    {service?.description}
+                    {service?.desc}
                   </p>
                 </div>
               </div>)
