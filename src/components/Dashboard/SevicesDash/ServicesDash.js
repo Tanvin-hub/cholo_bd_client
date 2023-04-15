@@ -39,8 +39,7 @@ const ServicesDash = () => {
         <div className="mx-auto w-full max-w-[550px] bg-white shadow-2xl">
           <form onSubmit={handleSubmit(handleServices)}
             className="py-6 px-9"
-            action="https://formbold.com/s/FORM_ID"
-            method="POST">
+          >
             <div className="mb-6 pt-4">
               <label className="mb-5 block text-xl font-semibold text-[#1cc3b2]">
                 Services Details
