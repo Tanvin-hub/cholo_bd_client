@@ -14,12 +14,11 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    console.log(data);
     createUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        verifyEmail()
-        reset()
+        // verifyEmail()
+        // reset()
         navigate('/');
 
         const userInfo = {

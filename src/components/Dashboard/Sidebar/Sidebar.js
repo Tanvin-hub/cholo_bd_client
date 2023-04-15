@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Sidebar = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user)
   return (
     <div>
         <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
@@ -13,9 +16,15 @@ const Sidebar = () => {
         </div>
 
         <div className="mt-8 text-center">
-            <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
-            <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
+           {
+            user?.uid ? <> 
+                 <img src={user?.photoURL} alt="Admin" className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
+            <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{user?.displayName}</h5>
             <span className="hidden text-gray-400 lg:block">Admin</span>
+            </>
+            :
+            <h3 className="text-xl">No user data found</h3>
+           }
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">
@@ -49,7 +58,7 @@ const Sidebar = () => {
                 </Link>
             </li>
             <li>
-                <Link to ="./offerDash" className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                <Link to ="/offerDash" className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path className="fill-current text-gray-600 group-hover:text-cyan-600" d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                         <path className="fill-current text-gray-300 group-hover:text-cyan-300" d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
