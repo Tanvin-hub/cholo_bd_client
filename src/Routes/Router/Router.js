@@ -28,6 +28,8 @@ import ServicesData from "../../components/Dashboard/ServicesData/ServicesData";
 import Booking from "../../components/Booking/Booking";
 import Users from "../../components/Dashboard/Users/Users";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
+import MakeAdmin from "../../components/Dashboard/MakeAdmin/MakeAdmin";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 
 const router = createBrowserRouter([
@@ -104,60 +106,50 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Dashboard />,
+    element: <AdminRoute><Dashboard /></AdminRoute>,
     children: [
       {
           path: "/dashboard",
-          element: <Dashboard />,
+          element: <AdminRoute><Dashboard /></AdminRoute>,
         },
         {
           path: "/sidebar",
-          element: <Sidebar />,
+          element: <AdminRoute><Sidebar /></AdminRoute>,
         },
-      
     ]
   },
-
-  
   {
     path: "/tripdash",
-    element: <TripDash />,
+    element: <AdminRoute><TripDash /></AdminRoute>,
   },
-
   {
     path: "/tripdata",
-    element: <TripData />,
+    element: <AdminRoute><TripData /></AdminRoute>,
   },
-
   {
     path: "/offerDash",
-    element: <OfferDash/>
+    element: <AdminRoute><OfferDash /></AdminRoute>
   },
-
   {
     path: "/offerdata",
-    element: <OfferData/>,
+    element: <AdminRoute><OfferData /></AdminRoute>,
   },
-
   {
     path: "/servicesDash",
-    element: <ServicesDash/>
+    element: <AdminRoute><ServicesDash /></AdminRoute>
   },
-
   {
     path: "/servicesData",
-    element: <ServicesData/>
+    element: <AdminRoute><ServicesData/></AdminRoute>
   },
-
+  {
+    path: "/makeAdmin",
+    element: <AdminRoute><MakeAdmin /></AdminRoute>
+  },
   {
     path: "/users",
-    element: <Users/>
+    element: <AdminRoute><Users /></AdminRoute>
   },
-
-
-  
-
-  
 ]);
 
 export default router;

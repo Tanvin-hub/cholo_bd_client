@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 const useTrips = (queryName, query, params) => {
     const { data: trips = [], refetch, isLoading } = useQuery({
