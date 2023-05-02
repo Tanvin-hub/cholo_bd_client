@@ -47,16 +47,16 @@ const Trip = () => {
       </section>
 
       <div
-        className="absolute border  -bottom-[195%] left-[5%] w-[90%]  mx-auto py-8 pl-6 pr-12 
-      rounded-2xl bg-white text-black shadow-xl">
-        <div className="container mx-auto px-32 py-20">
+        className="absolute -bottom-[58rem] left-[5%] w-[90%] mx-auto py-8 pl-6 pr-6 
+      rounded-2xl bg-white text-black">
+        <div className="">
           <div className="grid grid-cols-3 gap-6 items-center justify-center ">
             {trips?.map((trip) => (
               <div className="h-full w-full shadow-2xl rounded-lg">
                 <div className="relative w-full p-4">
                   <img
                     src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                    className="border border-primary mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                    className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                     alt=""
                   />
                   <button
@@ -65,8 +65,7 @@ const Trip = () => {
                   >
                     <div
                       className="flex h-full w-full items-center justify-center 
-                          rounded-full text-xl hover:bg-gray-50"
-                    >
+                          rounded-full text-xl hover:bg-gray-50">
                       <svg
                         stroke="currentColor"
                         fill="currentColor"
@@ -74,8 +73,7 @@ const Trip = () => {
                         viewBox="0 0 512 512"
                         height="1em"
                         width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill="none"
                           stroke-linecap="round"
@@ -98,7 +96,7 @@ const Trip = () => {
 
                   <ul className="flex flex-wrap gap-2 mt-5">
                     {trip?.facility?.map((fac) => (
-                      <li className="border border-primary flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                      <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
                         <span>
                           <FaAngleRight />
                         </span>

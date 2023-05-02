@@ -1,76 +1,88 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../Context/AuthProvider";
-import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
-import { GoogleAuthProvider } from "@firebase/auth";
+import React, {useContext } from "react";
+import Sidebar from "../Sidebar/Sidebar";
 import ScrollToTop from "../../../ScrollToTop";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../../../Context/AuthProvider";
+import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 
-const googleProvider = new GoogleAuthProvider();
+const MakeAdmin = () => {
+    const { createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const {register, handleSubmit, reset} = useForm();
 
-const Register = () => {
-  const { createUser, updateUser, googleSignIn, reset, verifyEmail } = useContext(AuthContext);
-  const {register, handleSubmit} = useForm();
-  const navigate = useNavigate();
+    const handleSignUp = (data) => {
+        createUser(data.email, data.password, data.role)
+          .then((result) => {
+            alert("Successfully Admin Created");
+            navigate("/makeAdmin")
+            const userInfo = {
+              displayName: data.name,
+            };
+    
+            updateUser(userInfo)
+              .then(() => {
+                savedUsertoDb(data.name, data.email, data.role);
+              })
+              .catch((error) => {
+                console.log(error.message);
+              });
+          })
+          .catch((error) => {
+            alert(error.message);
+          });
+      };
 
-  const handleSignUp = (data) => {
-    createUser(data.email, data.password)
-      .then((result) => {
-        const user = result.user;
-        // verifyEmail()
-        // reset()
-        navigate('/');
-
-        const userInfo = {
-          displayName: data.name,
+      const savedUsertoDb = (name, email, role) => {
+        const user = {
+          name,
+          email,
+          role,
+        };
+    
+        if (role === "admin") {
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                alert("Successfully created new admin");
+                reset();
+                navigate("/makeAdmin")
+              }
+            });
         }
-
-        updateUser(userInfo)
-        .then(() => {
-          savedUsertoDb(data.name, data.email);
-        })
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  };
-
-  const handleSignInGoogle = () => {
-    googleSignIn(googleProvider)
-      .then(result => {
-        const user = result.user;
-        console.log(user)
-        toast.success("successfully logged in");
-      })
-      .catch(error => {
-        toast.error(error.message);
-      })
-  }
-
-  const savedUsertoDb = (name, email) => {
-    const user = {
-      name,
-      email
-    }
-
-    fetch('http://localhost:5000/users', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(user)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.acknowledged) {
-
-        }
-      })
-
-  }
-
-  return (
-    <section className="py-20 bg-slate-100">
+    
+        // if (role === "editor") {
+        //   fetch("http://localhost:5000/users", {
+        //     method: "POST",
+        //     headers: {
+        //       "content-type": "application/json",
+        //     },
+        //     body: JSON.stringify(user),
+        //   })
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //       if (data.acknowledged) {
+        //         alert("Successfully created new editor");
+        //         reset();
+        //         navigate("/makeEditor")
+        //       }
+        //     });
+        // }
+      };
+    
+    return (
+        <div>
+        <DashboardNavbar />
+        <Sidebar />
+        <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <section className="py-20 bg-slate-100">
       <ScrollToTop />
       <div className="container mx-auto">
         <div className="flex justify-center px-6 my-12">
@@ -281,8 +293,7 @@ const Register = () => {
             </div>
             <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
               <h3 className="pt-4 text-2xl text-center">Create an Account!</h3>
-              <form
-                onSubmit={handleSubmit(handleSignUp)}
+              <form  onSubmit={handleSubmit(handleSignUp)}
                 className="px-8 pt-6 pb-8 mb-4 bg-white rounded"
               >
                 <div className="mb-4 md:flex md:justify-between">
@@ -302,19 +313,6 @@ const Register = () => {
                       })}
                     />
                   </div>
-                  <div className="md:ml-2">
-                    <label
-                      className="block mb-2 text-sm font-bold text-gray-700"
-                      for="lastName"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                      type="text"
-                      placeholder="Last Name"
-                    />
-                  </div>
                 </div>
                 <div className="mb-4">
                   <label
@@ -328,8 +326,8 @@ const Register = () => {
                     type="email"
                     placeholder="Email"
                     {...register("email", {
-                      required: "email address is required",
-                    })}
+                        required: "Please provided your name",
+                      })}
                   />
                 </div>
                 <div>
@@ -345,22 +343,27 @@ const Register = () => {
                       type="password"
                       placeholder="******************"
                       {...register("password", {
-                        required: "password is required",
+                        required: "Please provided your name",
                       })}
                     />
-                    <p className="text-xs italic text-red-500">
-                      Please choose a password.
-                    </p>
                   </div>
+                  <div className="mb-4 md:mr-2 md:mb-0">
+                          <select
+                            className=" mt-5 w-full pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                            {...register("role", {
+                              required: true,
+                            })}
+                          >
+                            <option selected value="admin">
+                              Admin{" "}
+                            </option>
+                            <option selected value="editor">
+                              Editor{" "}
+                            </option>
+                          </select>
+                        </div>
                 </div>
-                <div className="my-4">
-                  <a
-                    className="inline-block text-sm text-primary align-baseline hover:text-primary"
-                    href="./index.html"
-                  >
-                    Already have an account? <Link to="/login">Login!</Link>
-                  </a>
-                </div>
+               
                 <div className="mb-6 text-center">
                   <input
                     className="px-3 py-2 font-medium bg-primary border border-primary
@@ -373,7 +376,7 @@ const Register = () => {
                 </div>
                 <hr className="mb-6 border-t" />
               </form>
-              <button onClick={handleSignInGoogle} className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
+              <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
               >
                 <span>Sign in with Google</span>
               </button>
@@ -382,7 +385,9 @@ const Register = () => {
         </div>
       </div>
     </section>
-  );
+        </div>
+      </div>
+    );
 };
 
-export default Register;
+export default MakeAdmin;
