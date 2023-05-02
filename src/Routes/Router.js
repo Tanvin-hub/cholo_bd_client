@@ -21,12 +21,12 @@ import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../components/Dashboard/TripDash/TripDash";
 import OfferDetails from "../components/Home/Offer/OfferDetails/OfferDetails";
 import TripData from "../components/Dashboard/TripData/TripData";
-import OfferDash from "../components/Dashboard/OfferDash/OfferDash";
 import OfferData from "../components/Dashboard/OfferData/OfferData";
 import ServicesDash from "../components/Dashboard/SevicesDash/ServicesDash";
 import ServicesData from "../components/Dashboard/ServicesData/ServicesData";
 import Booking from "../components/Booking/Booking";
 import Users from "../components/Dashboard/Users/Users";
+import OfferDesh from "../components/Dashboard/OfferDesh/OfferDesh";
 
 
 const router = createBrowserRouter([
@@ -110,6 +110,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Dashboard />,
+    errorElement: <Error />,
     children: [
       {
           path: "/dashboard",
@@ -125,7 +126,7 @@ const router = createBrowserRouter([
 
   
   {
-    path: "/tripdash",
+    path: "/tripDash",
     element: <TripDash />,
   },
 
@@ -136,11 +137,12 @@ const router = createBrowserRouter([
 
   {
     path: "/offerDash",
-    element: <OfferDash/>
+    element: <OfferDesh/>,
   },
+ 
 
   {
-    path: "/offerdata",
+    path: "/offerData",
     element: <OfferData/>,
   },
 
