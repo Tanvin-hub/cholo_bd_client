@@ -8,6 +8,8 @@ import Testimonial from "../Testimonial/Testimonial.js";
 // import Review from "../../Home/Review/Review";
 import HomeContact from "../HomeContact/HomeContact";
 import AboutSec from "../About/AboutSec/AboutSec.js";
+import Trip from "../../Trip/Trip/Trip.js";
+import Review from "../Review/Review.js";
 
 const Home = () => {
   return (
@@ -16,9 +18,9 @@ const Home = () => {
       <AboutSec/>
       <SpecialOffer />
       <Services />
-      {/* <Trip /> */}
+      <Trip />
       <Testimonial />
-      {/* <Review/> */}
+      <Review/>
       <HomeContact />
     </div>
   );

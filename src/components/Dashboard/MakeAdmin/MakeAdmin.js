@@ -41,7 +41,7 @@ const MakeAdmin = () => {
         };
     
         if (role === "admin") {
-          fetch("http://localhost:5000/users", {
+          fetch("https://cholo-bd-server.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -59,7 +59,7 @@ const MakeAdmin = () => {
         }
     
         // if (role === "editor") {
-        //   fetch("http://localhost:5000/users", {
+        //   fetch("https://cholo-bd-server.vercel.app/users", {
         //     method: "POST",
         //     headers: {
         //       "content-type": "application/json",

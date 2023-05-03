@@ -53,7 +53,7 @@ const Register = () => {
       email
     }
 
-    fetch('http://localhost:5000/users', {
+    fetch('https://cholo-bd-server.vercel.app/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

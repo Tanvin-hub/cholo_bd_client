@@ -14,7 +14,7 @@ const TripDash = () => {
     //   icon: data.icon,
     //   desc: data.desc
     // }
-    // fetch('http://localhost:5000/admin/services', {
+    // fetch('https://cholo-bd-server.vercel.app/admin/services', {
     //   method: 'POST',
     //   headers:
     //   {

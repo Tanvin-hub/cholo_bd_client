@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 const SpecialOffer = () => {
   const { data: offers = [] } = useQuery({
     queryKey: ["offers"],
-    queryFn: () => fetch("http://localhost:5000/offers").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server.vercel.app/offers").then((res) => res.json()),
   });
+
+  console.log(offers)
 
   return (
     <section className="container mx-auto pt-32 pl-32 pr-32">
@@ -35,7 +37,7 @@ const SpecialOffer = () => {
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">
                 <img
-                  src={offer?.img}
+                  src={offer?.detailsImg}
                   className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
                   alt=""
                 />

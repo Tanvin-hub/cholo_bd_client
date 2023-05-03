@@ -9,7 +9,7 @@ const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
     queryFn: () =>
-      fetch("https://travel-server-zeta.vercel.app/reviews").then((res) =>
+      fetch("https://cholo-bd-server.vercel.app/reviews").then((res) =>
         res.json()
       ),
   });

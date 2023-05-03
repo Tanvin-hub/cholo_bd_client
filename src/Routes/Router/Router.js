@@ -3,7 +3,7 @@ import Main from "../../Layout/Main";
 import Home from "../../components/Home/Home/Home";
 import Contact from "../../components/Contact/Contact";
 import SpecialOffer from "../../components/Home/Offer/SpecialOffer/SpecialOffer";
-import Trip from "../../components/Trip/Trip/Trip";
+import Trip from "../../components/Trip/Trip/MainTrip";
 import Services from "../../components/Home/Services/Services";
 import About from "../../components/Home/About/About/About";
 import Login from "../../components/Shared/Login/Login";
@@ -12,7 +12,6 @@ import Review from "../../components/Home/Review/Review";
 import TripDetails from "../../components/Trip/TripDetails/TripDetails";
 import Tab from "../../components/Trip/Tab/Tab";
 import Accordion from "../../components/Trip/Accordion/Accordion";
-
 // Error Route (404)
 import Error from "../../components/Error/Error";
 
@@ -21,7 +20,7 @@ import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../../components/Dashboard/TripDash/TripDash";
 import OfferDetails from "../../components/Home/Offer/OfferDetails/OfferDetails";
 import TripData from "../../components/Dashboard/TripData/TripData";
-import OfferDash from "../../components/Dashboard/OfferDash/OfferDash";
+import OfferDash from "../../components/Dashboard/OfferDesh/OfferDesh";
 import OfferData from "../../components/Dashboard/OfferData/OfferData";
 import ServicesDash from "../../components/Dashboard/SevicesDash/ServicesDash";
 import ServicesData from "../../components/Dashboard/ServicesData/ServicesData";
@@ -30,6 +29,7 @@ import Users from "../../components/Dashboard/Users/Users";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import MakeAdmin from "../../components/Dashboard/MakeAdmin/MakeAdmin";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import MainTrip from "../../components/Trip/Trip/MainTrip";
 
 
 const router = createBrowserRouter([
@@ -57,10 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/offers/:id",
         element: <OfferDetails/>,
-        loader: ({ params }) =>  fetch(`http://localhost:5000/offers/${params.id}`),},
+        loader: ({ params }) =>  fetch(`https://cholo-bd-server.vercel.app/offers/${params.id}`),},
       {
         path: "/trip",
-        element: <Trip />,
+        element: <MainTrip />,
       },
 
       {
@@ -80,14 +80,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Review /></PrivateRoute>,
       },
       {
-        path: "/trips",
-        element: <Review />,
-      },
-      {
         path: "/trips/:id",
         element: <TripDetails />,
         loader: ({ params }) =>
-          fetch(`https://travel-server-zeta.vercel.app/trips/${params.id}`),
+          fetch(`https://cholo-bd-server.vercel.app/trips/${params.id}`),
       },
       {
         path: "/tab",
@@ -96,7 +92,7 @@ const router = createBrowserRouter([
 
       {
         path: "/accordion",
-        element: <Accordion />,
+        element: <Accordion />
       },
       {
         path: "/booking",
