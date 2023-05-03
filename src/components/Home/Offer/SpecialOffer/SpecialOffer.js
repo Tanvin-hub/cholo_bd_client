@@ -76,7 +76,7 @@ const SpecialOffer = () => {
                   450 Vine st # 310, peru
                 </p>
                 <Link
-                    to={`/offers/${offer?._id}`}
+                    to={`/trips/${offer?._id}`}
                     className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                       text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"

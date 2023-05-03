@@ -8,7 +8,7 @@ const Users = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      fetch("http://localhost:5000/admin/all-users").then((res) => res.json()),
+      fetch("http://localhost:5000/all-users").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -17,7 +17,7 @@ const Users = () => {
     );
 
     if (proceed) {
-      fetch(`http://localhost:5000/users/${id}`, {
+      fetch(`http://localhost:5000/all-users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -35,14 +35,14 @@ const Users = () => {
       <DashboardNavbar />
       <Sidebar />
       <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-        <div className="text-gray-900 bg-gray-200">
+        <div className="text-gray-900 container mx-auto px-8">
           <div className="p-4 flex">
-            <h6 className="font-bold text-2xl mb-8 text-center italic text-zinc-700">
+            <h6 className="font-bold text-2xl mb-8 text-center text-zinc-700">
               Users
             </h6>
           </div>
           <div className="px-3 py-4 flex justify-center">
-            <table className="w-full text-md bg-white shadow-md rounded mb-4">
+            <table className="w-full text-md bg-white rounded mb-4 shadow-lg">
               <tbody>
                 <tr className="border-b">
                   <th className="text-left p-3 px-5">Name</th>

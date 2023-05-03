@@ -86,7 +86,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <div className="hidden sm:block basis-1/2">
+              <div className="hidden sm:block basis-1/3">
                 <div className="flex">
                   {navigation.map((item) => (
                     <Link
