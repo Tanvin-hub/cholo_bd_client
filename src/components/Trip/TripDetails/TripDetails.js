@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -8,19 +8,20 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { RiMacbookLine } from "react-icons/ri";
 import { TbBrandStrava } from "react-icons/tb";
 import Tab from "../Tab/Tab";
-import ScrollToTop from "../../../ScrollToTop"
-
+import ScrollToTop from "../../../ScrollToTop";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Booking from "../../Booking/Booking";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const TripDetails = () => {
   const data = useLoaderData();
-  const detailsImg = data.detailsImg;
+  const { price, detailsImg,description } = data;
 
   const defaultProps = {
     center: {
@@ -31,18 +32,20 @@ const TripDetails = () => {
   };
 
   return (
-    <section className="bg-[#EBF0F4]">
-      <ScrollToTop/>
+    <section className="bg-[#EBF0F4] ">
+      <ScrollToTop />
       <div className="container mx-auto px-32 py-24">
-        <div className="grid grid-cols-3 bg-white rounded-lg">
-          <div className="rounded-xl col-start-1 col-end-3">
-            <Swiper
+        <div className="grid grid-cols-3 rounded-lg ">
+          <div className="rounded-xl col-start-1 col-end-3 mr-6">
+          <>
+          <Swiper
               pagination={{
                 type: "progressbar",
               }}
               navigation={true}
               modules={[Pagination, Navigation]}
-              className="mySwiper">
+              className="mySwiper"
+            >
               {detailsImg?.map((img) => (
                 <SwiperSlide>
                   <img
@@ -53,73 +56,19 @@ const TripDetails = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </>
+          <div className="my-6  rounded px-6 py-12 bg-white">
+                <h3 className="text-lg font-bold">Tour Overview</h3>
+                <p>{description}</p>
           </div>
-          <div className="px-3 py-5">
-            <h2 className="text-primary text-2xl font-semibold my-4">
-             {data?.title}
-            </h2>
-            <div
-              style={{
-                height: "35vh",
-                width: "100%",
-              }}>
-              <GoogleMapReact
-                bootstrapURLKeys={{ key: "" }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
-              >
-                <AnyReactComponent
-                  lat={59.955413}
-                  lng={30.337844}
-                  text="My Marker"
-                />
-              </GoogleMapReact>
+          <div className="my-6  rounded px-6 py-12 bg-white">
+                <h3 className="text-lg font-bold">Review</h3>
+                <p>{description}</p>
           </div>
-            <ul className="flex flex-wrap gap-2 mt-5">
-              <li className="flex items-center gap-3  py-1 px-4 rounded text-slate-500">
-                <span>
-                  <AiOutlineClockCircle />
-                </span>
-                <p className="text-sm text-bold text-black"> 7 minutes away</p>
-              </li>
-
-              <li className="flex items-center gap-3  py-1  rounded text-slate-500">
-                <span>
-                  <HiOutlineUserGroup />
-                </span>
-                <p className="text-sm text-bold text-black"> Up to 50 People</p>
-              </li>
-
-              <li className="flex items-center gap-3  py-1 px-4 rounded text-slate-500">
-                <span>
-                  <RiMacbookLine />
-                </span>
-                <p className="text-sm text-bold text-black">
-                  Activities Booking Can be Cancelled Anytime
-                </p>
-              </li>
-
-              <li className="flex items-center bg-slate-200 gap-2 ml-4 px-2 py-1  rounded text-slate-500">
-                <span>
-                  <AiOutlineClockCircle />
-                </span>
-                <p className="text-sm text-bold text-black">
-                  {" "}
-                  Outdoor Activities
-                </p>
-              </li>
-
-              <li className="flex items-center bg-slate-200 gap-2 ml-4 px-2 py-1  rounded text-slate-500">
-                <span>
-                  <TbBrandStrava />
-                </span>
-                <p className="text-smtext-bold text-black">Adventure</p>
-              </li>
-            </ul>
           </div>
-        </div>
-        <div className="bg-white rounded-lg">
-          <Tab data={data} />
+          <div>
+            <Booking tour={data} />
+          </div>
         </div>
       </div>
     </section>
