@@ -8,7 +8,7 @@ import useAdmin from "../../../Hooks/useAdmin";
 // import useEditor from "../../Hooks/useEditor";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "About", href: "/about", current: false },
   { name: "Trip", href: "/trip", current: false },
   { name: "Contact", href: "/contact", current: false },
