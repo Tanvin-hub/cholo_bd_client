@@ -9,18 +9,18 @@ const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/reviews").then((res) =>
+      fetch("http://localhost:5000/reviews").then((res) =>
         res.json()
       ),
   });
 
-  console.log(testimonials);
+  console.log(testimonials)
 
   return (
     <section className="my-20 container mx-auto px-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
-          <div className="text-center mx-auto mb-12 max-w-[510px]">
+          <div className="text-center mx-auto mb-12 max-w-[610px]">
             <span className="font-semibold text-lg text-primary mb-2 block">
               Testimonial
             </span>

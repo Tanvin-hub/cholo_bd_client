@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 const Services = () => {
   const { data: services = [] } = useQuery({
     queryKey: ["services"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/services").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/admin/services").then((res) => res.json()),
   });
 
   return (
@@ -12,7 +12,7 @@ const Services = () => {
       <div>
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
-            <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+            <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[610px]">
               <span className="font-semibold text-lg text-primary mb-2 block">
                 Our Services
               </span>

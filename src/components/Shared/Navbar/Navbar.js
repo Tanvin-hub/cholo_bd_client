@@ -66,7 +66,7 @@ const Navbar = () => {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 md:px-0">
             <div className="relative flex h-10 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -86,7 +86,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <div className="hidden sm:block">
+              <div className="hidden sm:block basis-1/2">
                 <div className="flex">
                   {navigation.map((item) => (
                     <Link
@@ -108,7 +108,7 @@ const Navbar = () => {
                 {user?.uid ? (
                   <Menu as="div" className="relative ml-3">
                     <div>
-                      <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 basis-1/3">
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"

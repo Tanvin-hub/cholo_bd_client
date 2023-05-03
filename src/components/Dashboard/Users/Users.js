@@ -8,7 +8,7 @@ const Users = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/admin/all-users").then((res) => res.json()),
+      fetch("http://localhost:5000/admin/all-users").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -17,7 +17,7 @@ const Users = () => {
     );
 
     if (proceed) {
-      fetch(`https://cholo-bd-server.vercel.app/users/${id}`, {
+      fetch(`http://localhost:5000/users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -7,16 +7,14 @@ import { Link } from "react-router-dom";
 const SpecialOffer = () => {
   const { data: offers = [] } = useQuery({
     queryKey: ["offers"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/offers").then((res) => res.json()),
+    queryFn: () => fetch("http://localhost:5000/offers").then((res) => res.json()),
   });
-
-  console.log(offers)
 
   return (
     <section className="container mx-auto pt-32 pl-32 pr-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
-          <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+          <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[610px]">
             <span className="font-semibold text-lg text-primary mb-2 block capitalize">
               Special Offer
             </span>
@@ -31,37 +29,17 @@ const SpecialOffer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto border ">
+      <div className="container mx-auto ">
         <div className="grid grid-cols-3 gap-6 items-center justify-center">
           {offers?.map((offer) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">
                 <img
                   src={offer?.detailsImg}
-                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full border border-primary"
+                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                   alt=""
                 />
-                <button className="absolute top-6 right-6 flex items-center justify-center rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer">
-                  <div className="flex h-full w-full items-center justify-center rounded-full text-xl hover:bg-gray-50">
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 512 512"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="32"
-                        d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
+              
               </div>
 
               <div className="px-6 py-3">

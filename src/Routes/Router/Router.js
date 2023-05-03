@@ -26,11 +26,12 @@ import ServicesDash from "../../components/Dashboard/SevicesDash/ServicesDash";
 import ServicesData from "../../components/Dashboard/ServicesData/ServicesData";
 import Booking from "../../components/Booking/Booking";
 import Users from "../../components/Dashboard/Users/Users";
-import PrivateRoute from "../PrivateRoute/PrivateRoute"
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MakeAdmin from "../../components/Dashboard/MakeAdmin/MakeAdmin";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import MainTrip from "../../components/Trip/Trip/MainTrip";
-
+import PaymentSuccess from "../../components/Booking/PaymentSuccess";
+import PaymentFail from "../../components/Booking/PaymentFail";
 
 const router = createBrowserRouter([
   {
@@ -56,8 +57,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/offers/:id",
-        element: <OfferDetails/>,
-        loader: ({ params }) =>  fetch(`https://cholo-bd-server.vercel.app/offers/${params.id}`),},
+        element: <OfferDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/offers/${params.id}`),
+      },
       {
         path: "/trip",
         element: <MainTrip />,
@@ -77,13 +80,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/review",
-        element: <PrivateRoute><Review /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Review />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/trips/:id",
         element: <TripDetails />,
         loader: ({ params }) =>
-          fetch(`https://cholo-bd-server.vercel.app/trips/${params.id}`),
+          fetch(`http://localhost:5000/trips/${params.id}`),
       },
       {
         path: "/tab",
@@ -92,59 +99,126 @@ const router = createBrowserRouter([
 
       {
         path: "/accordion",
-        element: <Accordion />
+        element: <Accordion />,
       },
       {
         path: "/booking",
-        element:<PrivateRoute> <Booking/></PrivateRoute>
-      }
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Booking />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/payment/success",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <PaymentSuccess/>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/payment/fail",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <PaymentFail/>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
     path: "/",
-    element: <AdminRoute><Dashboard /></AdminRoute>,
+    element: (
+      <AdminRoute>
+        <Dashboard />
+      </AdminRoute>
+    ),
     children: [
       {
-          path: "/dashboard",
-          element: <AdminRoute><Dashboard /></AdminRoute>,
-        },
-        {
-          path: "/sidebar",
-          element: <AdminRoute><Sidebar /></AdminRoute>,
-        },
-    ]
+        path: "/dashboard",
+        element: (
+          <AdminRoute>
+            <Dashboard />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/sidebar",
+        element: (
+          <AdminRoute>
+            <Sidebar />
+          </AdminRoute>
+        ),
+      },
+    ],
   },
   {
     path: "/tripdash",
-    element: <AdminRoute><TripDash /></AdminRoute>,
+    element: (
+      <AdminRoute>
+        <TripDash />
+      </AdminRoute>
+    ),
   },
   {
     path: "/tripdata",
-    element: <AdminRoute><TripData /></AdminRoute>,
+    element: (
+      <AdminRoute>
+        <TripData />
+      </AdminRoute>
+    ),
   },
   {
     path: "/offerDash",
-    element: <AdminRoute><OfferDash /></AdminRoute>
+    element: (
+      <AdminRoute>
+        <OfferDash />
+      </AdminRoute>
+    ),
   },
   {
     path: "/offerdata",
-    element: <AdminRoute><OfferData /></AdminRoute>,
+    element: (
+      <AdminRoute>
+        <OfferData />
+      </AdminRoute>
+    ),
   },
   {
     path: "/servicesDash",
-    element: <AdminRoute><ServicesDash /></AdminRoute>
+    element: (
+      <AdminRoute>
+        <ServicesDash />
+      </AdminRoute>
+    ),
   },
   {
     path: "/servicesData",
-    element: <AdminRoute><ServicesData/></AdminRoute>
+    element: (
+      <AdminRoute>
+        <ServicesData />
+      </AdminRoute>
+    ),
   },
   {
     path: "/makeAdmin",
-    element: <AdminRoute><MakeAdmin /></AdminRoute>
+    element: (
+      <AdminRoute>
+        <MakeAdmin />
+      </AdminRoute>
+    ),
   },
   {
     path: "/users",
-    element: <AdminRoute><Users /></AdminRoute>
+    element: (
+      <AdminRoute>
+        <Users />
+      </AdminRoute>
+    ),
   },
 ]);
 

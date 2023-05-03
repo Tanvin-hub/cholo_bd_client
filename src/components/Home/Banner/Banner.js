@@ -33,7 +33,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="absolute border-primary border -bottom-[66px] left-[15%] w-[70%] mx-auto py-8 px-6 
+      <div className="absolute border-primary border -bottom-[66px] left-[10%] max-w-[80%] mx-auto py-8 px-6 
       rounded-2xl bg-white text-black shadow-xl">
         <form className=" sm grid grid-cols-4 gap-6 items-center">
           <div>

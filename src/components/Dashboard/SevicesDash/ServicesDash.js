@@ -13,7 +13,7 @@ const ServicesDash = () => {
       icon: data.icon,
       desc: data.desc
     }
-    fetch('https://cholo-bd-server.vercel.app/admin/services', {
+    fetch('http://localhost:5000/admin/services', {
       method: 'POST',
       headers:
       {

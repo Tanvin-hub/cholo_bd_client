@@ -6,7 +6,7 @@ import Trip from "./Trip";
 
 const MainTrip = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <ScrollToTop />
       <section className="con-img text-white h-[500px] relative mb-[230vh]">
         <div className="overlay h-[500px]">

@@ -7,8 +7,9 @@ const Trip = () => {
   const { data: trips = [] } = useQuery({
     queryKey: ["trips"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/trips").then((res) => res.json()),
+      fetch("http://localhost:5000/trips").then((res) => res.json()),
   });
+  console.log(trips)
   return (
     <div
       className="w-[90%] mx-auto py-8 pl-6 pr-6 
@@ -20,37 +21,9 @@ const Trip = () => {
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-                  className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
+                  src={trip?.img}
                   alt=""
                 />
-                <button
-                  className="absolute top-6 right-6 flex items-center justify-center 
-                  rounded-full bg-primary text-white p-2 text-brand-500 hover:cursor-pointer"
-                >
-                  <div
-                    className="flex h-full w-full items-center justify-center 
-                      rounded-full text-xl hover:bg-gray-50"
-                  >
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 512 512"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="32"
-                        d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
               </div>
 
               <div className="px-6 py-3">
