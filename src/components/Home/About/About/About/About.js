@@ -4,7 +4,7 @@ import AboutSec from "../../AboutSec";
 
 const About = () => {
   return (
-    <section className="con-img text-white h-[40vh] relative mb-[100vh]">
+    <section className="con-img text-white h-[40vh] relative mb-[100vh] md:mb-[800px] lg:mb-[500px]">
       <div className="overlay h-[40vh]">
         <div className="py-12 md:py-20">
           <div
@@ -30,8 +30,8 @@ const About = () => {
           </div>
 
           <div
-            className="absolute border border-primary top-[80%] left-[5%] w-[90%] mx-auto px-6 
-            md:px-32 rounded-2xl bg-white text-black shadow-xl"
+            className="absolute border border-primary top-[80%] md:top-[70%] left-[5%] w-[90%] mx-auto px-6 
+            lg:px-0 lg:py-12 rounded-2xl bg-white text-black shadow-xl"
           >
             <AboutSec />
           </div>

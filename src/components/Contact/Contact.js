@@ -73,7 +73,7 @@ const Contact = () => {
         </div>
 
         <div
-          className="absolute border top-[80%] left-[5%] w-[90%] h-[110vh] mx-auto px-6 md:px-32 py-12
+          className="absolute border top-[80%] md:top-70% left-[5%] w-[90%] h-[110vh] mx-auto px-6 lg:px-32 py-12
           rounded-2xl bg-white text-black shadow-xl border-primary"
         >
           <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">

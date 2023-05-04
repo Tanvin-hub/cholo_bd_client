@@ -17,7 +17,7 @@ const Testimonial = () => {
   console.log(testimonials)
 
   return (
-    <section className="my-20 container mx-auto px-6 md:px-32 ">
+    <section className="my-20 container mx-auto px-6 lg:px-32 ">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 max-w-[610px]">
@@ -65,7 +65,7 @@ const Testimonial = () => {
       >
         {testimonials?.map((testimonial) => (
           <SwiperSlide>
-            <div className="border border-primary w-full py-4 px-8 bg-white shadow-lg rounded-lg my-12">
+            <div className="border border-primary w-full py-4 px-8 bg-white shadow-lg rounded-lg my-12 md:w-4/5 lg:w-1/2">
               <div className="flex justify-center md:justify-center -mt-16">
                 <img
                   className="w-20 h-20 object-cover rounded-full border-2 border-primary"

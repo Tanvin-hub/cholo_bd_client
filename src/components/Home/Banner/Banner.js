@@ -34,7 +34,7 @@ const Banner = () => {
           </div>
         </div>
         <div
-          className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 
+          className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] lg:-bottom-[4rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 
       rounded-2xl bg-white text-black shadow-xl"
         >
           <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">

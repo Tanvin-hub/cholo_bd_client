@@ -3,9 +3,9 @@ import React from 'react'
 const AboutSec = () => {
   return (
     <div>
-    <div className="container mx-auto px-12 md:px-32 pb-8">
+    <div className="container mx-auto px-12 lg:px-32 pb-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="mt-40">
+        <div className="mt-40 lg:mt-0">
           <span className="text-primary text-md md:text-lg">About Us</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-6 leading-tight">Welcome To Cholo Bangladesh</h2>
           <p className="text-slate-500 text-md md:text-lg mb-6">
