@@ -5,27 +5,29 @@ import { toast } from 'react-hot-toast';
 
 const Booking = (tour) => {
   const {_id, price, title} = tour.tour;
+  console.log(tour.tour)
   const {user} = useContext(AuthContext)
-
-  const [booking, setBooking] = useState({
-    userId: user && user._id,
-    userEmail: user && user.email,
-    serviceID: _id,
-    tourName: title, 
-    fullName: "",
-    phone: "a2324",
-    guest: 1,
-    bookingDate: ""
-  })
+  const [book, setBook] = useState()
 
   const handleChange = e => {
-    setBooking(prev => ({...prev, [e.target.id]: e.target.value}))
+    setBook(prev => ({...prev, [e.target.id]: e.target.value}))
   };
 
-  const totalAmount = Number(price) * Number(booking.guest);
+  const totalAmount = Number(price) * Number(book?.guest);
 
   const handleClick = async e => {
     e.preventDefault()
+    const booking = {
+      userId: user && user._id,
+      userEmail: user && user.email,
+      serviceID: _id,
+      tourName: title, 
+      fullName: book?.fullName,
+      phone: book?.phone,
+      guest: book?.guest,
+      bookingDate: "",
+      totalAmount: totalAmount
+    }
     try {
       if(!user || user===undefined || user===null) {
         return(toast("Please sign in"))

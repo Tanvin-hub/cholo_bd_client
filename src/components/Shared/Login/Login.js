@@ -303,7 +303,7 @@ const Login = () => {
                 <div className="text-center">
                   <a
                     className="inline-block text-sm text-primary align-baseline hover:text-primary"
-                    href="./index.html"
+                    
                   >
                     Don't have an account?  <Link to="/register">Register!</Link>
                   </a>

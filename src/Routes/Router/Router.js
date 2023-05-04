@@ -32,6 +32,7 @@ import AdminRoute from "../AdminRoute/AdminRoute";
 import MainTrip from "../../components/Trip/Trip/MainTrip";
 import PaymentSuccess from "../../components/Booking/PaymentSuccess";
 import PaymentFail from "../../components/Booking/PaymentFail";
+import Bookings from "../../components/Dashboard/Bookings/Bookings";
 
 const router = createBrowserRouter([
   {
@@ -112,11 +113,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/payment/success",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <PaymentSuccess/>
-          </PrivateRoute>
+        element: (<PrivateRoute><PaymentSuccess/></PrivateRoute>
         ),
       },
       {
@@ -217,6 +214,14 @@ const router = createBrowserRouter([
     element: (
       <AdminRoute>
         <Users />
+      </AdminRoute>
+    ),
+  },
+  {
+    path: "/bookings",
+    element: (
+      <AdminRoute>
+        <Bookings />
       </AdminRoute>
     ),
   },

@@ -3,6 +3,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
+import { MdDeleteSweep } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
 
 const Users = () => {
   const { data: users = [], refetch } = useQuery({
@@ -23,56 +25,97 @@ const Users = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            refetch()
+            refetch();
             toast.error("User Removed Successfully");
           }
         });
     }
   };
 
+  console.log(users);
+
   return (
     <div>
       <DashboardNavbar />
       <Sidebar />
-      <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-        <div className="text-gray-900 container mx-auto px-8">
-          <div className="p-4 flex">
-            <h6 className="font-bold text-2xl mb-8 text-center text-zinc-700">
-              Users
-            </h6>
-          </div>
-          <div className="px-3 py-4 flex justify-center">
-            <table className="w-full text-md bg-white rounded mb-4 shadow-lg">
-              <tbody>
-                <tr className="border-b">
-                  <th className="text-left p-3 px-5">Name</th>
-                  <th className="text-left p-3 px-5">Email</th>
-                  <th className="text-left p-3 px-5">Role</th>
-                  <th></th>
-                </tr>
+      <section className="container mx-auto px-6 lg:pl-[17rem] overflow-hidden">
+        <div class="flex flex-col">
+          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+              <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead class="bg-gray-50 dark:bg-gray-800">
+                    <tr>
+                      <th
+                        scope="col"
+                        class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      ></th>
+                      <th
+                        scope="col"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        Name
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        Email
+                      </th>
 
-                {users?.map((user) => <tr className="border-b hover:bg-orange-100 bg-gray-100">
-                    <td className="p-3 px-5">
-                        <input type="text" value={user.name} className="bg-transparent"/></td>
-                    <td className="p-3 px-5">
-                        <input type="text" value={user.email} className="bg-transparent"/></td>
-                    <td className="p-3 px-5">
-                        <select value="user.role" className="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td className="p-3 px-5 flex justify-end"><button type="button" 
-                    className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 
-                    text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button>
-                    <button onClick={() => handleRemove(user._id)} type="button" className="text-sm bg-red-500 hover:bg-red-700 
-                    text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Ban</button></td>
-                </tr>)}
-              </tbody>
-            </table>
+                      <th
+                        scope="col"
+                        class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      >
+                        Role
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                    <>
+                      {users?.map((user) => (
+                        <tr>
+                          <td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            <div class="inline-flex items-center gap-x-3">
+                              <button
+                                onClick={() => handleRemove(user._id)}
+                                className="font-semibold leading-tight text-2xl text-red-400"
+                              >
+                                <MdDeleteSweep />
+                              </button>
+                            </div>
+                          </td>
+                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            <div class="flex items-center gap-x-2">
+                              <img
+                                class="object-cover w-8 h-8 rounded-full"
+                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                                alt=""
+                              />
+                              <div>
+                                <p class="text-xs font-normal text-gray-600 dark:text-gray-400">
+                                  {user?.name}
+                                </p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            {user?.email}
+                          </td>
+                          <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                            {user?.role}
+                          </td>
+                     
+                        </tr>
+                      ))}
+                    </>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

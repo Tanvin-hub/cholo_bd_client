@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation, useSearchParams } from 'react-router-dom';
+import React from 'react'
+import { useLocation } from 'react-router-dom';
 
 const PaymentSuccess = () => {
     const location = useLocation();
-    const query = new URLSearchParams(location.search);
-    const transactionId = query.get("a");
-    console.log(transactionId)
-
-    const [booking, setbooking] = useState({});
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/bookings/by-transaction-id/${transactionId}`)
-    //     .then(res => res.json())
-    //     .then(data => setbooking(data));
-    //   }, [transactionId])
 
   return (
     <div  className="container mx-auto pt-32 pl-32 pr-32">
