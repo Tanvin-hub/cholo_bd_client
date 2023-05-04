@@ -5,7 +5,7 @@ import Contact from "../../components/Contact/Contact";
 import SpecialOffer from "../../components/Home/Offer/SpecialOffer/SpecialOffer";
 import Trip from "../../components/Trip/Trip/MainTrip";
 import Services from "../../components/Home/Services/Services";
-import About from "../../components/Home/About/About/About";
+import About from "../../components/Home/About/About/About/About";
 import Login from "../../components/Shared/Login/Login";
 import Register from "../../components/Shared/Register/Register";
 import Review from "../../components/Home/Review/Review";

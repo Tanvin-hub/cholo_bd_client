@@ -8,7 +8,7 @@ const Services = () => {
   });
 
   return (
-    <section className="container mx-auto pt-24 pl-32 pr-32">
+    <section className="container mx-auto px-6 md:px-32 mt-16">
       <div>
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
@@ -19,7 +19,7 @@ const Services = () => {
               <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading+-">
                 What We Offer
               </h2>
-              <p className="text-slate-500 text-body-color">
+              <p className="text-slate-500 text-body-color text-md md:text-lg">
                 There are many variations of passages of Lorem Ipsum available
                 but the majority have suffered alteration in some form.
               </p>

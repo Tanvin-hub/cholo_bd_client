@@ -9,7 +9,7 @@ const Trip = () => {
     queryFn: () =>
       fetch("http://localhost:5000/trips").then((res) => res.json()),
   });
-  console.log(trips)
+  console.log(trips);
   return (
     <div
       className="w-[90%] mx-auto py-8 pl-6 pr-6 
@@ -20,10 +20,7 @@ const Trip = () => {
           {trips?.map((trip) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4">
-                <img
-                  src={trip?.img}
-                  alt=""
-                />
+                <img src={trip?.img} alt="" />
               </div>
 
               <div className="px-6 py-3">

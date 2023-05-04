@@ -11,17 +11,17 @@ const SpecialOffer = () => {
   });
 
   return (
-    <section className="container mx-auto pt-32 pl-32 pr-32">
+    <section className="container mx-auto px-6 md:px-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[610px]">
             <span className="font-semibold text-lg text-primary mb-2 block capitalize">
               Special Offer
             </span>
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading capitalize">
               Offer given by us
             </h2>
-            <p className="text-slate-500 text-body-color">
+            <p className="text-slate-500 text-body-color text-md md:text-lg">
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.
             </p>
@@ -30,7 +30,7 @@ const SpecialOffer = () => {
       </div>
 
       <div className="container mx-auto ">
-        <div className="grid grid-cols-3 gap-6 items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 items-center justify-center">
           {offers?.map((offer) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">

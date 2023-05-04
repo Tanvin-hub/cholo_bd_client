@@ -3,17 +3,17 @@ import React from 'react'
 const AboutSec = () => {
   return (
     <div>
-           <div className="container mx-auto px-32 py-20">
-      <div className="grid grid-cols-2 gap-6">
-        <div className="mt-10">
-          <span className="text-primary text-lg">About Us</span>
-          <h2 className="text-5xl font-bold mt-2 mb-6 leading-tight">Welcome To Cholo Bangladesh</h2>
-          <p className="text-slate-500 text-xl mb-12">
+    <div className="container mx-auto px-6 md:px-32 py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-20">
+          <span className="text-primary text-md md:text-lg">About Us</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-6 leading-tight">Welcome To Cholo Bangladesh</h2>
+          <p className="text-slate-500 text-md md:text-lg mb-6">
             With over 340 hotels worldwide, NH Hotel Group offers a wide variety
             of hotels catering for a perfect stay no matter where your
             destination.
           </p>
-          <p className="text-xl">Manager: <span className="text-primary">John Doe</span></p>
+          <p className="text-lg">Manager: <span className="text-primary">John Doe</span></p>
         </div>
         <div className="grid  grid-flow-row gap-4">
           <div>
