@@ -38,16 +38,15 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <section className="con-img text-white h-[500px] relative mb-[1300px]">
-        <div className="overlay h-[500px]">
+      <section className="con-img text-white h-[40vh] relative mb-[1700px] md:mb-[1300px]">
+        <div className="overlay h-[40vh]">
           <div className="py-12 md:py-20">
             <div
               className="text-white md:pt-42 md:absolute md:top-[35%] 
           md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center"
             >
               <h1
-                className="text-4xl md:text-5xl font-extrabold capitalize
+                className="text-4xl md:text-5xl pt-12 font-extrabold capitalize
             sm:text-center heading"
               >
                 Contact Us
@@ -74,10 +73,10 @@ const Contact = () => {
         </div>
 
         <div
-          className="absolute border  -bottom-[100%] left-[5%] w-[90%] h-[110vh] mx-auto py-8 pl-6 pr-12 
-      rounded-2xl bg-white text-black shadow-xl border-primary"
+          className="absolute border top-[80%] left-[5%] w-[90%] h-[110vh] mx-auto px-6 md:px-32 py-12
+          rounded-2xl bg-white text-black shadow-xl border-primary"
         >
-          <form className="grid grid-cols-4 gap-6 items-center justify-center">
+          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
             <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
               <div className="text-primary text-3xl  mb-4">
                 <BsFillTelephoneFill />
@@ -126,8 +125,8 @@ const Contact = () => {
             </div>
           </form>
 
-          <div className="mt-10 ml-7">
-            <div className="px-3 py-5">
+          <div className="mt-16">
+            <div className="md:px-3 py-5">
               <div
                 style={{
                   height: "65vh",
@@ -149,7 +148,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="mt-48">
+          <div className="mt-12 md:mt-48">
             <div className=" -mx-4">
               <div className="w-full px-4">
                 <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
@@ -168,7 +167,7 @@ const Contact = () => {
               onSubmit={sendEmail}
               className="mx-auto mt-16  sm:mt-20"
             >
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                 <div>
                   <label
                     for="first-name"
@@ -176,14 +175,14 @@ const Contact = () => {
                   >
                     First name
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-2">
                     <input
                       type="text"
                       name="first-name"
                       id="first-name"
                       autocomplete="given-name"
                       placeholder="Enter Your Name"
-                      className="block w-full  border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                      className="block w-full  border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6 rounded-lg"
                     />
                   </div>
                 </div>
@@ -195,14 +194,14 @@ const Contact = () => {
                   >
                     Email
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-2">
                     <input
                       type="email"
                       name="email"
                       id="email"
                       autocomplete="email"
                       placeholder="Enter Your Email"
-                      className="block w-full  border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400   sm:text-sm sm:leading-6"
+                      className="block w-full  border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400   sm:text-sm sm:leading-6 rounded-lg"
                     />
                   </div>
                 </div>
@@ -214,13 +213,13 @@ const Contact = () => {
                   >
                     Message
                   </label>
-                  <div className="mt-2.5">
+                  <div className="mt-2">
                     <textarea
                       name="message"
                       id="message"
                       rows="4"
                       placeholder="Enter Your Message"
-                      className="block w-full  border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2  sm:text-sm sm:leading-6"
+                      className="block w-full  border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2  sm:text-sm sm:leading-6 rounded-lg"
                     ></textarea>
                   </div>
                 </div>
@@ -237,7 +236,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
   );
 };
 

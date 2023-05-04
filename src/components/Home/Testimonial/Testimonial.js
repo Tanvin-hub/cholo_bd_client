@@ -17,7 +17,7 @@ const Testimonial = () => {
   console.log(testimonials)
 
   return (
-    <section className="my-20 container mx-auto px-6 md:px-32">
+    <section className="my-20 container mx-auto px-6 md:px-32 ">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 max-w-[610px]">

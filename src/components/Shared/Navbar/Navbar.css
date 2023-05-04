@@ -19,3 +19,7 @@
 .navbar.navbar.active .item {
   color: #fff !important;
 }
+
+.myBgColor {
+  background-color: #1cc3b2;
+}

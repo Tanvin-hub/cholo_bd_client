@@ -9,11 +9,9 @@ const Trip = () => {
     queryFn: () =>
       fetch("http://localhost:5000/trips").then((res) => res.json()),
   });
-  console.log(trips);
+  
   return (
-    <div
-      className="container mx-auto px-6 md:px-32 rounded-2xl bg-white text-black"
-    >
+    <div className="container mx-auto rounded-2xl bg-white text-black">
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center ">
           {trips?.map((trip) => (
