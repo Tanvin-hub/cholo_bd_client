@@ -11,7 +11,7 @@ const SpecialOffer = () => {
   });
 
   return (
-    <section className="container mx-auto px-6 md:px-32">
+    <section className="container mx-auto px-6 lg:px-32 my-12">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[610px]">
@@ -30,7 +30,7 @@ const SpecialOffer = () => {
       </div>
 
       <div className="container mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center">
           {offers?.map((offer) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">

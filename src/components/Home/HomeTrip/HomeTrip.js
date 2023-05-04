@@ -3,7 +3,7 @@ import Trip from '../../Trip/Trip/Trip'
 
 const HomeTrip = () => {
   return (
-    <section className="container mx-auto px-6 md:px-32">
+    <section className="container mx-auto px-6 lg:px-32 my-12">
     <div className="flex flex-wrap -mx-4">
       <div className="w-full px-4">
         <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[610px]">

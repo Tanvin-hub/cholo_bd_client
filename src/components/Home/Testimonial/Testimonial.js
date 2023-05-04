@@ -9,7 +9,7 @@ const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
     queryFn: () =>
-      fetch("http://localhost:5000/reviews").then((res) =>
+      fetch("http://localhost:5000/testimonials").then((res) =>
         res.json()
       ),
   });
@@ -51,21 +51,21 @@ const Testimonial = () => {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 1,
+            spaceBetween: 30,
           },
           768: {
             slidesPerView: 1,
-            spaceBetween: 1,
+            spaceBetween: 30,
           },
           1024: {
             slidesPerView: 1,
-            spaceBetween: 1,
+            spaceBetween: 40,
           },
         }}
       >
         {testimonials?.map((testimonial) => (
           <SwiperSlide>
-            <div className="border border-primary max-w-xl py-4 px-8 bg-white shadow-lg rounded-lg my-12">
+            <div className="border border-primary w-full py-4 px-8 bg-white shadow-lg rounded-lg my-12">
               <div className="flex justify-center md:justify-center -mt-16">
                 <img
                   className="w-20 h-20 object-cover rounded-full border-2 border-primary"

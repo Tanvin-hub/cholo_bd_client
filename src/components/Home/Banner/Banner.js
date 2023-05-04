@@ -8,8 +8,8 @@ const Banner = () => {
         <div className="overlay h-screen md:h-[500px]">
           <div className="container mx-auto pt-24 px-6 py-12 md:py-20 ">
             <div
-              className="text-white md:pt-42 md:absolute md:top-[48%] 
-              md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center"
+              className="text-white md:pt-42 md:absolute md:top-[48%]
+              md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center md:w-4/5"
             >
               <h1
                 className="text-4xl md:text-5xl font-extrabold capitalize
@@ -34,10 +34,10 @@ const Banner = () => {
           </div>
         </div>
         <div
-          className="absolute border-primary border -bottom-[15rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 
+          className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 
       rounded-2xl bg-white text-black shadow-xl"
         >
-          <form className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
+          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
             <div>
               <label className="font-medium">Location</label>
               <input
