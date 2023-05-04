@@ -60,7 +60,7 @@ const Navbar = () => {
       className={
         navbar
           ? "navbar active myBgColor item fixed top-0 z-10 w-screen px-6 py-3 transition-all duration-300 ease-in-out"
-          : "navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 item"
+          : "navbar fixed top-0 z-10 h-6 w-screen px-6 py-3 item "
       }
       style={{ color: getColor("/") }}
     >
@@ -198,7 +198,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="sm:hidden bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg rounded-lg">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -207,7 +207,7 @@ const Navbar = () => {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white"
+                      ? "bg-primary text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}

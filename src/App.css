@@ -59,10 +59,6 @@ li:hover > button svg {
   background-color: #1cc3b2;
 }
 
-.heading {
-  line-height: 4rem;
-}
-
 /* SWIPER SLIDER */
 .swiper {
   width: 100%;
