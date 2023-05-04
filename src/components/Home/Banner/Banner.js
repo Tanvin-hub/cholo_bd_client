@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+  const [query, setQuery] = useState();
+
+  const { data: trips = [],refetch } = useQuery({
+    queryKey: ["trips"],
+    queryFn: () =>
+      fetch("http://localhost:5000/trips").then((res) =>
+        res.json()
+      ),
+  });
+  console.log(trips.filter(trip => trip.title.toLowerCase().includes("ja")))
   return (
     <div>
       <section className="banner text-white h-screen md:h-[500px] mb-32 relative">
@@ -34,16 +45,15 @@ const Banner = () => {
           </div>
         </div>
         <div
-          className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] lg:-bottom-[4rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 
-      rounded-2xl bg-white text-black shadow-xl"
-        >
+          className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] lg:-bottom-[4rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 rounded-2xl bg-white text-black shadow-xl">
           <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
             <div>
               <label className="font-medium">Location</label>
               <input
                 type="text"
+                onChange={(e) => setQuery(e.target.value)}
                 className="w-full rounded bg-gray-200 text-black 
-            outline-none py-3 px-6 mt-2"
+                outline-none py-3 px-6 mt-2"
                 placeholder="Dream Destination"
               />
             </div>
@@ -76,6 +86,15 @@ const Banner = () => {
             </div>
           </form>
         </div>
+        <ul className="bg-black">
+            {
+              trips.map(trip => {
+                <li key={trip._id}>
+                  {trip?.title}
+                </li>
+              })
+            }
+          </ul>
       </section>
     </div>
   );
