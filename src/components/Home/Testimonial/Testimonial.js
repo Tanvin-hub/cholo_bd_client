@@ -17,17 +17,17 @@ const Testimonial = () => {
   console.log(testimonials)
 
   return (
-    <section className="my-20 container mx-auto px-32">
+    <section className="my-20 container mx-auto px-6 md:px-32">
       <div className="flex flex-wrap -mx-4">
         <div className="w-full px-4">
           <div className="text-center mx-auto mb-12 max-w-[610px]">
             <span className="font-semibold text-lg text-primary mb-2 block">
               Testimonial
             </span>
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-4 custom-leading">
+            <h2 className="font-bold text-3xl mb-4 custom-leading capitalize">
               What Client says about us
             </h2>
-            <p className="text-base text-body-color">
+            <p className="text-base text-body-color text-md md:text-lg">
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.
             </p>

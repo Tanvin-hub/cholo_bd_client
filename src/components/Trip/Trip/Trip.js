@@ -12,11 +12,10 @@ const Trip = () => {
   console.log(trips);
   return (
     <div
-      className="w-[90%] mx-auto py-8 pl-6 pr-6 
-  rounded-2xl bg-white text-black"
+      className="container mx-auto px-6 md:px-32 rounded-2xl bg-white text-black"
     >
       <div className="">
-        <div className="grid grid-cols-3 gap-6 items-center justify-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center ">
           {trips?.map((trip) => (
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4">
