@@ -7,7 +7,7 @@ const Trip = () => {
   const { data: trips = [] } = useQuery({
     queryKey: ["trips"],
     queryFn: () =>
-      fetch("http://localhost:5000/trips").then((res) => res.json()),
+      fetch("https://cholo-bd-server.vercel.app/trips").then((res) => res.json()),
   });
   
   return (

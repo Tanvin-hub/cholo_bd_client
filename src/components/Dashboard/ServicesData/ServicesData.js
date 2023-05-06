@@ -10,7 +10,7 @@ import toast from "react-hot-toast"
 const ServicesData = () => {
   const { data: servicesData = [], refetch  } = useQuery({
     queryKey: ["servicesData"],
-    queryFn: () => fetch("http://localhost:5000/admin/services").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/services").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -19,7 +19,7 @@ const ServicesData = () => {
     );
 
     if (proceed) {
-      fetch(`http://localhost:5000/services/${id}`, {
+      fetch(`https://cholo-bd-server.vercel.app/services/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

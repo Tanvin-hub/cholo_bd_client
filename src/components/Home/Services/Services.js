@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 const Services = () => {
   const { data: services = [] } = useQuery({
     queryKey: ["services"],
-    queryFn: () => fetch("http://localhost:5000/admin/services").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/services").then((res) => res.json()),
   });
 
   return (

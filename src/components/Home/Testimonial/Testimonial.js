@@ -9,7 +9,7 @@ const Testimonial = () => {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
     queryFn: () =>
-      fetch("http://localhost:5000/testimonials").then((res) =>
+      fetch("https://cholo-bd-server.vercel.app/testimonials").then((res) =>
         res.json()
       ),
   });
