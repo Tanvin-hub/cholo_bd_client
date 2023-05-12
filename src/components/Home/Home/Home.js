@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <AboutSec/>
+      {/* <AboutSec/> */}
       <SpecialOffer />
       <Services />
       <HomeTrip />
