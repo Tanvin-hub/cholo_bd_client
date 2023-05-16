@@ -4,7 +4,7 @@ import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
 import { MdDeleteSweep } from "react-icons/md";
-import { FiEdit } from "react-icons/fi";
+
 
 const Users = () => {
   const { data: users = [], refetch } = useQuery({

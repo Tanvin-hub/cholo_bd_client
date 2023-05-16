@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../../../ScrollToTop";
-import Trip from "./Trip"
+import Trip from "./Trip";
 
 const MainTrip = () => {
   return (
@@ -10,10 +10,12 @@ const MainTrip = () => {
         <div className="py-12 md:py-20">
           <div
             className="text-white pt-12 md:pt-42 md:absolute md:top-[35%] 
-          md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center">
+          md:left-1/2 md:-translate-x-2/4 md:-translate-y-2/4 flex flex-col items-center"
+          >
             <h1
               className="text-3xl md:text-4xl font-extrabold capitalize
-              sm:text-center heading">
+              sm:text-center heading"
+            >
               Upcoming Trip
             </h1>
 
@@ -34,7 +36,7 @@ const MainTrip = () => {
             className="absolute top-[80%] md:top-[70%] left-[5%] w-[90%] mx-auto px-6 
             lg:px-0 rounded-2xl text-black"
           >
-            <Trip/>
+            <Trip />
           </div>
         </div>
       </div>

@@ -54,6 +54,8 @@ const Navbar = () => {
       });
   };
 
+console.log(user)
+
   return (
     <Disclosure
       as="nav"
@@ -132,18 +134,31 @@ const Navbar = () => {
                       rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 
                       focus:outline-none"
                         >
-                          <Menu.Item>
+                          {/* <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="/"
+                              <Link
+                                to="/profile"
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 Your Profile
-                              </a>
+                              </Link>
                             )}
+                          </Menu.Item> */}
+                           <Menu.Item>
+                            <>
+                              {isAdmin === true && (
+                                <Link
+                                  to="/profile"
+                                  className="bg-gray-100
+                              block px-4 py-2 text-sm text-gray-700"
+                                >
+                                  Profile
+                                </Link>
+                              )}
+                            </>
                           </Menu.Item>
                           <Menu.Item>
                             <>

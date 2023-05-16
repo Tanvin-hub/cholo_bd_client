@@ -4,7 +4,7 @@ import { AuthContext } from "../../../Context/AuthProvider";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { GoogleAuthProvider } from "@firebase/auth";
-import ScrollToTop from "../../../ScrollToTop";
+
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -301,12 +301,12 @@ const Login = () => {
                   </Link>
                 </div>
                 <div className="text-center">
-                  <a
+                  <Link
                     className="inline-block text-sm text-primary align-baseline hover:text-primary"
                     
                   >
                     Don't have an account?  <Link to="/register">Register!</Link>
-                  </a>
+                  </Link>
                 </div>
               </form>
             </div>

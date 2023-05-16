@@ -1,39 +1,56 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import Navbar from "../Shared/Navbar/Navbar";
+import { AuthContext } from "../../Context/AuthProvider";
+
 
 const Error = () => {
+  const { user } = useContext(AuthContext);
   return (
-    <section>
-      <div className="w-full h-screen flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-3xl md:text-4xl lg:text-5xl text-gray-800 mt-12">
-            Page Not Found
-          </p>
-          <p className="md:text-lg lg:text-xl text-gray-600 mt-8">
-            Sorry, the page you are looking for could not be found.
-          </p>
-          <Link
-            to="/"
-            className="flex items-center space-x-2 bg-primary hover:bg-transparent border border-primary text-white hover:text-black px-4 py-2 mt-12 rounded transition duration-150"
-            title="Return Home"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <span>Return Home</span>
-          </Link>
+    <div>
+<Navbar></Navbar>
+<div class="flex items-center h-screen w-full justify-center">
+
+<div class="max-w-xs">
+    <div class="bg-white shadow-xl rounded-lg py-3">
+        <div class="photo-wrapper p-2">
+            <img class="w-32 h-32 rounded-full mx-auto" src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp" alt="John Doe"/>
         </div>
-      </div>
-    </section>
+      
+
+        <div class="p-2">
+        {user?.uid ? (
+              <>
+            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">
+            {user?.displayName}
+            </h3>
+            <div class="text-center text-gray-400 text-xs font-semibold">
+                <p>Admin</p>
+            </div>
+            <table class="text-xs my-3">
+                <tbody><tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
+                    <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
+                </tr>
+                <tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
+                    <td class="px-2 py-2">{user?.contact}</td>
+                </tr>
+                <tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
+                    <td class="px-2 py-2">{ user?.email}</td>
+                </tr>
+            </tbody></table>
+
+             
+            </>
+             ) : (
+              <h3 className="text-xl">No user data found</h3>
+)}
+        </div>
+    </div>
+</div>
+</div>
+</div>
   );
 };
 
