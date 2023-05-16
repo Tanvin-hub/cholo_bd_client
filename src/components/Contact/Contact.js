@@ -75,26 +75,11 @@ const Contact = () => {
       <div
         className="absolute border top-[80%] md:top-70% left-[5%] w-[90%] h-[110vh] mx-auto px-6 lg:px-32 py-12
           rounded-2xl bg-white text-black shadow-xl border-primary"
-<<<<<<< HEAD
       >
         <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
           <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
             <div className="text-primary text-3xl  mb-4">
               <BsFillTelephoneFill />
-=======
-        >
-          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
-            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
-              <div className="text-primary text-3xl  mb-4">
-                <BsFillTelephoneFill />
-              </div>
-              <label className="font-medium text-xl text-gray-600 ">
-                Phone
-              </label>
-              <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
-                +123456789011
-              </h1>
->>>>>>> d4ee6b2240b8d3c4e043bc4bb152c33902c910c8
             </div>
             <label className="font-medium text-xl text-gray-600 ">Phone</label>
             <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
