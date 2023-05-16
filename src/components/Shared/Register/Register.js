@@ -15,7 +15,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    createUser(data.email, data.password, data.contact, data.address)
+    createUser(data.email, data.password, data.contact, data.address, data.photoURL)
       .then((result) => {
         const user = result.user;
         // verifyEmail()
@@ -26,10 +26,11 @@ const Register = () => {
           displayName: data.name,
           contact: data.contact,
           address: data.address,
+          photoURL: data.photoURL
         };
 
         updateUser(userInfo).then(() => {
-          savedUsertoDb(data.name, data.email, data.contact, data.address);
+          savedUsertoDb(data.name, data.email, data.contact, data.address, data.photoURL);
         });
       })
       .catch((error) => {
@@ -49,12 +50,13 @@ const Register = () => {
       });
   };
 
-  const savedUsertoDb = (name, email, contact, address) => {
+  const savedUsertoDb = (name, email, contact, address, photoURL) => {
     const user = {
       name,
       email,
       contact,
-      address
+      address,
+      
     };
 
     fetch("https://cholo-bd-server.vercel.app/users", {
@@ -289,6 +291,9 @@ const Register = () => {
                 className="px-8 pt-6 pb-8 mb-4 bg-white rounded"
               >
                 <div className="mb-4 md:flex md:justify-between">
+                  
+           
+
                   <div className="mb-4 md:mr-2 md:mb-0">
                     <label
                       className="block mb-2 text-sm font-bold text-gray-700"

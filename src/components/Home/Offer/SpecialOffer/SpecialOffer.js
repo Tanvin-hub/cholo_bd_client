@@ -42,10 +42,25 @@ const SpecialOffer = () => {
               
               </div>
 
+
+
+              
+
               <div className="px-6 py-3">
+              <div className="flex justify-between ">
+                  
+                  <div className="order-first ml-24 mb-2 text-xl font-bold">
+                    {offer?.title}
+                    
+                  </div>
+                
+                </div>
+
+
                 <div className="flex justify-between ">
-                  <div className="order-first text-2xl font-bold">
-                    $ {offer?.price}
+                  
+                  <div className="order-first text-xl  text-black">
+                    Package: $ {offer?.price}
                   </div>
                   <p
                     className="text-md font-semibold bg-slate-200 py-1 px-3 rounded-full
