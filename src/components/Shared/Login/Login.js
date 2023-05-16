@@ -5,9 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { GoogleAuthProvider } from "@firebase/auth";
 
-
 const googleProvider = new GoogleAuthProvider();
-
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
@@ -31,6 +29,7 @@ const Login = () => {
         toast.error(error.message);
       })
   }
+
 
   return (
     <section className="py-20 bg-slate-100">
