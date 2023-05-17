@@ -29,6 +29,7 @@ import Users from "../components/Dashboard/Users/Users";
 import OfferDesh from "../components/Dashboard/OfferDesh/OfferDesh";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -104,7 +105,9 @@ const router = createBrowserRouter([
       {
         path: "/booking",
         element: <Booking/>
-      }
+      },
+
+      
     ],
   },
   {

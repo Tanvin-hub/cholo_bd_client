@@ -9,26 +9,29 @@ import ScrollToTop from "../../../ScrollToTop";
 const googleProvider = new GoogleAuthProvider();
 
 const Register = () => {
-  const { createUser, updateUser, googleSignIn, reset, verifyEmail } = useContext(AuthContext);
-  const {register, handleSubmit} = useForm();
+  const { createUser, updateUser, googleSignIn, reset, verifyEmail } =
+    useContext(AuthContext);
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    createUser(data.email, data.password)
+    createUser(data.email, data.password, data.contact, data.address, data.photoURL)
       .then((result) => {
         const user = result.user;
         // verifyEmail()
         // reset()
-        navigate('/');
+        navigate("/");
 
         const userInfo = {
           displayName: data.name,
-        }
+          contact: data.contact,
+          address: data.address,
+          photoURL: data.photoURL
+        };
 
-        updateUser(userInfo)
-        .then(() => {
-          savedUsertoDb(data.name, data.email);
-        })
+        updateUser(userInfo).then(() => {
+          savedUsertoDb(data.name, data.email, data.contact, data.address, data.photoURL);
+        });
       })
       .catch((error) => {
         toast.error(error.message);
@@ -37,37 +40,38 @@ const Register = () => {
 
   const handleSignInGoogle = () => {
     googleSignIn(googleProvider)
-      .then(result => {
+      .then((result) => {
         const user = result.user;
-        console.log(user)
+        console.log(user);
         toast.success("successfully logged in");
       })
-      .catch(error => {
+      .catch((error) => {
         toast.error(error.message);
-      })
-  }
+      });
+  };
 
-  const savedUsertoDb = (name, email) => {
+  const savedUsertoDb = (name, email, contact, address, photoURL) => {
     const user = {
       name,
-      email
-    }
+      email,
+      contact,
+      address,
+      
+    };
 
-    fetch('https://cholo-bd-server.vercel.app/users', {
-      method: 'POST',
+    fetch("https://cholo-bd-server.vercel.app/users", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.acknowledged) {
-
         }
-      })
-
-  }
+      });
+  };
 
   return (
     <section className="py-20 bg-slate-100">
@@ -82,7 +86,8 @@ const Register = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
                 height="auto"
-                viewBox="0 0 744.84799 747.07702">
+                viewBox="0 0 744.84799 747.07702"
+              >
                 <path
                   id="fa3b9e12-7275-481e-bee9-64fd9595a50d"
                   data-name="Path 1"
@@ -286,6 +291,9 @@ const Register = () => {
                 className="px-8 pt-6 pb-8 mb-4 bg-white rounded"
               >
                 <div className="mb-4 md:flex md:justify-between">
+                  
+           
+
                   <div className="mb-4 md:mr-2 md:mb-0">
                     <label
                       className="block mb-2 text-sm font-bold text-gray-700"
@@ -332,6 +340,42 @@ const Register = () => {
                     })}
                   />
                 </div>
+
+                <div className="mb-4">
+                  <label
+                    className="block mb-2 text-sm font-bold text-gray-700"
+                    for="contact"
+                  >
+                    Contact
+                  </label>
+                  <input
+                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    type="contact"
+                    placeholder="contact"
+                    {...register("contact", {
+                      required: "contact address is required",
+                    })}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    className="block mb-2 text-sm font-bold text-gray-700"
+                    for="address"
+                  >
+                    Address
+                  </label>
+                  <input
+                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    type="address"
+                    placeholder="address"
+                    {...register("address", {
+                      required: "address is required",
+                    })}
+                  />
+                </div>
+
+
                 <div>
                   <div className="mb-4 md:mr-2 md:mb-0">
                     <label
@@ -373,7 +417,9 @@ const Register = () => {
                 </div>
                 <hr className="mb-6 border-t" />
               </form>
-              <button onClick={handleSignInGoogle} className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
+              <button
+                onClick={handleSignInGoogle}
+                className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
               >
                 <span>Sign in with Google</span>
               </button>

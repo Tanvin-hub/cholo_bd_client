@@ -39,13 +39,13 @@ li:hover > button svg {
 }
 
 .banner {
-  background: url("./assets/banner.jpg") no-repeat center;
+  background: url("./Assets/banner.jpg") no-repeat center;
   width: 100%;
   background-size: cover;
 }
 
 .con-img {
-  background: url("./assets/natural.jpg") no-repeat center;
+  background: url("./Assets/natural.jpg") no-repeat center;
   width: 100%;
   background-size: cover;
 }
@@ -152,14 +152,14 @@ li:hover > button svg {
 /* Login */
 
 .login {
-  background: url("./assets/natural.jpg");
+  background: url("./Assets/natural.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 /* Contact */
 .contact {
-  background: url("./assets/banner.jpg") no-repeat center;
+  background: url("./Assets/banner.jpg") no-repeat center;
   background-size: cover;
 }
 
