@@ -22,10 +22,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_8kfw5tr",
-        "template_zsbax3m",
+        "service_d75unzo",
+        "template_s6aprmh",
         form.current,
-        "ZwLe3cjoDsAxotL9D"
+        "PdjjAC1wPOJ6a5hLy"
       )
       .then(
         (result) => {
@@ -85,7 +85,7 @@ const Contact = () => {
                 Phone
               </label>
               <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
-                +8801779580031
+               123456789
               </h1>
             </div>
 
@@ -109,7 +109,7 @@ const Contact = () => {
                 E-Mail
               </label>
               <h1 className="ml-[10px] mt-1 font-semibold text-base text-gray-600">
-                marufrony48@gmail.com
+                tanvinnova50@gmail.com
               </h1>
             </div>
             <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
