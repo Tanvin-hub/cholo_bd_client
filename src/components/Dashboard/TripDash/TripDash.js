@@ -1,34 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast"
 
 const TripDash = () => {
+  const [snap, setSnap] = useState([]);
   const {register, handleSubmit, reset} = useForm();
 
   const handleTrip = (data) => {
-    console.log(data)
-    // const tripData = {
-    //   title: data.title,
-    //   icon: data.icon,
-    //   desc: data.desc
-    // }
-    // fetch('https://cholo-bd-server.vercel.app/admin/services', {
-    //   method: 'POST',
-    //   headers:
-    //   {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(tripData)
-    // })
-    // .then(res => res.json())
-    // .then(result => {
-    //   if(result.acknowledged) {
-    //     toast.success("Successfully service uploaded")
-    //     reset()
-    //   }
-    // })
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=0622eee91f18d4103329c8947242f849`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+
+        if (imgData.success) {
+          const addTrip = {
+            img: imgData.data.url,
+            title: data.name,
+            icon: data.price,
+            desc: data.location
+          };
+
+          fetch("https://cholo-bd-server.vercel.app/admin/services", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(addTrip),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                alert("Service placed successfully");
+                console.log(data)
+                reset();
+              }
+            })
+            .catch((err) => console.error(err));
+        }
+      });
   };
 
   return (
@@ -46,25 +63,15 @@ const TripDash = () => {
               </label>
 
               <div className="mb-8">
-                <input type="file" name="file" id="file" className="sr-only"  
-                 {...register("img", {
-                    required: "Please provided title",
-                  })} />
-                <label
-                  for="file"
-                  className="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
-                  <div>
-                    <span className="mb-2 block text-xl font-semibold text-[#07074D]">
-                      Drop files here
-                    </span>
-                    <span className="mb-2 block text-base font-medium text-[#6B7280]">
-                      Or
-                    </span>
-                    <span className="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
-                      Browse
-                    </span>
-                  </div>
-                </label>
+              <input
+                    {...register("image", {
+                      required: "Image is required",
+                    })}
+                    type="file"
+                    className="text-black input input-bordered border border-black input-bordered w-full max-w-xs p-2 rounded-lg shadow-lg ml-28"
+                    placeholder="Upload a Snap Image"
+                  />
+               
               </div>
 
               <div className="mb-4">
