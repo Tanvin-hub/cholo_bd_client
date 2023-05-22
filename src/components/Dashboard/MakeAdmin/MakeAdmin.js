@@ -81,12 +81,12 @@ const MakeAdmin = () => {
         <div>
         <DashboardNavbar />
         <Sidebar />
-        <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-        <section className="py-20 bg-slate-100">
+        <div className="ml-auto lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <section className="">
       <ScrollToTop />
       <div className="container mx-auto">
         <div className="flex justify-center px-6 my-12">
-          <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+          <div className="w-full xl:w-3/4 lg:w-11/12 flex border shadow-xl rounded">
             <div class="hidden md:block w-1/2 bg-primary py-10 px-10 rounded">
               <svg
                 id="a87032b8-5b37-4b7e-a4d9-4dbfbe394641"
@@ -348,8 +348,14 @@ const MakeAdmin = () => {
                     />
                   </div>
                   <div className="mb-4 md:mr-2 md:mb-0">
+                  <label
+                      className="block mb-2 text-sm font-bold text-gray-700"
+                      for="role"
+                    >
+                      Role
+                    </label>
                           <select
-                            className=" mt-5 w-full pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                            className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outliney"
                             {...register("role", {
                               required: true,
                             })}
@@ -364,7 +370,7 @@ const MakeAdmin = () => {
                         </div>
                 </div>
                
-                <div className="mb-6 text-center">
+                <div className="my-6 text-center w-full">
                   <input
                     className="px-3 py-2 font-medium bg-primary border border-primary
                      rounded hover:bg-transparent transition-all 
@@ -374,12 +380,7 @@ const MakeAdmin = () => {
                     value=" Register Account"
                   />
                 </div>
-                <hr className="mb-6 border-t" />
               </form>
-              <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative"
-              >
-                <span>Sign in with Google</span>
-              </button>
             </div>
           </div>
         </div>

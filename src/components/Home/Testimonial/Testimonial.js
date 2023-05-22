@@ -14,8 +14,6 @@ const Testimonial = () => {
       ),
   });
 
-  console.log(testimonials)
-
   return (
     <section className="my-20 container mx-auto px-6 lg:px-32 ">
       <div className="flex flex-wrap -mx-4">
