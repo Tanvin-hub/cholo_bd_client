@@ -47,6 +47,7 @@ const Review = () => {
               the majority have suffered alteration in some form.
             </p>
           </div>
+       
         </div>
       </div>
       <div>

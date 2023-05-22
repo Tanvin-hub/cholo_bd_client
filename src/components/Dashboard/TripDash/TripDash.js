@@ -9,26 +9,26 @@ const TripDash = () => {
 
   const handleTrip = (data) => {
     console.log(data)
-    // const tripData = {
-    //   title: data.title,
-    //   icon: data.icon,
-    //   desc: data.desc
-    // }
-    // fetch('https://cholo-bd-server.vercel.app/admin/services', {
-    //   method: 'POST',
-    //   headers:
-    //   {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(tripData)
-    // })
-    // .then(res => res.json())
-    // .then(result => {
-    //   if(result.acknowledged) {
-    //     toast.success("Successfully service uploaded")
-    //     reset()
-    //   }
-    // })
+    const tripData = {
+      name: data.name,
+      price: data.price,
+      location: data.location
+    }
+    fetch('https://cholo-bd-server.vercel.app/admin/trips', {
+      method: 'POST',
+      headers:
+      {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(tripData)
+    })
+    .then(res => res.json())
+    .then(result => {
+      if(result.acknowledged) {
+        toast.success("Successfully service uploaded")
+        reset()
+      }
+    })
   };
 
   return (
