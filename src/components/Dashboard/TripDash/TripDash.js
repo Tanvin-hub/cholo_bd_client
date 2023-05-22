@@ -12,7 +12,8 @@ const TripDash = () => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=0622eee91f18d4103329c8947242f849`;
+    const url = `https://api.imgbb.com/1/upload?key=0622eee91f18d4103329c8947242f849`; 
+    //  ====IMPORTANT===== ADD YOUR OWN IMGBB HOST KEY
     fetch(url, {
       method: "POST",
       body: formData,
