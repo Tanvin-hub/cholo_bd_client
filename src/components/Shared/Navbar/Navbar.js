@@ -84,7 +84,7 @@ console.log(user)
               <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/" className="font-bold text-xl uppercase">
-                    Cholo Bangaldesh
+                    Cholo Bangladesh
                   </Link>
                 </div>
               </div>

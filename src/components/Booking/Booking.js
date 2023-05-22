@@ -77,6 +77,7 @@ const Booking = (tour) => {
               placeholder="Phone"
               className="border p-2 w-full rounded mb-2"
             />
+
           </>
           <div className="flex gap-2">
             <input
@@ -86,6 +87,8 @@ const Booking = (tour) => {
               required
               className="border p-2 w-full rounded mb-2"
             />
+
+            
             <input
               type="number"
               id="guest"

@@ -16,8 +16,6 @@ const Testimonial = () => {
       ),
   });
 
-  console.log(testimonials);
-
   return (
     <div>
       <section className="my-20 container mx-auto px-6 lg:px-32 ">

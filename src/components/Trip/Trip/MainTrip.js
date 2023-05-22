@@ -4,7 +4,7 @@ import Trip from "./Trip";
 
 const MainTrip = () => {
   return (
-    <section className="con-img text-white h-[40vh] relative mb-[100vh] md:mb-[1200px]">
+    <section className="con-img text-white h-[40vh] relative mb-[100vh] ">
       <div className="overlay h-[40vh]">
         <div className="py-12 md:py-20">
           <div
