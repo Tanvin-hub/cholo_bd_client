@@ -11,11 +11,11 @@ import Login from "../components/Shared/Login/Login";
 import Register from "../components/Shared/Register/Register";
 import Review from "../components/Home/Review/Review";
 import TripDetails from "../components/Trip/TripDetails/TripDetails";
-import Tab from "../components/Trip/Tab/Tab";
+
 import Accordion from "../components/Trip/Accordion/Accordion";
 
 // Error Route (404)
-import Error from "../components/Error/Error";
+
 import Dashboard from "../components/Dashboard/Dashboard/Dashboard";
 import Sidebar from "../components/Dashboard/Sidebar/Sidebar";
 import TripDash from "../components/Dashboard/TripDash/TripDash";
@@ -27,14 +27,12 @@ import ServicesData from "../components/Dashboard/ServicesData/ServicesData";
 import Booking from "../components/Booking/Booking";
 import Users from "../components/Dashboard/Users/Users";
 import OfferDesh from "../components/Dashboard/OfferDesh/OfferDesh";
-
-
+import TripDate from "../components/Trip/Date/TripDate";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -54,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/offers/:id",
-        element: <OfferDetails/>,
+        element: <OfferDetails />,
         loader: ({ params }) =>
           fetch(`https://cholo-bd-server.vercel.app/offers/${params.id}`),
       },
@@ -83,10 +81,10 @@ const router = createBrowserRouter([
         path: "/review",
         element: <Review />,
       },
-      {
-        path: "/trips",
-        element: <Review />,
-      },
+      // {
+      //   path: "/trips",
+      //   element: <Review />,
+      // },
       {
         path: "/trips/:id",
         element: <TripDetails />,
@@ -94,8 +92,8 @@ const router = createBrowserRouter([
           fetch(`https://cholo-bd-server.vercel.app/trips/${params.id}`),
       },
       {
-        path: "/tab",
-        element: <Tab />,
+        path: "/date",
+        element: <TripDate />,
       },
 
       {
@@ -104,30 +102,31 @@ const router = createBrowserRouter([
       },
       {
         path: "/booking",
-        element: <Booking/>
+        element: <Booking />,
       },
 
-      
+      {
+        path: "/review",
+        element: <Review />,
+      },
     ],
   },
   {
     path: "/",
     element: <Dashboard />,
-    errorElement: <Error />,
+
     children: [
       {
-          path: "/dashboard",
-          element: <Dashboard />,
-        },
-        {
-          path: "/sidebar",
-          element: <Sidebar />,
-        },
-      
-    ]
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/sidebar",
+        element: <Sidebar />,
+      },
+    ],
   },
 
-  
   {
     path: "/tripDash",
     element: <TripDash />,
@@ -140,35 +139,28 @@ const router = createBrowserRouter([
 
   {
     path: "/offerDash",
-    element: <OfferDesh/>,
+    element: <OfferDesh />,
   },
- 
 
   {
     path: "/offerData",
-    element: <OfferData/>,
+    element: <OfferData />,
   },
 
   {
     path: "/servicesDash",
-    element: <ServicesDash/>
+    element: <ServicesDash />,
   },
 
   {
     path: "/servicesData",
-    element: <ServicesData/>
+    element: <ServicesData />,
   },
 
   {
     path: "/users",
-    element: <Users/>
+    element: <Users />,
   },
-
-
-  
-
-  
 ]);
 
 export default router;
-

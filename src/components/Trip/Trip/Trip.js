@@ -50,7 +50,7 @@ const Trip = () => {
                   transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                   text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
                 >
-                  Details
+                  Book Now
                   <span>
                     <FaArrowRight />
                   </span>

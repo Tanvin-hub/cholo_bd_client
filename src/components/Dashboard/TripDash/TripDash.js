@@ -63,13 +63,13 @@ const TripDash = () => {
                 Trip Details
               </label>
 
-              <div className="mb-8">
+              <div className="mb-4">
               <input
                     {...register("image", {
                       required: "Image is required",
                     })}
                     type="file"
-                    className="text-black input input-bordered border border-black input-bordered w-full max-w-xs p-2 rounded-lg shadow-lg ml-28"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Upload a Snap Image"
                   />
                

@@ -10,7 +10,7 @@ import Login from "../../components/Shared/Login/Login";
 import Register from "../../components/Shared/Register/Register";
 import Review from "../../components/Home/Review/Review";
 import TripDetails from "../../components/Trip/TripDetails/TripDetails";
-import Tab from "../../components/Trip/Tab/Tab";
+
 import Accordion from "../../components/Trip/Accordion/Accordion";
 // Error Route (404)
 import Error from "../../components/Error/Error";
@@ -33,12 +33,13 @@ import MainTrip from "../../components/Trip/Trip/MainTrip";
 import PaymentSuccess from "../../components/Booking/PaymentSuccess";
 import PaymentFail from "../../components/Booking/PaymentFail";
 import Bookings from "../../components/Dashboard/Bookings/Bookings";
+import TripDate from "../../components/Trip/Date/TripDate";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <Error />,
+    
     children: [
       {
         path: "/",
@@ -94,8 +95,8 @@ const router = createBrowserRouter([
           fetch(`https://cholo-bd-server.vercel.app/trips/${params.id}`),
       },
       {
-        path: "/tab",
-        element: <Tab />,
+        path: "/date",
+        element: <TripDate/>,
       },
 
       {

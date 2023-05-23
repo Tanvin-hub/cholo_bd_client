@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMapMarkerAlt, FaArrowRight, FaAngleRight } from "react-icons/fa";
+import { FaMapMarkerAlt, FaArrowRight, } from "react-icons/fa";
 import { useQuery } from "react-query";
 
 import { Link } from "react-router-dom";
@@ -58,19 +58,18 @@ const SpecialOffer = () => {
 
 
                 <div className="flex justify-between ">
-                  
-                  <div className="order-first text-xl  text-black">
-                    Package: $ {offer?.price}
-                  </div>
                   <p
-                    className="text-md font-semibold bg-slate-200 py-1 px-3 rounded-full
-                   text-primary"
+                    className="text-md font-semibold ml-24 bg-slate-200 py-1 px-3 rounded-full
+                   text-primary mb-5"
                   >
                     {offer?.discount}% Off
                   </p>
                 </div>
+                <div className="ml-10">
+                  <span className="font-semibold text-xl text-dark">  Packages Fee: $ {offer?.price} </span>
+                  </div>
 
-                <ul className="flex flex-wrap gap-2 mt-5">
+                {/* <ul className="flex flex-wrap gap-2 mt-5">
                   {offer?.facility?.map((fac) => (
                     <li
                       className="flex items-center gap-3 bg-slate-200 
@@ -82,16 +81,16 @@ const SpecialOffer = () => {
                       <p>{fac?.name}</p>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
-                <p className="flex gap-3 items-center my-6 text-slate-500">
+                <p className="flex gap-3 items-center my-6 text-slate-500 ml-20">
                   <span>
                     <FaMapMarkerAlt />
                   </span>
-                  450 Vine st # 310, peru
+                  Location
                 </p>
                 <Link
-                    to={`/trips/${offer?._id}`}
+                    to="trip"
                     className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
                       text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"

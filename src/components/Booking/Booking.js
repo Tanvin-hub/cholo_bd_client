@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 // import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-hot-toast";
+import TripDate from "../Trip/Date/TripDate";
+
 
 const Booking = (tour) => {
   const { _id, price, title } = tour.tour;
@@ -48,6 +50,8 @@ const Booking = (tour) => {
     }
   };
 
+  
+
   return (
     <div className="px-6 py-5 border bg-white rounded-lg">
       <div className="border-b pb-6">
@@ -80,13 +84,7 @@ const Booking = (tour) => {
 
           </>
           <div className="flex gap-2">
-            <input
-              type="date"
-              id="bookingDate"
-              onChange={handleChange}
-              required
-              className="border p-2 w-full rounded mb-2"
-            />
+            <TripDate/>
 
             
             <input

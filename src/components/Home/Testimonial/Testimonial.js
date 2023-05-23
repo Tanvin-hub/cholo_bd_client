@@ -88,13 +88,13 @@ const Testimonial = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <Link
+        <Link to="/review"
                     
                     className="bg-primary hover:bg-transparent border border-primary 
                       transition-all duration-200 ease-linear flex justify-center py-2 px-8 
-                      text-white hover:text-black items-center gap-4 mb-3 w-full rounded-full"
+                      text-white hover:text-black items-center gap-4 mb-3 w-1/4 rounded-full ml-96 mt-3"
                   >
-                    Details
+                    Give us Review
                     <span>
                       <FaArrowRight />
                     </span>
