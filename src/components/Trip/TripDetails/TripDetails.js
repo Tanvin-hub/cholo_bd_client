@@ -2,6 +2,9 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import img1 from "../../../Assets/shapla.jpg"
+import img2 from "../../../Assets/boat.jpg"
+import img3 from "../../../Assets/nature.jpg"
 import ScrollToTop from "../../../ScrollToTop";
 
 // Import Swiper styles
@@ -15,7 +18,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const TripDetails = () => {
   const data = useLoaderData();
-  const { title, detailsImg,description } = data;
+  const { title,price, detailsImg,description,location } = data;
 
   const defaultProps = {
     center: {
@@ -28,7 +31,7 @@ const TripDetails = () => {
   console.log(data)
 
   return (
-    <section className="bg-[#EBF0F4] ">
+    <section className="con-img  h-[130vh] relative">
       <ScrollToTop />
       <div className="container mx-auto px-32 py-24">
         <div className="grid grid-cols-3 rounded-lg ">
@@ -43,24 +46,47 @@ const TripDetails = () => {
               className="mySwiper"
             >
               {detailsImg?.map((img) => (
+                <div>
                 <SwiperSlide>
                   <img
-                    src="https://plus.unsplash.com/premium_photo-1673970474453-7c49815647ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                    src={img1} 
                     alt=""
                     className="h-full w-full"
                   />
                 </SwiperSlide>
+
+
+                    <SwiperSlide>
+                    <img
+                      src={img2} 
+                      alt=""
+                      className="h-full w-full"
+                    />
+                  </SwiperSlide>
+
+                   <SwiperSlide>
+                    <img
+                      src={img3} 
+                      alt=""
+                      className="h-full w-full"
+                    />
+                  </SwiperSlide>
+                  
+                  </div>
+                
               ))}
             </Swiper>
           </>
           <div className="my-6  rounded px-6 py-12 bg-white">
                 <h3 className="text-lg font-bold">Tour Overview</h3>
                 <p className="mt-3">{title}</p>
+                <p className="mt-3">Package : {price}</p>
+                <p className="mt-3">{description}</p>
           </div>
-          <div className="my-6  rounded px-6 py-12 bg-white">
+          {/* <div className="my-6  rounded px-6 py-12 bg-white">
                 <h3 className="text-lg font-bold">Review</h3>
                 <p>{description}</p>
-          </div>
+          </div> */}
           </div>
           <div>
             <Booking tour={data} />

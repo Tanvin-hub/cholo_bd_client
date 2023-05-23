@@ -28,6 +28,7 @@ import Booking from "../components/Booking/Booking";
 import Users from "../components/Dashboard/Users/Users";
 import OfferDesh from "../components/Dashboard/OfferDesh/OfferDesh";
 import TripDate from "../components/Trip/Date/TripDate";
+import Error from "../components/Error/Error";
 
 const router = createBrowserRouter([
   {
@@ -108,6 +109,11 @@ const router = createBrowserRouter([
       {
         path: "/review",
         element: <Review />,
+      },
+
+      {
+        path: "/error",
+        element: <Error />,
       },
     ],
   },

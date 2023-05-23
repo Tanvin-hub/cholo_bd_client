@@ -73,21 +73,19 @@ const Contact = () => {
       </div>
 
       <div
-        className="absolute border top-[80%] md:top-70% left-[5%] w-[90%] h-[110vh] mx-auto px-6 lg:px-32 py-12
+        className="absolute border top-[80%] md:top-70% left-[5%] w-[90%] h-[130vh] mx-auto px-6 lg:px-32 py-12
           rounded-2xl bg-white text-black shadow-xl border-primary"
-        >
-          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
-            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
-              <div className="text-primary text-3xl  mb-4">
-                <BsFillTelephoneFill />
-              </div>
-              <label className="font-medium text-xl text-gray-600 ">
-                Phone
-              </label>
-              <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
-               123456789
-              </h1>
+      >
+        <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
+          <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+            <div className="text-primary text-3xl  mb-4">
+              <BsFillTelephoneFill />
             </div>
+            <label className="font-medium text-xl text-gray-600 ">Phone</label>
+            <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
+              123456789
+            </h1>
+          </div>
 
           <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
             <div className="text-primary text-4xl mb-4">
@@ -101,29 +99,27 @@ const Contact = () => {
             </h1>
           </div>
 
-            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
-              <div className="text-primary text-4xl mb-4">
-                <MdOutlineMail />
-              </div>
-              <label className="font-medium text-xl text-gray-600 ">
-                E-Mail
-              </label>
-              <h1 className="ml-[10px] mt-1 font-semibold text-base text-gray-600">
-                tanvinnova50@gmail.com
-              </h1>
+          <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+            <div className="text-primary text-4xl mb-4">
+              <MdOutlineMail />
             </div>
-            <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
-              <div className="text-primary text-4xl mb-4">
-                <BsFillClockFill />
-              </div>
-              <label className="font-medium text-xl text-gray-600">
-                Opening Time
-              </label>
-              <h1 className=" mt-1 font-semibold text-lg ml-6 text-gray-600">
-                10:00 am to 23:00 pm
-              </h1>
+            <label className="font-medium text-xl text-gray-600 ">E-Mail</label>
+            <h1 className="ml-[10px] mt-1 font-semibold text-base text-gray-600">
+              tanvinnova50@gmail.com
+            </h1>
+          </div>
+          <div className="shadow-lg py-4 rounded-xl text-center flex flex-col items-center justify-center">
+            <div className="text-primary text-4xl mb-4">
+              <BsFillClockFill />
             </div>
-          </form>
+            <label className="font-medium text-xl text-gray-600">
+              Opening Time
+            </label>
+            <h1 className=" mt-1 font-semibold text-lg ml-6 text-gray-600">
+              10:00 am to 23:00 pm
+            </h1>
+          </div>
+        </form>
 
         <div className="mt-16">
           <div className="md:px-3 py-5">
@@ -147,6 +143,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+
+
+
 
         <div className="mt-12 md:mt-48">
           <div className=" -mx-4">

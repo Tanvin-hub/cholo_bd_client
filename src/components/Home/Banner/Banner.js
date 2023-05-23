@@ -29,8 +29,7 @@ const Banner = () => {
                 Plan your trip with Cholo <br /> Bangladesh
               </h1>
               <p className="mt-6 text-x text-center my-8 text-slate-200">
-                Plan and book your perfect trip with expert advice, travel tips,
-                destination information and inspiration from us.
+              Are you craving an adventure, dreaming of a relaxing escape, or seeking a cultural immersion? Look no further! Our trip website is your one-stop destination for all your travel needs. We specialize in curating unforgettable experiences and providing you with all the resources you need to plan your perfect getaway.
               </p>
               <Link
                 to="/"

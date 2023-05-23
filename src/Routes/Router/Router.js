@@ -88,6 +88,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+
+      {
+        path: "/error",
+        element: (
+          <PrivateRoute>
+            <Error/>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/trips/:id",
         element: <TripDetails />,

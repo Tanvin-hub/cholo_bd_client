@@ -13,13 +13,12 @@ const Footer = () => {
               </Link>
             </div>
             <p className="max-w-xs mt-4 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-              accusantium.
+            Start your journey with us today and unlock a world of incredible travel experiences. 
             </p>
             <div className="flex mt-8 space-x-6 text-gray-600">
               <a
                 className="hover:opacity-75"
-                href
+                href="https://www.facebook.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -39,7 +38,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -59,7 +58,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="https://twitter.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -75,7 +74,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="https://github.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -95,7 +94,7 @@ const Footer = () => {
               </a>
               <a
                 className="hover:opacity-75"
-                href
+                href="https://github.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -202,7 +201,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-800">© 2022 Comany Name</p>
+        <p className="mt-8 text-xs text-gray-800">© 2023 Cholo Bangladesh</p>
       </div>
     </footer>
   );

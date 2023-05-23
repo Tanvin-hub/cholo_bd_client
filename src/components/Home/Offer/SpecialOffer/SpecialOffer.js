@@ -22,8 +22,7 @@ const SpecialOffer = () => {
               Offer given by us
             </h2>
             <p className="text-slate-500 text-body-color text-md md:text-lg">
-              There are many variations of passages of Lorem Ipsum available but
-              the majority have suffered alteration in some form.
+            Are you ready to embark on an extraordinary journey filled with wonder, relaxation, and incredible memories? Look no further! We are thrilled to present you with an irresistible special offer that will make your dream trip a reality. Prepare yourself for an unparalleled experience like no other!
             </p>
           </div>
         </div>
