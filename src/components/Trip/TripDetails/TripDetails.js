@@ -21,7 +21,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const TripDetails = () => {
   const data = useLoaderData();
-  const { price, detailsImg,description } = data;
+  const { title, detailsImg,description } = data;
 
   const defaultProps = {
     center: {
@@ -30,6 +30,8 @@ const TripDetails = () => {
     },
     zoom: 11,
   };
+
+  console.log(data)
 
   return (
     <section className="bg-[#EBF0F4] ">
@@ -59,7 +61,7 @@ const TripDetails = () => {
           </>
           <div className="my-6  rounded px-6 py-12 bg-white">
                 <h3 className="text-lg font-bold">Tour Overview</h3>
-                <p>{description}</p>
+                <p className="mt-3">{title}</p>
           </div>
           <div className="my-6  rounded px-6 py-12 bg-white">
                 <h3 className="text-lg font-bold">Review</h3>
