@@ -9,7 +9,7 @@ const HomeContact = () => {
           <div>
             <h3 className="text-4xl font-bold mb-4">Contact us Now!</h3>
             <p className="font-semibold">
-              Contact (+12) 345-678-9999 to book directly or for advice
+              Contact +8801711-122220 to book directly or for advice
             </p>
           </div>
           <div>

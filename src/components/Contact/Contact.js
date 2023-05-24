@@ -83,7 +83,7 @@ const Contact = () => {
             </div>
             <label className="font-medium text-xl text-gray-600 ">Phone</label>
             <h1 className="ml-8 mt-1 font-semibold text-xl text-gray-600">
-              123456789
+              +880171-1112220
             </h1>
           </div>
 
@@ -116,7 +116,7 @@ const Contact = () => {
               Opening Time
             </label>
             <h1 className=" mt-1 font-semibold text-lg ml-6 text-gray-600">
-              10:00 am to 23:00 pm
+              10:00 am to 06:00 pm
             </h1>
           </div>
         </form>

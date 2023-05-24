@@ -39,11 +39,11 @@ const Trip = () => {
                   ))}
                 </ul>
                 <p className="flex gap-3 items-center my-4 text-slate-500 ">
-                  <span>
+                <span>
                     <FaMapMarkerAlt />
                   </span>
-                  450 Vine st # 310, peru
-                </p>
+                  Bangladesh
+                  </p>
                 <Link
                   to={`/trips/${trip?._id}`}
                   className="bg-primary hover:bg-transparent border border-primary 

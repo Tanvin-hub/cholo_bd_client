@@ -14,8 +14,8 @@ const HomeTrip = () => {
             Trips
           </h2>
           <p className="text-slate-500 text-body-color text-md md:text-lg">
-            There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form.
+            Let us plan your amazing gateway today!
+            
           </p>
         </div>
       </div>
