@@ -1,8 +1,51 @@
 import React from 'react'
 import DashboardNavbar from '../Dashboard/DashboardNavbar/DashboardNavbar'
 import Sidebar from '../Sidebar/Sidebar'
+import { useForm } from "react-hook-form";
 
 const OfferDash = () => {
+  const {register, handleSubmit, reset} = useForm();
+  const handleOffer = (data) => {
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=9de9593a3eaec419d297413f561280de`; 
+    //  ====IMPORTANT===== ADD YOUR OWN IMGBB HOST KEY
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+
+        if (imgData.success) {
+          const addTrip = {
+            img: imgData.data.url,
+            title: data.name,
+            icon: data.price,
+            desc: data.location
+          };
+
+       fetch('https://cholo-bd-server.vercel.app/admin/offers', {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(addTrip),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                alert("Service placed successfully");
+                console.log(data)
+                reset();
+              }
+            })
+            .catch((err) => console.error(err));
+        }
+      });
+  };
+
   return (
     <div>
         <DashboardNavbar/>
@@ -11,59 +54,73 @@ const OfferDash = () => {
          <div className="flex items-center justify-center p-12 ml-48">
 
   <div className="mx-auto w-full max-w-[550px] bg-white shadow-2xl">
-    <form
-      className="py-6 px-9"
-      action="https://formbold.com/s/FORM_ID"
-      method="POST"
-    >
+  <form onSubmit={handleSubmit(handleOffer)}
+            className="py-6 px-9">
 
       <div className="mb-6 pt-4">
         <label className="mb-5 block text-xl font-semibold text-[#07074D]">
           Trip Details
         </label>
 
-        <div className="mb-8">
-          <input type="file" name="file" id="file" className="sr-only" />
-          <label
-            for="file"
-            className="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
-          >
-            <div>
-              <span className="mb-2 block text-xl font-semibold text-[#07074D]">
-                Drop files here
-              </span>
-              <span className="mb-2 block text-base font-medium text-[#6B7280]">
-                Or
-              </span>
-              <span
-                className="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
-              >
-                Browse
-              </span>
-            </div>
-          </label>
-        </div>
-
         <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" for="Package Name">
-        Package Name
-      </label>
-      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Package Name"/>
-    </div>
+              <input
+                    {...register("image", {
+                      required: "Image is required",
+                    })}
+                    type="file"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Upload a Snap Image"
+                  />
+               
+              </div>
 
-        <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" for="Price">
-        Price
-      </label>
-      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="Number" placeholder="Package Price"/>
-    </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  for="Package Name">
+                  Package Name
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Package Name"
+                  {...register("name", {
+                    required: "Please provided name",
+                  })}
+                />
+              </div>
 
-    <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" for="Location">
-       Discount
-      </label>
-      <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="Number" placeholder="Discount"/>
-    </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  for="Price">
+                  Price
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Price"
+                  {...register("price", {
+                    required: "Please provided name",
+                  })}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  for="Discount">
+                  Discount
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Discount"
+                  {...register("discount", {
+                    required: "Discount Amount",
+                  })}
+                />
+              </div>
 
     <div className='flex gap-6'> 
     <div className="mb-4">
