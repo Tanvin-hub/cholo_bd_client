@@ -11,7 +11,7 @@ const TripData = () => {
 
   const { data: tripData = [], refetch  } = useQuery({
     queryKey: ["tripData"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/trips").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/trips").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -20,7 +20,7 @@ const TripData = () => {
     );
 
     if (proceed) {
-      fetch(`https://cholo-bd-server.vercel.app/trips/${id}`, {
+      fetch(`https://cholo-bd-server-maruf19.vercel.app/trips/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

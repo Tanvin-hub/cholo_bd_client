@@ -34,7 +34,7 @@ const Booking = (tour) => {
       if (!user || user === undefined || user === null) {
         return toast("Please sign in");
       }
-      fetch("https://cholo-bd-server.vercel.app/bookings", {
+      fetch("https://cholo-bd-server-maruf19.vercel.app/bookings", {
         method: "POST",
         headers: {
           "content-type": "application/json",

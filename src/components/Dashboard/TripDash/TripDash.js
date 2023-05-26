@@ -29,7 +29,7 @@ const TripDash = () => {
             desc: data.location
           };
 
-       fetch('https://cholo-bd-server.vercel.app/admin/trips', {
+       fetch('https://cholo-bd-server-maruf19.vercel.app/admin/trips', {
             method: "POST",
             headers: {
               "content-type": "application/json",

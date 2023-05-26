@@ -11,7 +11,7 @@ const Bookings = () => {
     const { data: bookings = [],refetch } = useQuery({
         queryKey: ["bookings"],
         queryFn: () =>
-          fetch("https://cholo-bd-server.vercel.app/bookings").then((res) =>
+          fetch("https://cholo-bd-server-maruf19.vercel.app/bookings").then((res) =>
             res.json()
           ),
       });
@@ -24,7 +24,7 @@ const Bookings = () => {
         );
     
         if (proceed) {
-          fetch(`https://cholo-bd-server.vercel.app/bookings/${id}`, {
+          fetch(`https://cholo-bd-server-maruf19.vercel.app/bookings/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

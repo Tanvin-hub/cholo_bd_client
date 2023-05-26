@@ -26,7 +26,7 @@ const OfferDash = () => {
             desc: data.location
           };
 
-       fetch('https://cholo-bd-server.vercel.app/admin/offers', {
+       fetch('https://cholo-bd-server-maruf19.vercel.app/admin/offers', {
             method: "POST",
             headers: {
               "content-type": "application/json",

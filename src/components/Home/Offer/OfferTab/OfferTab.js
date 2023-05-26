@@ -15,7 +15,7 @@ const OfferTab = (data) => {
   const { data: tab = [] } = useQuery({
     queryKey: ["tab"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/tabs").then((res) =>
+      fetch("https://cholo-bd-server-maruf19.vercel.app/tabs").then((res) =>
         res.json()
       ),
   });
@@ -29,7 +29,7 @@ const OfferTab = (data) => {
       email: user?.email,
       name: user?.displayName
     };
-    fetch('https://cholo-bd-server.vercel.app/offerBooking', {
+    fetch('https://cholo-bd-server-maruf19.vercel.app/offerBooking', {
       method: "POST",
       headers: {
         "content-type": "application/json"

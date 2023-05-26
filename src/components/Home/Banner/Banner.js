@@ -8,7 +8,7 @@ const Banner = () => {
   const { data: trips = [],refetch } = useQuery({
     queryKey: ["trips"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/trips").then((res) =>
+      fetch("https://cholo-bd-server-maruf19.vercel.app/trips").then((res) =>
         res.json()
       ),
   });

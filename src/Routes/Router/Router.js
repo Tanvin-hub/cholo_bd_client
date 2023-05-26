@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         path: "/offers/:id",
         element: <OfferDetails />,
         loader: ({ params }) =>
-          fetch(`https://cholo-bd-server.vercel.app/offers/${params.id}`),
+          fetch(`https://cholo-bd-server-maruf19.vercel.app/offers/${params.id}`),
       },
       {
         path: "/trip",
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
         path: "/trips/:id",
         element: <TripDetails />,
         loader: ({ params }) =>
-          fetch(`https://cholo-bd-server.vercel.app/trips/${params.id}`),
+          fetch(`https://cholo-bd-server-maruf19.vercel.app/trips/${params.id}`),
       },
       {
         path: "/date",
