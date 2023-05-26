@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const SpecialOffer = () => {
   const { data: offers = [] } = useQuery({
     queryKey: ["offers"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/offers").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/offers").then((res) => res.json()),
   });
 
   return (

@@ -1,15 +1,18 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { FaAngleRight, FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
+import { MdOutlineDescription } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Trip = () => {
   const { data: trips = [] } = useQuery({
     queryKey: ["trips"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/admin/trips").then((res) => res.json()),
+      fetch("https://cholo-bd-server-maruf19.vercel.app/admin/trips").then(
+        (res) => res.json()
+      ),
   });
-  
+
   return (
     <div className="container mx-auto rounded-2xl bg-white text-black">
       <div className="">
@@ -25,25 +28,22 @@ const Trip = () => {
                   <div className="order-first text-xl font-bold">
                     {trip?.title}
                   </div>
-                  <div className="text-xl font-bold">$ {trip?.price}</div>
+                  <div className="text-xl font-bold">$ {trip?.icon}</div>
                 </div>
 
-                <ul className="flex flex-wrap gap-2 mt-5">
-                  {trip?.facility?.map((fac) => (
-                    <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
-                      <span>
-                        <FaAngleRight />
-                      </span>
-                      <p>{fac?.name}</p>
-                    </li>
-                  ))}
-                </ul>
+              
                 <p className="flex gap-3 items-center my-4 text-slate-500 ">
-                <span>
+                  <span>
+                    <MdOutlineDescription />
+                  </span>
+                  
+                </p>
+                <p className="flex gap-3 items-center my-4 text-slate-500 ">
+                  <span>
                     <FaMapMarkerAlt />
                   </span>
-                  Bangladesh
-                  </p>
+                  {trip?.desc}
+                </p>
                 <Link
                   to={`/trips/${trip?._id}`}
                   className="bg-primary hover:bg-transparent border border-primary 
