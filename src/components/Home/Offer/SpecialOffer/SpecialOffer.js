@@ -10,6 +10,8 @@ const SpecialOffer = () => {
     queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/offers").then((res) => res.json()),
   });
 
+  console.log(offers)
+
   return (
     <section className="container mx-auto px-6 lg:px-32 my-12">
       <div className="flex flex-wrap -mx-4">
@@ -34,7 +36,7 @@ const SpecialOffer = () => {
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">
                 <img
-                  src={offer?.detailsImg}
+                  src={offer?.img}
                   className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                   alt=""
                 />

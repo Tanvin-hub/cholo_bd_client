@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 
 const TripDash = () => {
@@ -25,8 +26,8 @@ const TripDash = () => {
           const addTrip = {
             img: imgData.data.url,
             title: data.name,
-            icon: data.price,
-            desc: data.location
+            price: data.price,
+            location: data.location
           };
 
        fetch('https://cholo-bd-server-maruf19.vercel.app/admin/trips', {
@@ -39,7 +40,7 @@ const TripDash = () => {
             .then((res) => res.json())
             .then((data) => {
               if (data.acknowledged) {
-                alert("Service placed successfully");
+                toast.success("Trip placed successfully");
                 console.log(data)
                 reset();
               }

@@ -9,6 +9,8 @@ const Trip = () => {
     queryFn: () =>
       fetch("https://cholo-bd-server-maruf19.vercel.app/admin/trips").then((res) => res.json()),
   });
+
+  console.log(trips)
   
   return (
     <div className="container mx-auto rounded-2xl bg-white text-black">
@@ -42,7 +44,7 @@ const Trip = () => {
                 <span>
                     <FaMapMarkerAlt />
                   </span>
-                  Bangladesh
+                  {trip?.location}
                   </p>
                 <Link
                   to={`/trips/${trip?._id}`}
