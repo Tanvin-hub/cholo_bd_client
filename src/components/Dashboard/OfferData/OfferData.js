@@ -4,8 +4,34 @@ import DashboardNavbar from '../Dashboard/DashboardNavbar/DashboardNavbar'
 import { Link } from 'react-router-dom'
 import {MdDeleteSweep} from 'react-icons/md'
 import {FiEdit} from 'react-icons/fi'
+import { useQuery } from "react-query";
+import toast from "react-hot-toast";
 
 const OfferData = () => {
+
+  const { data: offerData = [], refetch  } = useQuery({
+    queryKey: ["offerData"],
+    queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/offers").then((res) => res.json()),
+  });
+
+  const handleRemove = (id) => {
+    const proceed = window.confirm(
+      "Are you sure, you want to remove this order?"
+    );
+
+    if (proceed) {
+      fetch(`https://cholo-bd-server-maruf19.vercel.app/offers/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            refetch()
+            toast.error("Removed Order Successfully");
+          }
+        });
+    }
+  };
   return (
     <div>
     <DashboardNavbar/>
@@ -24,10 +50,10 @@ const OfferData = () => {
      <th className="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Price</th>
      <th className="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Discount</th>
      <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Location</th>
-     <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Bed</th>
+     {/* <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Bed</th>
      <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Room</th>
      <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Days</th>
-     <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Quantity</th>
+     <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Quantity</th> */}
      {/* <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Action</th> */}
      
    </tr>
@@ -35,35 +61,38 @@ const OfferData = () => {
  <tbody>
 
 
+ {
+                   offerData?.map(offerData => 
+
    <tr>
      <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
        <div className="flex px-2 py-1">
          <div>
-           <img src="../assets/img/team-2.jpg" className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
+           <img src={offerData?.img} className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
          </div>
          <div className="flex flex-col justify-center">
-           <h6 className="mb-0 leading-normal text-sm">Bandarban</h6>
-           <p className="mb-0 leading-tight text-xs text-slate-400">Date</p>
+           <h6 className="mb-0 leading-normal text-sm">{offerData?.title}</h6>
+           <p className="mb-0 leading-tight text-xs text-slate-400">{offerData?.date}</p>
          </div>
        </div>
      </td>
 
      <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-       <p className="mb-0 font-semibold leading-tight text-xs">$700</p>
+       <p className="mb-0 font-semibold leading-tight text-xs">{offerData?.price}</p>
        
      </td>
 
      <td className="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
-       <span className="mb-0 font-semibold leading-tight text-xs">Discount</span>
+       <span className="mb-0 font-semibold leading-tight text-xs">{offerData?.discount}</span>
      </td>
 
      <td className="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
-       <span className="mb-0 font-semibold leading-tight text-xs">Bangladesh</span>
+       <span className="mb-0 font-semibold leading-tight text-xs">{offerData?.location}</span>
      </td>
-     <td className="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+     {/* <td className="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
        <span className="font-semibold leading-tight text-xs text-slate-400">10</span>
-     </td>
-
+     </td> */}
+{/* 
      <td className="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
        <span className="font-semibold leading-tight text-xs text-slate-400">23</span>
      </td>
@@ -74,22 +103,22 @@ const OfferData = () => {
 
      <td className="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
        <span className="font-semibold leading-tight text-xs text-slate-400">50</span>
-     </td>
+     </td> */}
 
    
+<td>
+                      <button  onClick={() => handleRemove(offerData._id)} className="font-semibold leading-tight text-2xl text-slate-400">
+                        <MdDeleteSweep />
+                      </button>
 
-     <td>
-       <Link className="font-semibold leading-tight text-2xl text-slate-400"> 
-        <MdDeleteSweep/>
-       </Link>
-
-       <Link>
-       <FiEdit/>
-       </Link>
-     </td> 
+                      <Link>
+                        <FiEdit />
+                      </Link>
+                    </td>
      
    </tr>
-
+                    )
+                    }
 
 {/* 
    <tr>

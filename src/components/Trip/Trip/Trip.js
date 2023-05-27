@@ -1,7 +1,13 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { FaArrowRight, FaMapMarkerAlt } from "react-icons/fa";
-import { MdOutlineDescription } from "react-icons/md";
+import { WiDaySunny } from "react-icons/wi";
+import { BsFillHouseFill } from "react-icons/bs";
+import { IoMdBed } from "react-icons/io";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { MdDateRange } from "react-icons/md";
+
+
 import { Link } from "react-router-dom";
 
 const Trip = () => {
@@ -28,21 +34,48 @@ const Trip = () => {
                   <div className="order-first text-xl font-bold">
                     {trip?.title}
                   </div>
-                  <div className="text-xl font-bold">$ {trip?.icon}</div>
+                  <div className="text-xl font-bold">$ {trip?.price}</div>
                 </div>
 
-              
-                <p className="flex gap-3 items-center my-4 text-slate-500 ">
-                  <span>
-                    <MdOutlineDescription />
-                  </span>
-                  
-                </p>
-                <p className="flex gap-3 items-center my-4 text-slate-500 ">
+                <ul className="flex flex-wrap gap-2 ml-6 mt-5">
+                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                    <span>
+                      <BsFillHouseFill />
+                    </span>
+                    <p>Room: {trip?.room}</p>
+                  </li>
+
+                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                    <span>
+                      <IoMdBed />
+                    </span>
+                    <p>Bed: {trip?.bed}</p>
+                  </li>
+                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-4 rounded text-slate-500">
+                    <span>
+                      <HiOutlineUserGroup />
+                    </span>
+                    <p>Capacity: {trip?.group}</p>
+                  </li>
+                  <li className="flex items-center gap-3 bg-slate-200 py-1 px-1 rounded text-slate-500">
+                    <span>
+                      <WiDaySunny />
+                    </span>
+                    <p>Days: {trip?.days}</p>
+                  </li>
+                </ul>
+                <p className="flex gap-3 items-center ml-16 my-4 text-slate-500 ">
                   <span>
                     <FaMapMarkerAlt />
                   </span>
-                  {trip?.desc}
+                  {trip?.location}
+                </p>
+
+                <p className="flex gap-3 items-center ml-16 my-4 text-slate-500 ">
+                  <span>
+                    <MdDateRange />
+                  </span>
+                  {trip?.date}
                 </p>
                 <Link
                   to={`/trips/${trip?._id}`}

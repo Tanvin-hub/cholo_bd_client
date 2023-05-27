@@ -31,12 +31,12 @@ const TripDetails = () => {
   console.log(data)
 
   return (
-    <section className="con-img  h-[130vh] relative">
+    <section className="con-img  h-[100vh] relative">
       <ScrollToTop />
       <div className="container mx-auto px-32 py-24">
         <div className="grid grid-cols-3 rounded-lg ">
-          <div className="rounded-xl col-start-1 col-end-3 mr-6">
-          <>
+          <div className="rounded-xl col-start-1 col-end-3 mr-6 mt-24">
+          {/* <>
           <Swiper
               pagination={{
                 type: "progressbar",
@@ -76,12 +76,12 @@ const TripDetails = () => {
                 
               ))}
             </Swiper>
-          </>
+          </> */}
           <div className="my-6  rounded px-6 py-12 bg-white">
-                <h3 className="text-lg font-bold">Tour Overview</h3>
-                <p className="mt-3">{title}</p>
-                <p className="mt-3">Package : {price}</p>
-                <p className="mt-3">{description}</p>
+                <h3 className="text-lg font-bold text-primary">Tour Overview</h3>
+                <p className="mt-3">Package: {title}</p>
+                <p className="mt-3 ">Package Fee: {price}</p>
+                <p className="mt-3  ">Location: {location}</p>
           </div>
           {/* <div className="my-6  rounded px-6 py-12 bg-white">
                 <h3 className="text-lg font-bold">Review</h3>

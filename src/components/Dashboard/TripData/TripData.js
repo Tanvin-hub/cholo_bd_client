@@ -66,11 +66,11 @@ const TripData = () => {
             <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
               <div className="flex px-2 py-1">
                 <div>
-                  <img src="../assets/img/team-2.jpg" className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
+                  <img src= {tripData?.img} className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
                 </div>
                 <div className="flex flex-col justify-center">
                   <h6 className="mb-0 leading-normal text-sm">  {tripData?.title}</h6>
-                  <p className="mb-0 leading-tight text-xs text-slate-400">Date</p>
+                  <p className="mb-0 leading-tight text-xs text-slate-400">{tripData?.date}</p>
                 </div>
               </div>
             </td>
@@ -98,15 +98,15 @@ const TripData = () => {
               <span className="font-semibold leading-tight text-xs text-slate-400">50</span>
             </td>
 
-            <td>
-                      <button  onClick={() => handleRemove(tripData._id)} className="font-semibold leading-tight text-2xl text-slate-400">
-                        <MdDeleteSweep />
-                      </button>
+          <td>
+                    <button  onClick={() => handleRemove(tripData._id)} className="font-semibold leading-tight text-2xl text-slate-400">
+                      <MdDeleteSweep />
+                    </button>
 
-                      <Link>
-                        <FiEdit />
-                      </Link>
-                    </td>
+                    <Link>
+                      <FiEdit />
+                    </Link>
+                  </td>
 
 
             

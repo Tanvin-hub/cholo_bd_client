@@ -45,7 +45,7 @@ const Banner = () => {
         </div>
         <div
           className="absolute border-primary border -bottom-[15rem] md:-bottom-[10rem] lg:-bottom-[4rem] left-[10%] max-w-[80%] mx-auto py-8 px-6 rounded-2xl bg-white text-black shadow-xl">
-          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
+          {/* <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
             <div>
               <label className="font-medium">Location</label>
               <input
@@ -83,7 +83,13 @@ const Banner = () => {
           hover:text-black cursor-pointer transition-all duration-150 ease-linear uppercase font-medium"
               />
             </div>
-          </form>
+          </form> */}
+          <div>
+            <span className="font-bold text-lg text-primary">
+              Know About Bangladesh
+            </span>
+            <p>Bangladesh's natural beauty astounds: the majestic Sundarbans, picturesque rivers, rolling hills, pristine beaches, charming villages, serene lakes, and vibrant gardens. From breathtaking views to diverse flora and fauna, it's an enchanting escape.</p>
+          </div>
         </div>
         <ul className="bg-black">
             {

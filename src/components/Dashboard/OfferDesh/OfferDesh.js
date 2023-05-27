@@ -5,11 +5,12 @@ import { useForm } from "react-hook-form";
 
 const OfferDash = () => {
   const { register, handleSubmit, reset } = useForm();
+
   const handleOffer = (data) => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=9de9593a3eaec419d297413f561280de`;
+    const url = `https://api.imgbb.com/1/upload?key=0622eee91f18d4103329c8947242f849`;
     //  ====IMPORTANT===== ADD YOUR OWN IMGBB HOST KEY
     fetch(url, {
       method: "POST",
@@ -18,11 +19,13 @@ const OfferDash = () => {
       .then((res) => res.json())
       .then((imgData) => {
         if (imgData.success) {
-          const addTrip = {
+          const addOffers = {
             img: imgData.data.url,
             title: data.name,
-            icon: data.price,
-            desc: data.location,
+            price: data.price,
+            discount:data.discount,
+            location: data.location,
+            date: data.date,
           };
 
           fetch("https://cholo-bd-server-maruf19.vercel.app/admin/offers", {
@@ -30,7 +33,7 @@ const OfferDash = () => {
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(addTrip),
+            body: JSON.stringify(addOffers),
           })
             .then((res) => res.json())
             .then((data) => {
@@ -55,7 +58,7 @@ const OfferDash = () => {
           <form onSubmit={handleSubmit(handleOffer)} className="py-6 px-9">
             <div className="mb-6 pt-4">
               <label className="mb-5 block text-xl font-semibold text-[#07074D]">
-                Trip Details
+                Offers Details
               </label>
 
               <div className="mb-4">
@@ -82,6 +85,23 @@ const OfferDash = () => {
                   placeholder="Package Name"
                   {...register("name", {
                     required: "Please provided name",
+                  })}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  for="Date"
+                >
+                  Travel Date
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Travel Date"
+                  {...register("date", {
+                    required: "Please provided a date",
                   })}
                 />
               </div>
@@ -119,8 +139,24 @@ const OfferDash = () => {
                   })}
                 />
               </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  for="Location"
+                >
+                  Location
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Travel Location"
+                  {...register("location", {
+                    required: "Please provided location",
+                  })}
+                />
+              </div>
 
-              <div className="flex gap-6">
+              {/* <div className="flex gap-6">
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
@@ -178,7 +214,7 @@ const OfferDash = () => {
                     placeholder="Quantity"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div>

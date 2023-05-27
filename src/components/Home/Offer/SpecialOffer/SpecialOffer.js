@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaArrowRight, } from "react-icons/fa";
 import { useQuery } from "react-query";
-
+import { MdDateRange } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const SpecialOffer = () => {
@@ -22,7 +22,7 @@ const SpecialOffer = () => {
               Offer given by us
             </h2>
             <p className="text-slate-500 text-body-color text-md md:text-lg">
-            Are you ready to embark on an extraordinary journey filled with wonder, relaxation, and incredible memories? Look no further! We are thrilled to present you with an irresistible special offer that will make your dream trip a reality. Prepare yourself for an unparalleled experience like no other!
+            Experience an extraordinary journey filled with wonder and relaxation. Get ready for an unparalleled trip with our irresistible special offer.
             </p>
           </div>
         </div>
@@ -34,39 +34,46 @@ const SpecialOffer = () => {
             <div className="h-full w-full shadow-2xl rounded-lg">
               <div className="relative w-full p-4 ">
                 <img
-                  src={offer?.detailsImg}
+                  src={offer?.img}
                   className="mb-3 h-64 object-cover w-full rounded-xl 3xl:w-full"
                   alt=""
                 />
               
               </div>
 
-
-
-              
-
               <div className="px-6 py-3">
               <div className="flex justify-between ">
                   
-                  <div className="order-first ml-24 mb-2 text-xl font-bold">
+                  <div className="order-first  mb-2 text-xl font-bold">
                     {offer?.title}
                     
                   </div>
                 
-                </div>
+               
 
 
                 <div className="flex justify-between ">
                   <p
-                    className="text-md font-semibold ml-24 bg-slate-200 py-1 px-3 rounded-full
+                    className="text-md font-semibold  bg-slate-200 py-1 px-3 rounded-full
                    text-primary mb-5"
                   >
                     {offer?.discount}% Off
                   </p>
                 </div>
-                <div className="ml-10">
+                </div>
+
+                
+                <div className="ml-10 mt-5">
                   <span className="font-semibold text-xl text-dark">  Packages Fee: $ {offer?.price} </span>
                   </div>
+
+
+                <p className="flex gap-3 items-center ml-20 my-4 text-slate-500 ">
+                  <span>
+                    <MdDateRange />
+                  </span>
+                  {offer?.date}
+                </p>
 
                 {/* <ul className="flex flex-wrap gap-2 mt-5">
                   {offer?.facility?.map((fac) => (
@@ -86,8 +93,9 @@ const SpecialOffer = () => {
                   <span>
                     <FaMapMarkerAlt />
                   </span>
-                  Location
+                  {offer?.location}
                 </p>
+
                 <Link
                     to="trip"
                     className="bg-primary hover:bg-transparent border border-primary 

@@ -22,8 +22,13 @@ const TripDash = () => {
           const addTrip = {
             img: imgData.data.url,
             title: data.name,
-            icon: data.price,
-            desc: data.location,
+            price: data.price,
+            location: data.location,
+            room: data.room,
+            bed: data.bed,
+            group: data.group,
+            days: data.days,
+            date: data.date,
           };
 
           fetch("https://cholo-bd-server-maruf19.vercel.app/admin/trips", {
@@ -58,7 +63,6 @@ const TripDash = () => {
               <label className="mb-5 block text-xl font-semibold text-[#07074D]">
                 Trip Details
               </label>
-
               <div className="mb-4">
                 <input
                   {...register("image", {
@@ -69,7 +73,6 @@ const TripDash = () => {
                   placeholder="Upload a Snap Image"
                 />
               </div>
-
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -86,7 +89,6 @@ const TripDash = () => {
                   })}
                 />
               </div>
-
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -103,24 +105,23 @@ const TripDash = () => {
                   })}
                 />
               </div>
-
-              {/* <div className="mb-4">
+              *{" "}
+              <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
                   for="Price"
                 >
-                  Price
+                  Date
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="Number"
-                  placeholder="Price"
-                  {...register("number", {
-                    required: "Please provided price",
+                  placeholder="date"
+                  {...register("date", {
+                    required: "Please provide a date",
                   })}
                 />
-              </div> */}
-
+              </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -137,21 +138,7 @@ const TripDash = () => {
                   })}
                 />
               </div>
-
-              {/* <div className="flex gap-6">
-                <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
-                    for="Bed">
-                    Bed
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded h-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    type="text"
-                    placeholder="Bed"
-                  />
-                </div>
-
+              <div className="flex gap-6">
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
@@ -163,10 +150,29 @@ const TripDash = () => {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Room"
+                    {...register("room", {
+                      required: "Please provide Room",
+                    })}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    for="Bed"
+                  >
+                    Bed
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="text"
+                    placeholder="Bed"
+                    {...register("bed", {
+                      required: "Please provide Bed",
+                    })}
                   />
                 </div>
               </div>
-
               <div className="flex gap-6">
                 <div className="mb-4">
                   <label
@@ -176,26 +182,32 @@ const TripDash = () => {
                     Days
                   </label>
                   <input
-                    className="shadow appearance-none border rounded h-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Days"
+                    {...register("days", {
+                      required: "Please provide Days",
+                    })}
                   />
                 </div>
 
                 <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
-                    for="Quantity"
+                    for="Group"
                   >
-                    Quantity
+                    Group
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    type="Number"
-                    placeholder="Quantity"
+                    type="text"
+                    placeholder="Group"
+                    {...register("group", {
+                      required: "Please provide Group",
+                    })}
                   />
                 </div>
-              </div> */}
+              </div>
             </div>
 
             <div>
