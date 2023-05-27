@@ -10,6 +10,8 @@ const SpecialOffer = () => {
     queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/offers").then((res) => res.json()),
   });
 
+  console.log(offers)
+
   return (
     <section className="container mx-auto px-6 lg:px-32 my-12">
       <div className="flex flex-wrap -mx-4">

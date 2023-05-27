@@ -10,7 +10,7 @@ import toast from "react-hot-toast"
 const ServicesData = () => {
   const { data: servicesData = [], refetch  } = useQuery({
     queryKey: ["servicesData"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/services").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/services").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -19,7 +19,7 @@ const ServicesData = () => {
     );
 
     if (proceed) {
-      fetch(`https://cholo-bd-server.vercel.app/services/${id}`, {
+      fetch(`https://cholo-bd-server-maruf19.vercel.app/services/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -73,6 +73,19 @@ const ServicesData = () => {
                       </p>
                     </td>
 
+                    <td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            <div class="inline-flex items-center gap-x-3">
+                              <button
+                                onClick={() => handleRemove(service._id)}
+                                className="font-semibold leading-tight text-2xl text-red-400"
+                              >
+                                <MdDeleteSweep />
+                              </button>
+
+                             
+                            </div>
+                          </td>
+{/* 
                     <td>
                       <button  onClick={() => handleRemove(service._id)} className="font-semibold leading-tight text-2xl text-slate-400">
                         <MdDeleteSweep />
@@ -81,7 +94,7 @@ const ServicesData = () => {
                       <Link>
                         <FiEdit />
                       </Link>
-                    </td>
+                    </td> */}
                   </tr>)
                   }
 

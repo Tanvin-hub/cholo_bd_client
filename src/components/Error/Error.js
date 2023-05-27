@@ -11,7 +11,7 @@ const Error = () => {
     queryKey: ["profile"],
     queryFn: async () => {
       const res = await fetch(
-        `https://cholo-bd-server.vercel.app/users/?email=${user?.email}`
+        `https://cholo-bd-server-maruf19.vercel.app/users/?email=${user?.email}`
       );
       const data = await res.json();
       return data;

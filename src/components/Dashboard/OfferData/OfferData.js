@@ -106,16 +106,18 @@ const OfferData = () => {
      </td> */}
 
    
-<td>
-                      <button  onClick={() => handleRemove(offerData._id)} className="font-semibold leading-tight text-2xl text-slate-400">
-                        <MdDeleteSweep />
-                      </button>
+<td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            <div class="inline-flex items-center gap-x-3">
+                              <button
+                                onClick={() => handleRemove(offerData._id)}
+                                className="font-semibold leading-tight text-2xl text-red-400"
+                              >
+                                <MdDeleteSweep />
+                              </button>
 
-                      <Link>
-                        <FiEdit />
-                      </Link>
-                    </td>
-     
+                            
+                            </div>
+                          </td>
    </tr>
                     )
                     }

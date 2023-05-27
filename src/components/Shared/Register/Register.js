@@ -59,7 +59,7 @@ const Register = () => {
       
     };
 
-    fetch("https://cholo-bd-server.vercel.app/users", {
+    fetch("https://cholo-bd-server-maruf19.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

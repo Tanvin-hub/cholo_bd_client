@@ -10,7 +10,7 @@ const Users = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
-      fetch("https://cholo-bd-server.vercel.app/all-users").then((res) => res.json()),
+      fetch("https://cholo-bd-server-maruf19.vercel.app/all-users").then((res) => res.json()),
   });
 
   const handleRemove = (id) => {
@@ -19,7 +19,7 @@ const Users = () => {
     );
 
     if (proceed) {
-      fetch(`https://cholo-bd-server.vercel.app/all-users/${id}`, {
+      fetch(`https://cholo-bd-server-maruf19.vercel.app/all-users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

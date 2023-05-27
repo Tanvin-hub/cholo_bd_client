@@ -2,15 +2,19 @@ import React, { useContext, useState } from "react";
 // import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-hot-toast";
-import TripDate from "../Trip/Date/TripDate";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Booking = (tour) => {
   const { _id, price, title } = tour.tour;
   console.log(tour.tour);
   const { user } = useContext(AuthContext);
   const [book, setBook] = useState();
+  const [selectedDate, setSelectedDate] = useState(null);
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
   const handleChange = (e) => {
     setBook((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -34,7 +38,7 @@ const Booking = (tour) => {
       if (!user || user === undefined || user === null) {
         return toast("Please sign in");
       }
-      fetch("https://cholo-bd-server.vercel.app/bookings", {
+      fetch("https://cholo-bd-server-maruf19.vercel.app/bookings", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -84,7 +88,19 @@ const Booking = (tour) => {
 
           </>
           <div className="flex gap-2">
-            <TripDate/>
+          <DatePicker
+        type="date"
+        selected={selectedDate}
+        onChange={handleDateChange}
+        dateFormat="dd/MM/yyyy"
+        minDate={new Date()}
+        showYearDropdown
+        scrollableYearDropdown
+        yearDropdownItemNumber={10}
+        className="border p-2 w-full rounded mb-2"
+        required
+        
+      />
 
             
             <input

@@ -14,7 +14,7 @@ const Review = () => {
       name: user?.displayName,
     };
 
-    fetch("https://cholo-bd-server.vercel.app/reviews", {
+    fetch("https://cholo-bd-server-maruf19.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

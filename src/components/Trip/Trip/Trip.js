@@ -64,14 +64,14 @@ const Trip = () => {
                     <p>Days: {trip?.days}</p>
                   </li>
                 </ul>
-                <p className="flex gap-3 items-center ml-16 my-4 text-slate-500 ">
+                <p className="flex gap-1 items-center ml-20 my-4 text-slate-500 ">
                   <span>
                     <FaMapMarkerAlt />
                   </span>
                   {trip?.location}
                 </p>
 
-                <p className="flex gap-3 items-center ml-16 my-4 text-slate-500 ">
+                <p className="flex gap-3 items-center ml-20 my-4 text-slate-500 ">
                   <span>
                     <MdDateRange />
                   </span>

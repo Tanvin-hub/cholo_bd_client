@@ -1,18 +1,19 @@
-import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
-import DashboardNavbar from '../Dashboard/DashboardNavbar/DashboardNavbar'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Sidebar from "../Sidebar/Sidebar";
+import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
+import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
 import { MdDeleteSweep } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 
 const TripData = () => {
-
-  const { data: tripData = [], refetch  } = useQuery({
+  const { data: tripData = [], refetch } = useQuery({
     queryKey: ["tripData"],
     queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/trips").then((res) => res.json()),
   });
+
+  console.log(tripData)
 
   const handleRemove = (id) => {
     const proceed = window.confirm(
@@ -26,17 +27,17 @@ const TripData = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            refetch()
+            refetch();
             toast.error("Removed Order Successfully");
           }
         });
     }
   };
   return (
- <div>
-           <DashboardNavbar/>
-         <Sidebar/>
-         <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+    <div>
+      <DashboardNavbar />
+      <Sidebar />
+      <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] px-8">
         <div className="relative flex flex-col w-full min-w-0 mb-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
   <div className="p-6 pb-0 mb-0 bg-white rounded-t-2xl">
     <h6 className='font-bold text-2xl mb-8 text-center italic text-zinc-700'>Trip Information</h6>
@@ -53,7 +54,7 @@ const TripData = () => {
             <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Room</th>
             <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Days</th>
             <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Quantity</th>
-            <th className="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-800 opacity-70">Action</th>
+          
             
           </tr>
         </thead>
@@ -98,15 +99,18 @@ const TripData = () => {
               <span className="font-semibold leading-tight text-xs text-slate-400">50</span>
             </td>
 
-          <td>
-                    <button  onClick={() => handleRemove(tripData._id)} className="font-semibold leading-tight text-2xl text-slate-400">
-                      <MdDeleteSweep />
-                    </button>
+            <td class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                            <div class="inline-flex items-center gap-x-3">
+                              <button
+                                onClick={() => handleRemove(tripData._id)}
+                                className="font-semibold leading-tight text-2xl text-red-400"
+                              >
+                                <MdDeleteSweep />
+                              </button>
 
-                    <Link>
-                      <FiEdit />
-                    </Link>
-                  </td>
+                           
+                            </div>
+                          </td>
 
 
             
@@ -198,15 +202,14 @@ const TripData = () => {
               <Link className="font-semibold leading-tight text-xs text-slate-400"> Edit </Link>
             </td>
           </tr> */}
-        </tbody>
-      </table>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    </div>
-    </div>
-    
-  )
-}
+  );
+};
 
-export default TripData
+export default TripData;

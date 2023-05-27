@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const TripDash = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -41,7 +42,7 @@ const TripDash = () => {
             .then((res) => res.json())
             .then((data) => {
               if (data.acknowledged) {
-                alert("Service placed successfully");
+                alert("Trip placed successfully");
                 console.log(data);
                 reset();
               }

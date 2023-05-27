@@ -4,7 +4,7 @@ import {MdOutlineTravelExplore} from "react-icons/md"
 const Services = () => {
   const { data: services = [] } = useQuery({
     queryKey: ["services"],
-    queryFn: () => fetch("https://cholo-bd-server.vercel.app/admin/services").then((res) => res.json()),
+    queryFn: () => fetch("https://cholo-bd-server-maruf19.vercel.app/admin/services").then((res) => res.json()),
   });
 
   return (

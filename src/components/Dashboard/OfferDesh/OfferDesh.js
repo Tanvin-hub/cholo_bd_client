@@ -2,10 +2,10 @@ import React from "react";
 import DashboardNavbar from "../Dashboard/DashboardNavbar/DashboardNavbar";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const OfferDash = () => {
   const { register, handleSubmit, reset } = useForm();
-
   const handleOffer = (data) => {
     const image = data.image[0];
     const formData = new FormData();
